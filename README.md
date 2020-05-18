@@ -1,1 +1,2 @@
-# TextDigger
+# SAMPLE
+Sample Projects
