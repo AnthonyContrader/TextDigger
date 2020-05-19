@@ -6,17 +6,16 @@ public class Document {
 	
 	private int idDocument;
 	
-	private int userId;
+	private User user;
 	
-	private Blob textBlob;
+	private String textBlob;
 	
 	public Document() {
 		
 	}
 	
-	public Document(int idDocument, int userId, Blob textBlob) {
-		this.idDocument = idDocument;
-		this.userId = userId;
+	public Document( User user, String textBlob) {
+		this.user = user;
 		this.textBlob = textBlob;
 	}
 
@@ -28,35 +27,25 @@ public class Document {
 		this.idDocument = idDocument;
 	}
 
-	public int getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUserId(User user) {
+		this.user = user;
 	}
 
-	public Blob getTextBlob() {
+	public String getTextBlob() {
 		return textBlob;
 	}
 
-	public void setTextBlob(Blob textBlob) {
+	public void setTextBlob(String textBlob) {
 		this.textBlob = textBlob;
 	}
 
 	@Override
 	public String toString() {
-		return "Document [idDocument=" + idDocument + ", userId=" + userId + ", textBlob=" + textBlob + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idDocument;
-		result = prime * result + ((textBlob == null) ? 0 : textBlob.hashCode());
-		result = prime * result + userId;
-		return result;
+		return "Document [idDocument=" + idDocument + ", userId=" + user + ", textBlob=" + textBlob + "]";
 	}
 
 	@Override
@@ -75,7 +64,7 @@ public class Document {
 				return false;
 		} else if (!textBlob.equals(other.textBlob))
 			return false;
-		if (userId != other.userId)
+		if (user != other.user)
 			return false;
 		return true;
 	}
