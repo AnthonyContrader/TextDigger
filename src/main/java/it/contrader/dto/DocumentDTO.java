@@ -2,22 +2,24 @@ package it.contrader.dto;
 
 import java.sql.Blob;
 
+import it.contrader.model.User;
+
 public class DocumentDTO {
 	
     private int idDocument;
 	
-	private int userId;
+	private User user;
 	
-	private Blob textBlob;
+	private String textBlob;
 	
 	public DocumentDTO() {
 		
 	}
 	
-	public DocumentDTO(int idDocument, int userId, Blob textBlob) {
+	public DocumentDTO(int idDocument, User user, String textBlob) {
 		
 		this.idDocument = idDocument;
-		this.userId = userId;
+		this.user = user;
 		this.textBlob = textBlob;
 	}
 
@@ -29,25 +31,25 @@ public class DocumentDTO {
 		this.idDocument = idDocument;
 	}
 
-	public int getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Blob getTextBlob() {
+	public String getTextBlob() {
 		return textBlob;
 	}
 
-	public void setTextBlob(Blob textBlob) {
+	public void setTextBlob(String textBlob) {
 		this.textBlob = textBlob;
 	}
 
 	@Override
 	public String toString() {
-		return "DocumentDTO [idDocument=" + idDocument + ", userId=" + userId + ", textBlob=" + textBlob + "]";
+		return "DocumentDTO [idDocument=" + idDocument + ", user=" + user + ", textBlob=" + textBlob + "]";
 	}
 	
 	

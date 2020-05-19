@@ -83,5 +83,44 @@ public class DocumentDAO {
 		    return null;
 		}
 	}
+	
+	public boolean updateDocument(Document document) {
+		Connection connection = ConnectionSingleton.getInstance();
+		if(document.getIdDocument() == 0) {
+			return false;
+		}
+		
+		try {
+			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
+			preparedStatement.setInt(1, document.getIdDocument());
+			preparedStatement.setString(2, document.getTextBlob());
+			int a = preparedStatement.executeUpdate();
+			if(a > 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}catch (SQLException e) {
+			return false;
+		}
+	}
+	
+	public boolean deleteDocument(Integer id) {
+		Connection connection = ConnectionSingleton.getInstance();
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
+			preparedStatement.setInt(1, id);
+			int n = preparedStatement.executeUpdate();
+			if(n != 0) {
+				return true;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return false;
+	}
+	
+	
 
 }
