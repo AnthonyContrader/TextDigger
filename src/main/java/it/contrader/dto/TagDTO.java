@@ -10,8 +10,12 @@ public class TagDTO {
 		
 	}
 
-	public TagDTO(int idTag, String tag) {
+	public TagDTO(String tag) {
 		
+		this.tag = tag;
+	}
+	
+	public TagDTO(int idTag, String tag) {
 		this.idTag = idTag;
 		this.tag = tag;
 	}
