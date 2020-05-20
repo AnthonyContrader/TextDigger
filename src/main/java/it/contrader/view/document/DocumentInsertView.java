@@ -8,7 +8,7 @@ public class DocumentInsertView extends AbstractView{
 
 	private Request request;
 	
-	private String textBlob;
+	private String text;
 	
 	private final String mode = "INSERT";
 	
@@ -29,7 +29,7 @@ public class DocumentInsertView extends AbstractView{
 	public void showOptions() {
 		
 			System.out.println("Inserisci test del Documento:");
-			textBlob = getInput();
+			text = getInput();
 			
 	}
 
@@ -37,7 +37,7 @@ public class DocumentInsertView extends AbstractView{
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("text", textBlob);
+		request.put("text", text);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Document", "doControl", request);
 	}

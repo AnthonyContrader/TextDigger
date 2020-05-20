@@ -19,7 +19,7 @@ public class DocumentView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione Document ----------------\n");
-			System.out.println("IdDocument\\users\textBlob");
+			System.out.println("IdDocument\\users\text");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

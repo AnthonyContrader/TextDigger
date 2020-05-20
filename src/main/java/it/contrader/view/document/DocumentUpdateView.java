@@ -9,7 +9,7 @@ public class DocumentUpdateView extends AbstractView {
     private Request request;
 	
     private int idDocument;
-	private String textBlob;
+	private String text;
 	
 	private final String mode = "Update";
 	
@@ -31,7 +31,7 @@ public class DocumentUpdateView extends AbstractView {
 			System.out.println("Inserisci idDocument dell'utente:");
 			idDocument = Integer.parseInt(getInput());
 			System.out.println("Inserisci testo:");
-			textBlob = getInput();
+			text = getInput();
 			
 		} catch (Exception e) {
 
@@ -43,7 +43,7 @@ public class DocumentUpdateView extends AbstractView {
 	public void submit() {
 		request = new Request();
 		request.put("id", idDocument);
-		request.put("Testo", textBlob);
+		request.put("Testo", text);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Document", "doControl", request);
 	}

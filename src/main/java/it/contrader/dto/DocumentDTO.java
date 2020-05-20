@@ -10,21 +10,21 @@ public class DocumentDTO {
 	
 	private User user;
 	
-	private String textBlob;
+	private String text;
 	
 	public DocumentDTO() {
 		
 	}
 	
-	public DocumentDTO(int idDocument, User user, String textBlob) {
+	public DocumentDTO(int idDocument, User user, String text) {
 		
 		this.idDocument = idDocument;
 		this.user = user;
-		this.textBlob = textBlob;
+		this.text = text;
 	}
 	
-	public DocumentDTO(String textBlob) {
-		this.textBlob = textBlob;
+	public DocumentDTO(String text) {
+		this.text = text;
 	}
 
 	public int getIdDocument() {
@@ -43,17 +43,17 @@ public class DocumentDTO {
 		this.user = user;
 	}
 
-	public String getTextBlob() {
-		return textBlob;
+	public String getText() {
+		return text;
 	}
 
-	public void setTextBlob(String textBlob) {
-		this.textBlob = textBlob;
+	public void setTextBlob(String text) {
+		this.text = text;
 	}
 
 	@Override
 	public String toString() {
-		return "DocumentDTO [idDocument=" + idDocument + ", user=" + user + ", textBlob=" + textBlob + "]";
+		return "DocumentDTO [idDocument=" + idDocument + ", user=" + user + ", text=" + text + "]";
 	}
 	
 	

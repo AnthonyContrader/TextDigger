@@ -1,6 +1,5 @@
 package it.contrader.dao;
-
-import java.io.File;
+ 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -53,7 +52,7 @@ public class DocumentDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(1, document.getTextBlob());
+			preparedStatement.setString(1, document.getText());
 			return preparedStatement.execute();
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -93,7 +92,7 @@ public class DocumentDAO {
 		try {
 			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 			preparedStatement.setInt(1, document.getIdDocument());
-			preparedStatement.setString(2, document.getTextBlob());
+			preparedStatement.setString(2, document.getText());
 			int a = preparedStatement.executeUpdate();
 			if(a > 0) {
 				return true;

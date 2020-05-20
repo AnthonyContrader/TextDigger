@@ -10,13 +10,13 @@ public class DocumentConverter {
 	
 	public DocumentDTO toDTO(Document document) {
 		
-		DocumentDTO documentDTO = new DocumentDTO(document.getIdDocument(), document.getUser(), document.getTextBlob());
+		DocumentDTO documentDTO = new DocumentDTO(document.getIdDocument(), document.getUser(), document.getText());
 		
 		return documentDTO;
 	}
 	
 	public Document toEntity(DocumentDTO documentDTO) {
-		Document document = new Document(documentDTO.getUser(), documentDTO.getTextBlob());
+		Document document = new Document(documentDTO.getUser(), documentDTO.getText());
 		
 		return document;
 	}

@@ -1,6 +1,5 @@
 package it.contrader.model;
 
-import java.sql.Blob;
 
 public class Document {
 	
@@ -8,15 +7,15 @@ public class Document {
 	
 	private User user;
 	
-	private String textBlob;
+	private String text;
 	
 	public Document() {
 		
 	}
 	
-	public Document( User user, String textBlob) {
+	public Document( User user, String text) {
 		this.user = user;
-		this.textBlob = textBlob;
+		this.text = text;
 	}
 
 	public int getIdDocument() {
@@ -35,17 +34,17 @@ public class Document {
 		this.user = user;
 	}
 
-	public String getTextBlob() {
-		return textBlob;
+	public String getText() {
+		return text;
 	}
 
-	public void setTextBlob(String textBlob) {
-		this.textBlob = textBlob;
+	public void setTextBlob(String text) {
+		this.text = text;
 	}
 
 	@Override
 	public String toString() {
-		return "Document [idDocument=" + idDocument + ", userId=" + user + ", textBlob=" + textBlob + "]";
+		return "Document [idDocument=" + idDocument + ", userId=" + user + ", text=" + text + "]";
 	}
 
 	@Override
@@ -59,10 +58,10 @@ public class Document {
 		Document other = (Document) obj;
 		if (idDocument != other.idDocument)
 			return false;
-		if (textBlob == null) {
-			if (other.textBlob != null)
+		if (text == null) {
+			if (other.text != null)
 				return false;
-		} else if (!textBlob.equals(other.textBlob))
+		} else if (!text.equals(other.text))
 			return false;
 		if (user != other.user)
 			return false;
