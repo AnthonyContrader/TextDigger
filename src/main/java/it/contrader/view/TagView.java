@@ -20,7 +20,7 @@ public class TagView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione Tag ----------------\n");
-			System.out.println("IDTag\tTag");
+			System.out.println("IDTag\tag");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

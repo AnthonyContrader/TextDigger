@@ -10,7 +10,6 @@ import java.util.List;
 
 import it.contrader.main.ConnectionSingleton;
 import it.contrader.model.Tags;
-import it.contrader.model.User;
 
 public class TagDAO {
 	
@@ -32,7 +31,7 @@ public class TagDAO {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Tags tags;
 			while(resultSet.next()) {
-			 int idTag = resultSet.getInt("id");
+			 int idTag = resultSet.getInt("idtags");
 			 String tag = resultSet.getString("tag");
 			 tags = new Tags(idTag, tag);
 			 tags.setIdTag(idTag);
@@ -68,7 +67,7 @@ public class TagDAO {
 
 			tags = resultSet.getString("tag");
 			Tags tag = new Tags(idTag,tags);
-			tag.setIdTag(resultSet.getInt("id"));
+			tag.setIdTag(resultSet.getInt("idtags"));
 
 			return tag;
 		} catch (SQLException e) {
