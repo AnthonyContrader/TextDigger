@@ -35,7 +35,7 @@ public class TagInsertView extends AbstractView{
 	public void submit() {
 		request = new Request();
 		request.put("tag", tag);
-		request.put("mode", "mode");
+		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Tag", "doControl", request);
 	}
 

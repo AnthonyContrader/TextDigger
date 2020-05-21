@@ -15,7 +15,6 @@ public class TagDeleteView extends AbstractView {
 		
 	}
 
-	@Override
 	public void showResults(Request request) {
 		if(request != null) {
 			System.out.println("Cancellazione andata a buon fine. \n");
@@ -23,17 +22,15 @@ public class TagDeleteView extends AbstractView {
 		}
 	}
 
-	@Override
 	public void showOptions() {
 		System.out.println("Inserisci id del tag: ");
 		id = Integer.parseInt(getInput());
 		
 	}
 
-	@Override
 	public void submit() {
 		request = new Request();
-		request.put("id", "id");
+		request.put("id", id);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Tag", "doControl", request);
 	}

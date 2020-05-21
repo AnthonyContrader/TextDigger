@@ -1,7 +1,5 @@
 package it.contrader.dto;
 
-import java.sql.Blob;
-
 import it.contrader.model.User;
 
 public class DocumentDTO {
