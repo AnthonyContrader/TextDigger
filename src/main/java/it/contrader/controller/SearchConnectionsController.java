@@ -9,7 +9,6 @@ import it.contrader.service.SearchConnectionsService;
 
 public class SearchConnectionsController implements Controller {
 	
-	private static String sub_package = "SearchConnections";
 	
 	private SearchConnectionsService searchConnectionsService;
 	
@@ -30,7 +29,7 @@ public class SearchConnectionsController implements Controller {
 		case "SEARCHCONNECTIONSLIST":
 			List<SearchConnectionsDTO> searchConnectionsDTOList =  searchConnectionsService.getAll();
 			request.put("searchconnections", searchConnectionsDTOList);
-			MainDispatcher.getInstance().callView(sub_package + "DocumentRead", request);
+			MainDispatcher.getInstance().callView("SearchConnections", request);
 			break;
 			
 		case "GETCHOICE" :
