@@ -20,7 +20,7 @@ public class SearchConnectionsView extends AbstractView {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione Search Connections ----------------\n");
 			System.out.println("idDocument\tidTags");
-			System.out.println("----------------------------------------------------\n");
+			System.out.println("----------------------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
 			List<SearchConnectionsDTO> Connections = (List<SearchConnectionsDTO>) request.get("searchconnections");

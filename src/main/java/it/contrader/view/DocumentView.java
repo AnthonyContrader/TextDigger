@@ -20,7 +20,7 @@ public class DocumentView extends AbstractView {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione Document ----------------\n");
 			System.out.println("IdDocument\tUsers\tText");
-			System.out.println("----------------------------------------------------\n");
+			System.out.println("------------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
 			List<DocumentDTO> Document = (List<DocumentDTO>) request.get("documents");
