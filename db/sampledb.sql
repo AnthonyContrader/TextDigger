@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `document`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `document` (
-  `iddocument` int(11) NOT NULL,
+  `iddocument` int(11) NOT NULL AUTO_INCREMENT,
   `text` longtext,
   `user` int(11) NOT NULL,
   PRIMARY KEY (`iddocument`),
   KEY `user_idx` (`user`),
-  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,10 +52,10 @@ DROP TABLE IF EXISTS `searchconnections`;
 CREATE TABLE `searchconnections` (
   `iddocument` int(11) NOT NULL,
   `idtag` int(11) NOT NULL,
-  KEY `iddocument_idx` (`iddocument`),
-  KEY `idtags_idx` (`idtag`),
-  CONSTRAINT `iddocument` FOREIGN KEY (`iddocument`) REFERENCES `document` (`iddocument`),
-  CONSTRAINT `idtags` FOREIGN KEY (`idtag`) REFERENCES `tags` (`idtags`) ON UPDATE CASCADE
+  PRIMARY KEY (`iddocument`,`idtag`),
+  KEY `idtag_idx` (`idtag`),
+  CONSTRAINT `iddocument` FOREIGN KEY (`iddocument`) REFERENCES `document` (`iddocument`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `idtag` FOREIGN KEY (`idtag`) REFERENCES `tags` (`idtags`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,7 +65,7 @@ CREATE TABLE `searchconnections` (
 
 LOCK TABLES `searchconnections` WRITE;
 /*!40000 ALTER TABLE `searchconnections` DISABLE KEYS */;
-INSERT INTO `searchconnections` VALUES (1,1),(1,3),(2,1),(2,2),(3,1),(3,3),(4,1),(4,2);
+INSERT INTO `searchconnections` VALUES (1,1),(2,1),(3,1),(4,1),(2,2),(4,2),(1,3),(3,3);
 /*!40000 ALTER TABLE `searchconnections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,11 +77,11 @@ DROP TABLE IF EXISTS `tags`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `tags` (
-  `idtags` int(11) NOT NULL,
+  `idtags` int(11) NOT NULL AUTO_INCREMENT,
   `tag` varchar(45) NOT NULL,
   PRIMARY KEY (`idtags`),
   UNIQUE KEY `tag_UNIQUE` (`tag`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,9 +105,9 @@ CREATE TABLE `user` (
   `username` varchar(16) NOT NULL,
   `usertype` varchar(255) DEFAULT NULL,
   `password` varchar(32) NOT NULL,
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-22  9:29:43
+-- Dump completed on 2020-05-22 10:03:30
