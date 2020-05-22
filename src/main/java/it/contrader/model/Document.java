@@ -13,6 +13,12 @@ public class Document {
 		
 	}
 	
+	public Document(int idDocument, User user, String text) {
+		this.idDocument = idDocument;
+		this.user = user;
+		this.text = text;
+	}
+	
 	public Document( User user, String text) {
 		this.user = user;
 		this.text = text;

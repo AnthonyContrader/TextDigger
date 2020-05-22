@@ -26,11 +26,11 @@ public class SearchConnectionsDAO {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			SearchConnections connections;
 			while(resultSet.next()) {
-				int idTag = resultSet.getInt("idtag");
 				int idDocument = resultSet.getInt("iddocument");
-				connections = new SearchConnections(idTag, idDocument);
-				connections.setIdTags(idTag);
+				int idTag = resultSet.getInt("idtag");
+				connections = new SearchConnections(idDocument, idTag);
 				connections.setIdDocument(idDocument);
+				connections.setIdTags(idTag);
 				list.add(connections);
 			}
 		}catch (SQLException e) {

@@ -15,9 +15,9 @@ import it.contrader.model.User;
 public class DocumentDAO {
 	
 	private final String QUERY_ALL = "SELECT * FROM document";
-	private final String QUERY_CREATE = "INSERT INTO document (text) VALUES (?)";
+	private final String QUERY_CREATE = "INSERT INTO document (iddocument,text) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM document WHERE iddocument=?";
-	private final String QUERY_UPDATE = "UPDATE document SET  WHERE iddocument=?";
+	private final String QUERY_UPDATE = "UPDATE document SET iddocument=?, text=?  WHERE iddocument=?";
 	private final String QUERY_DELETE = "DELETE FROM document WHERE iddocument=?";
 
 	public DocumentDAO() {
@@ -32,6 +32,8 @@ public class DocumentDAO {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Document document;
 			while(resultSet.next()) {
+				int idDocument = resultSet.getInt("iddocument");
+
 				int userId = resultSet.getInt("user");
 				User userDoc = new User(null, null, null);
 				userDoc.setId(userId);
@@ -39,7 +41,7 @@ public class DocumentDAO {
 				String text = resultSet.getString("text");
 				
 				document = new Document(userDoc,text);
-				document.setIdDocument(resultSet.getInt("iddocument"));
+				document.setIdDocument(idDocument);
 				documentList.add(document);
 			}
 		}catch(SQLException e) {
@@ -52,7 +54,8 @@ public class DocumentDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(1, document.getText());
+			preparedStatement.setInt(1, document.getIdDocument());
+			preparedStatement.setString(2, document.getText());
 			return preparedStatement.execute();
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -67,10 +70,11 @@ public class DocumentDAO {
 			preparedStatement.setInt(1, idDocument);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String user, textDocument;
+			//String user;
+			String textDocument;
 			
 			textDocument = resultSet.getString("text");
-			int userId = resultSet.getInt("user");
+			//int userId = resultSet.getInt("user");
 			User userDoc = new User(null, null, null);
 			
 			Document document = new Document(userDoc, textDocument);

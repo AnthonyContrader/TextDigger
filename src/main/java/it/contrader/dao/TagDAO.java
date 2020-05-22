@@ -14,9 +14,9 @@ import it.contrader.model.Tags;
 public class TagDAO {
 	
 	private final String QUERY_ALL = "SELECT * FROM tags";
-	private final String QUERY_CREATE = "INSERT INTO tags (tag) VALUES (?)";
+	private final String QUERY_CREATE = "INSERT INTO tags (idtags,tag) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM user WHERE idtags=?";
-	private final String QUERY_UPDATE = "UPDATE user SET tag=? WHERE idtags=?";
+	private final String QUERY_UPDATE = "UPDATE user SET idtags=?, tag=? WHERE idtags=?";
 	private final String QUERY_DELETE = "DELETE FROM user WHERE idtags=?";
 	
 	public TagDAO() {
@@ -48,7 +48,8 @@ public class TagDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(1, tagToInsert.getTag());
+			preparedStatement.setInt(1, tagToInsert.getIdTag());
+			preparedStatement.setString(2, tagToInsert.getTag());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
