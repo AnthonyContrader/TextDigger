@@ -19,7 +19,7 @@ public class SearchConnectionsView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione Search Connections ----------------\n");
-			System.out.println("idDocument\\idTags");
+			System.out.println("idDocument\tidTags");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

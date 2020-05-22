@@ -35,7 +35,7 @@ public class SearchConnectionsDTO {
 
 	@Override
 	public String toString() {
-		return "SearchConnectionsDTO [idDocument=" + idDocument + ", idTags=" + idTags + "]";
+		return idDocument + "\t\t" + idTags;
 	}
 	
 }

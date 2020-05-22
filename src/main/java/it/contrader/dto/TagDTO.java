@@ -38,7 +38,7 @@ public class TagDTO {
 
 	@Override
 	public String toString() {
-		return "TagDTO [idTag=" + idTag + ", tag=" + tag + "]";
+		return idTag + "\t" + tag;
 	}
 	
 	
