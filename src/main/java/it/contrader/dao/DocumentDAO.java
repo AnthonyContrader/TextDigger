@@ -74,8 +74,9 @@ public class DocumentDAO {
 			String textDocument;
 			
 			textDocument = resultSet.getString("text");
-			//int userId = resultSet.getInt("user");
-			User userDoc = new User();
+			int userId = resultSet.getInt("user");
+			User userDoc = new User(null, null, null);
+			userDoc.setId(userId);
 			
 			Document document = new Document(userDoc, textDocument);
 			document.setIdDocument(resultSet.getInt("iddocument"));
