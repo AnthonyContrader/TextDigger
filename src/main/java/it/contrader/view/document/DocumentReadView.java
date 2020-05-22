@@ -22,7 +22,7 @@ public class DocumentReadView extends AbstractView{
 	@Override
 	public void showResults(Request request) {
 		if (request != null) {
-			DocumentDTO Document = (DocumentDTO) request.get("Document");
+			DocumentDTO Document = (DocumentDTO) request.get("document");
 			System.out.println(Document);
 			MainDispatcher.getInstance().callView("Document", null);
 		}
