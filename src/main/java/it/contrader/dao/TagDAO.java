@@ -48,7 +48,6 @@ public class TagDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setInt(1, tagToInsert.getIdTag());
 			preparedStatement.setString(2, tagToInsert.getTag());
 			preparedStatement.execute();
 			return true;
@@ -91,7 +90,6 @@ public class TagDAO {
 			
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, tagToUpdate.getTag());
-				preparedStatement.setInt(2, tagToUpdate.getIdTag());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

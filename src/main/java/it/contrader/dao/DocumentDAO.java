@@ -54,7 +54,6 @@ public class DocumentDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setInt(1, document.getIdDocument());
 			preparedStatement.setString(3, document.getText());
 			return preparedStatement.execute();
 		}catch (SQLException e) {
@@ -97,7 +96,6 @@ public class DocumentDAO {
 		try {
 			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 			preparedStatement.setInt(1, document.getIdDocument());
-			preparedStatement.setString(3, document.getText());
 			int a = preparedStatement.executeUpdate();
 			if(a > 0) {
 				return true;
