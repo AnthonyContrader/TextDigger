@@ -28,7 +28,7 @@ CREATE TABLE `document` (
   `user` int(11) NOT NULL,
   PRIMARY KEY (`iddocument`),
   KEY `user_idx` (`user`),
-  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +38,7 @@ CREATE TABLE `document` (
 
 LOCK TABLES `document` WRITE;
 /*!40000 ALTER TABLE `document` DISABLE KEYS */;
-INSERT INTO `document` VALUES (1,'primo documento di prova ',1),(2,'secondo documento inserito dall\'utente',2),(3,'terzo documento per provare l\'inserimento',1),(4,'quarto documento inserito dall\'utente',2);
+INSERT INTO `document` VALUES (1,'primo documento di prova ',1),(2,'secondo documento inserito dall\'utente',2),(3,'terzo documento per provare l\'inserimento',1);
 /*!40000 ALTER TABLE `document` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,12 +50,12 @@ DROP TABLE IF EXISTS `searchconnections`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `searchconnections` (
-  `iddocument` int(11) NOT NULL,
-  `idtag` int(11) NOT NULL,
-  PRIMARY KEY (`iddocument`,`idtag`),
+  `iddocument` int(11) DEFAULT NULL,
+  `idtag` int(11) DEFAULT NULL,
   KEY `idtag_idx` (`idtag`),
-  CONSTRAINT `iddocument` FOREIGN KEY (`iddocument`) REFERENCES `document` (`iddocument`) ON UPDATE CASCADE,
-  CONSTRAINT `idtag` FOREIGN KEY (`idtag`) REFERENCES `tags` (`idtags`) ON UPDATE CASCADE
+  KEY `document` (`iddocument`),
+  CONSTRAINT `document` FOREIGN KEY (`iddocument`) REFERENCES `document` (`iddocument`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `tag` FOREIGN KEY (`idtag`) REFERENCES `tags` (`idtags`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,7 +65,7 @@ CREATE TABLE `searchconnections` (
 
 LOCK TABLES `searchconnections` WRITE;
 /*!40000 ALTER TABLE `searchconnections` DISABLE KEYS */;
-INSERT INTO `searchconnections` VALUES (1,1),(2,1),(3,1),(4,1),(2,2),(4,2),(1,3),(3,3);
+INSERT INTO `searchconnections` VALUES (1,1),(1,3),(2,1),(2,2),(3,1),(3,3),(NULL,1),(NULL,2);
 /*!40000 ALTER TABLE `searchconnections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +81,7 @@ CREATE TABLE `tags` (
   `tag` varchar(45) NOT NULL,
   PRIMARY KEY (`idtags`),
   UNIQUE KEY `tag_UNIQUE` (`tag`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-22 13:14:41
+-- Dump completed on 2020-05-22 14:26:44
