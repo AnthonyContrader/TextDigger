@@ -33,7 +33,7 @@ public class DocumentDAO {
 			Document document;
 			while(resultSet.next()) {
 				int idDocument = resultSet.getInt("iddocument");
-
+				
 				int userId = resultSet.getInt("user");
 				User userDoc = new User(null, null, null);
 				userDoc.setId(userId);
