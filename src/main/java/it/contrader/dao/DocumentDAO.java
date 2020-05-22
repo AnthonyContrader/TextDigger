@@ -55,7 +55,8 @@ public class DocumentDAO {
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setInt(1, document.getIdDocument());
-			preparedStatement.setString(2, document.getText());
+			preparedStatement.setInt(2, document.getUser().getId());
+			preparedStatement.setString(3, document.getText());
 			return preparedStatement.execute();
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -97,7 +98,8 @@ public class DocumentDAO {
 		try {
 			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 			preparedStatement.setInt(1, document.getIdDocument());
-			preparedStatement.setString(2, document.getText());
+			preparedStatement.setInt(2, document.getUser().getId());
+			preparedStatement.setString(3, document.getText());
 			int a = preparedStatement.executeUpdate();
 			if(a > 0) {
 				return true;
