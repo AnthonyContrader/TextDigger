@@ -55,7 +55,8 @@ public class DocumentDAO {
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, document.getText());
-			return preparedStatement.execute();
+			preparedStatement.execute();
+			return true;
 		}catch (SQLException e) {
 			e.printStackTrace();
 			return false;
