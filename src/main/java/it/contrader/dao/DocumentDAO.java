@@ -54,7 +54,7 @@ public class DocumentDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(3, document.getText());
+			preparedStatement.setString(1, document.getText());
 			return preparedStatement.execute();
 		}catch (SQLException e) {
 			e.printStackTrace();

@@ -48,7 +48,7 @@ public class TagDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(2, tagToInsert.getTag());
+			preparedStatement.setString(1, tagToInsert.getTag());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
