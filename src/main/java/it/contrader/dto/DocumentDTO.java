@@ -51,7 +51,7 @@ public class DocumentDTO {
 
 	@Override
 	public String toString() {
-		return idDocument + "\t" + user + "\t" + text;
+		return idDocument + "\t\t" + user + "\t" + text;
 	}
 	
 	

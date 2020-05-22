@@ -70,13 +70,12 @@ public class DocumentDAO {
 			preparedStatement.setInt(1, idDocument);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String user;
+			//String user;
 			String textDocument;
 			
 			textDocument = resultSet.getString("text");
-			int userId = resultSet.getInt("user");
-			User userDoc = new User(null, null, null);
-			userDoc.setId(userId);
+			//int userId = resultSet.getInt("user");
+			User userDoc = new User();
 			
 			Document document = new Document(userDoc, textDocument);
 			document.setIdDocument(resultSet.getInt("iddocument"));
