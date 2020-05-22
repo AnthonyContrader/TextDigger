@@ -14,6 +14,7 @@ public class TagReadView extends AbstractView {
 	public TagReadView() {
 		
 	}
+	
 
 	@Override
 	public void showResults(Request request) {

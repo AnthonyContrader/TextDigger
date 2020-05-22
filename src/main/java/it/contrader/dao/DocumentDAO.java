@@ -15,9 +15,9 @@ import it.contrader.model.User;
 public class DocumentDAO {
 	
 	private final String QUERY_ALL = "SELECT * FROM document";
-	private final String QUERY_CREATE = "INSERT INTO document (iddocument,text) VALUES (?,?)";
+	private final String QUERY_CREATE = "INSERT INTO document (text) VALUES (?)";
 	private final String QUERY_READ = "SELECT * FROM document WHERE iddocument=?";
-	private final String QUERY_UPDATE = "UPDATE document SET iddocument=?, text=?  WHERE iddocument=?";
+	private final String QUERY_UPDATE = "UPDATE document SET  text=?  WHERE iddocument=?";
 	private final String QUERY_DELETE = "DELETE FROM document WHERE iddocument=?";
 
 	public DocumentDAO() {
