@@ -77,19 +77,19 @@ public class DocumentController implements Controller {
 			
 			switch(choice.toUpperCase()) {
 			case "L":
-				MainDispatcher.getInstance().callView(sub_package + "DocRead", null);
+				MainDispatcher.getInstance().callView(sub_package + "DocumentRead", null);
 				break;
 				
 			case "I":
-				MainDispatcher.getInstance().callView(sub_package + "DocInsert", null);
+				MainDispatcher.getInstance().callView(sub_package + "DocumentInsert", null);
 				break;
 				
 			case "M":
-				MainDispatcher.getInstance().callView(sub_package + "DocUpdate", null);
+				MainDispatcher.getInstance().callView(sub_package + "DocumentUpdate", null);
 				break;
 				
 			case "C":
-				MainDispatcher.getInstance().callView(sub_package + "DocDelete", null);
+				MainDispatcher.getInstance().callView(sub_package + "DocumentDelete", null);
 				break;
 				
 			case "E":
