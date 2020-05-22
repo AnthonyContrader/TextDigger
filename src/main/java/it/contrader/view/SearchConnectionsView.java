@@ -43,7 +43,7 @@ public class SearchConnectionsView extends AbstractView {
 		request = new Request();
 		request.put("choice", choice);
 		request.put("mode", "GETCHOICE");
-		MainDispatcher.getInstance().callAction("Connections", "doControl", this.request);
+		MainDispatcher.getInstance().callAction("SearchConnections", "doControl", this.request);
 	}
 }
 
