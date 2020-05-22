@@ -29,9 +29,9 @@ public class DocumentController implements Controller {
 		switch(mode) {
 
 		case "READ":
-			id = Integer.parseInt(request.get("id").toString());
+			id = Integer.parseInt(request.get("iddocument").toString());
 			DocumentDTO documentDTO = documentService.read(id);
-			request.put("tags", documentDTO);
+			request.put("document", documentDTO);
 			MainDispatcher.getInstance().callView(sub_package + "DocumentRead", request);
 			break;
 		
