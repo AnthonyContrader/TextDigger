@@ -27,7 +27,7 @@ public class TagReadView extends AbstractView {
 
 	@Override
 	public void showOptions() {
-		System.out.println("Inserisci l'ID del tag:");
+		System.out.println("Inserisci l'IDTag del tag:");
 		idTag = Integer.parseInt(getInput());
 		
 	}

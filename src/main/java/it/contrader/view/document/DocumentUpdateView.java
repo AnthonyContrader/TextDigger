@@ -11,7 +11,7 @@ public class DocumentUpdateView extends AbstractView {
     private int idDocument;
 	private String text;
 	
-	private final String mode = "Update";
+	private final String mode = "UPDATE";
 	
 	public DocumentUpdateView() {
 		
@@ -28,7 +28,7 @@ public class DocumentUpdateView extends AbstractView {
 	@Override
 	public void showOptions() {
 		try {
-			System.out.println("Inserisci idDocument dell'utente:");
+			System.out.println("Inserisci idDocument del documento:");
 			idDocument = Integer.parseInt(getInput());
 			System.out.println("Inserisci testo:");
 			text = getInput();

@@ -27,7 +27,7 @@ public class TagUpdateView extends AbstractView {
 	@Override
 	public void showOptions() {
 		try {
-			System.out.println("Inserisci id del tag:");
+			System.out.println("Inserisci IDTag del tag:");
 			id = Integer.parseInt(getInput());
 			System.out.println("Inserisci tag:");
 			tag = getInput();

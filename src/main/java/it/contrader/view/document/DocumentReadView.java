@@ -13,7 +13,7 @@ public class DocumentReadView extends AbstractView{
 	
 	private int idDocument;
 	
-	private final String mode = "Read";
+	private final String mode = "READ";
 	
 	public DocumentReadView() {
 		
@@ -32,7 +32,7 @@ public class DocumentReadView extends AbstractView{
 	
 	@Override
 	public void showOptions() {
-		System.out.println("Inserisci l'idDocument dell'utente:");
+		System.out.println("Inserisci l'idDocument del documento:");
 		idDocument = Integer.parseInt(getInput());
 	}
 

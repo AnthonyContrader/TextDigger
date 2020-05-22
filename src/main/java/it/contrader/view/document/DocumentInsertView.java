@@ -28,7 +28,7 @@ public class DocumentInsertView extends AbstractView{
 	@Override
 	public void showOptions() {
 		
-			System.out.println("Inserisci test del Documento:");
+			System.out.println("Inserisci testo del documento:");
 			text = getInput();
 			
 	}

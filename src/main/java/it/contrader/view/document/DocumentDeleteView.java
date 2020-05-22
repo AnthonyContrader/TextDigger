@@ -26,7 +26,7 @@ public class DocumentDeleteView extends AbstractView {
 	
 	@Override
 	public void showOptions() {
-			System.out.println("Inserisci id del Documento:");
+			System.out.println("Inserisci id del documento:");
 			idDocument = Integer.parseInt(getInput());
 
 	}

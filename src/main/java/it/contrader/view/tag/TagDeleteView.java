@@ -23,7 +23,7 @@ public class TagDeleteView extends AbstractView {
 	}
 
 	public void showOptions() {
-		System.out.println("Inserisci id del tag: ");
+		System.out.println("Inserisci IDTag del tag: ");
 		id = Integer.parseInt(getInput());
 		
 	}
