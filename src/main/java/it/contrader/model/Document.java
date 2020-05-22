@@ -44,7 +44,7 @@ public class Document {
 		return text;
 	}
 
-	public void setTextBlob(String text) {
+	public void setText(String text) {
 		this.text = text;
 	}
 
@@ -72,8 +72,6 @@ public class Document {
 		if (user != other.user)
 			return false;
 		return true;
-	}
-	
-	
+	}	
 
 }
