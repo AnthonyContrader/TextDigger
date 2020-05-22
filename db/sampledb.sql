@@ -28,7 +28,7 @@ CREATE TABLE `document` (
   `user` int(11) NOT NULL,
   PRIMARY KEY (`iddocument`),
   KEY `user_idx` (`user`),
-  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,8 +54,8 @@ CREATE TABLE `searchconnections` (
   `idtag` int(11) NOT NULL,
   PRIMARY KEY (`iddocument`,`idtag`),
   KEY `idtag_idx` (`idtag`),
-  CONSTRAINT `iddocument` FOREIGN KEY (`iddocument`) REFERENCES `document` (`iddocument`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT `idtag` FOREIGN KEY (`idtag`) REFERENCES `tags` (`idtags`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `iddocument` FOREIGN KEY (`iddocument`) REFERENCES `document` (`iddocument`) ON UPDATE CASCADE,
+  CONSTRAINT `idtag` FOREIGN KEY (`idtag`) REFERENCES `tags` (`idtags`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -107,7 +107,7 @@ CREATE TABLE `user` (
   `password` varchar(32) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-22 10:03:30
+-- Dump completed on 2020-05-22 13:14:41
