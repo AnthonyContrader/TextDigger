@@ -23,7 +23,7 @@ public class DocumentView extends AbstractView {
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
-			List<DocumentDTO> Document = (List<DocumentDTO>) request.get("Document");
+			List<DocumentDTO> Document = (List<DocumentDTO>) request.get("document");
 			for (DocumentDTO d: Document)
 				System.out.println(d);
 			System.out.println();

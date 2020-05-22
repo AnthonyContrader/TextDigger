@@ -23,7 +23,7 @@ public class SearchConnectionsView extends AbstractView {
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
-			List<SearchConnectionsDTO> Connections = (List<SearchConnectionsDTO>) request.get("Connections");
+			List<SearchConnectionsDTO> Connections = (List<SearchConnectionsDTO>) request.get("searchconnections");
 			for (SearchConnectionsDTO c: Connections)
 				System.out.println(c);
 			System.out.println();

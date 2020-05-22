@@ -24,7 +24,7 @@ public class TagView extends AbstractView {
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
-			List<TagDTO> Tags = (List<TagDTO>) request.get("Tags");
+			List<TagDTO> Tags = (List<TagDTO>) request.get("tags");
 			for (TagDTO t: Tags)
 				System.out.println(t);
 			System.out.println();
