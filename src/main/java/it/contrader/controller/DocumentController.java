@@ -8,7 +8,7 @@ import it.contrader.service.DocumentService;
 
 public class DocumentController implements Controller {
 	
-	private static String sub_package = "Document";
+	private static String sub_package = "document.";
 	
 	private DocumentService documentService;
 	

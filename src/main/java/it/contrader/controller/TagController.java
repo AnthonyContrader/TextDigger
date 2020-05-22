@@ -8,7 +8,7 @@ import it.contrader.service.TagsService;
 
 public class TagController implements Controller {
 	
-	private static String sub_package = "tags";
+	private static String sub_package = "tags.";
 	
 	private TagsService tagService;
 	
