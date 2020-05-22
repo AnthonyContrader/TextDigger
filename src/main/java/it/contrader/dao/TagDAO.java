@@ -16,8 +16,8 @@ public class TagDAO {
 	private final String QUERY_ALL = "SELECT * FROM tags";
 	private final String QUERY_CREATE = "INSERT INTO tags (idtags,tag) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM tags WHERE idtags=?";
-	private final String QUERY_UPDATE = "UPDATE user SET idtags=?, tag=? WHERE idtags=?";
-	private final String QUERY_DELETE = "DELETE FROM user WHERE idtags=?";
+	private final String QUERY_UPDATE = "UPDATE tags SET idtags=?, tag=? WHERE idtags=?";
+	private final String QUERY_DELETE = "DELETE FROM tags WHERE idtags=?";
 	
 	public TagDAO() {
 		
