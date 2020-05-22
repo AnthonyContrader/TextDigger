@@ -25,11 +25,11 @@ DROP TABLE IF EXISTS `document`;
 CREATE TABLE `document` (
   `iddocument` int(11) NOT NULL AUTO_INCREMENT,
   `text` longtext,
-  `user` int(11) NOT NULL,
+  `user` int(11) DEFAULT NULL,
   PRIMARY KEY (`iddocument`),
   KEY `user_idx` (`user`),
   CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `document` (
 
 LOCK TABLES `document` WRITE;
 /*!40000 ALTER TABLE `document` DISABLE KEYS */;
-INSERT INTO `document` VALUES (1,'primo documento di prova ',1),(2,'secondo documento inserito dall\'utente',2),(3,'terzo documento per provare l\'inserimento',1);
+INSERT INTO `document` VALUES (1,'primo documento di prova ',1),(2,'secondo documento inserito dall\'utente',2),(3,'terzo documento per provare l\'inserimento',1),(5,'documento da console',NULL);
 /*!40000 ALTER TABLE `document` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-22 14:26:44
+-- Dump completed on 2020-05-22 17:11:35
