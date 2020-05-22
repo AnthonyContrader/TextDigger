@@ -50,7 +50,7 @@ public class Document {
 
 	@Override
 	public String toString() {
-		return "Document [idDocument=" + this.getIdDocument() + ", userId=" + this.getUser().getId() + ", text=" + this.getText() + "]";
+		return this.getIdDocument() + "\t" + this.getUser().getId() + "\t" + this.getText();
 	}
 
 	@Override

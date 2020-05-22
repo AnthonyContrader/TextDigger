@@ -32,7 +32,7 @@ public class Tags {
 
 	@Override
 	public String toString() {
-		return "Tags [idTag=" + idTag + ", tag=" + tag + "]";
+		return idTag + "\t" + tag;
 	}
 
 	@Override

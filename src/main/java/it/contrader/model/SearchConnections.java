@@ -32,7 +32,7 @@ public class SearchConnections {
 
 	@Override
 	public String toString() {
-		return "SearchConnections [idDocument=" + idDocument + ", idTags=" + idTags + "]";
+		return idDocument + "\t" + idTags;
 	}
 
 	@Override
