@@ -18,7 +18,7 @@ public class TagReadView extends AbstractView {
 	@Override
 	public void showResults(Request request) {
 		if (request != null) {
-			TagDTO tag = (TagDTO) request.get("tag");
+			TagDTO tag = (TagDTO) request.get("tags");
 			System.out.println(tag);
 			MainDispatcher.getInstance().callView("Tag", null);
 		}
