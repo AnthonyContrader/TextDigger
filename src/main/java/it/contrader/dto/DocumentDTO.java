@@ -21,6 +21,11 @@ public class DocumentDTO {
 		this.text = text;
 	}
 	
+	public DocumentDTO(User user, String text) {
+		this.user = user;
+		this.text = text;
+	}
+	
 	public DocumentDTO(String text) {
 		this.text = text;
 	}
@@ -51,7 +56,7 @@ public class DocumentDTO {
 
 	@Override
 	public String toString() {
-		return idDocument + "\t\t" + user + "\t" + text;
+		return this.getIdDocument() + "\t\t" + this.getUser().getId() + "\t" + this.getText();
 	}
 	
 	
