@@ -27,7 +27,7 @@ public class TagController implements Controller {
 		
 		switch(mode) {
 		case "READ":
-			id = Integer.parseInt(request.get("idtags").toString());
+			id = Integer.parseInt(request.get("id").toString());
 			TagDTO tagDTO = tagService.read(id);
 			request.put("tags", tagDTO);
 			MainDispatcher.getInstance().callView(sub_package + "TagRead", request);
@@ -46,7 +46,7 @@ public class TagController implements Controller {
 			break;
 			
 		case "DELETE":
-			id = Integer.parseInt(request.get("idtags").toString());
+			id = Integer.parseInt(request.get("id").toString());
 			
 			tagService.delete(id);
 			request = new Request();
@@ -55,7 +55,7 @@ public class TagController implements Controller {
 			break;
 			
 		case "UPDATE":
-			id = Integer.parseInt(request.get("idtags").toString());
+			id = Integer.parseInt(request.get("id").toString());
 			tag = request.get("tag").toString();
 			TagDTO tagDTOToUpdate = new TagDTO(tag);
 			tagDTOToUpdate.setIdTag(id);
