@@ -82,7 +82,7 @@ public class TagDAO {
 		}
 		
 		Tags tagRead = read(tagToUpdate.getIdTag());
-		if(tagRead.equals(tagToUpdate)) {
+		if(!tagRead.equals(tagToUpdate)) {
 			try {
 				if (tagToUpdate.getTag() == null || tagToUpdate.getTag().equals("")) {
 					tagToUpdate.setTag(tagRead.getTag());
