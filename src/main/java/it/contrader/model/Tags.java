@@ -14,6 +14,10 @@ public class Tags {
 		this.tag = tag;
 	}
 
+	public Tags(String tag) {
+		this.tag = tag;
+	}
+
 	public int getIdTag() {
 		return idTag;
 	}

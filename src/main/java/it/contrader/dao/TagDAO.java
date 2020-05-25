@@ -66,7 +66,7 @@ public class TagDAO {
 			String tags;
 
 			tags = resultSet.getString("tag");
-			Tags tag = new Tags(idTag,tags);
+			Tags tag = new Tags(tags);
 			tag.setIdTag(resultSet.getInt("idtags"));
 
 			return tag;
@@ -90,6 +90,7 @@ public class TagDAO {
 			
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, tagToUpdate.getTag());
+				preparedStatement.setInt(2, tagToUpdate.getIdTag());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;
