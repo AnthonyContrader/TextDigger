@@ -42,7 +42,7 @@ public class DocumentUpdateView extends AbstractView {
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("id", idDocument);
+		request.put("iddocument", idDocument);
 		request.put("text", text);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Document", "doControl", request);

@@ -103,6 +103,7 @@ public class DocumentDAO {
 			
 			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 			preparedStatement.setString(1, document.getText());
+			preparedStatement.setInt(2, document.getIdDocument());
 			int a = preparedStatement.executeUpdate();
 			if(a > 0) {
 				return true;
@@ -117,7 +118,7 @@ public class DocumentDAO {
 		return false;
 	}
 	
-	public boolean deleteDocument(Integer id) {
+	public boolean deleteDocument(int id) {
 		Connection connection = ConnectionSingleton.getInstance();
 		
 		try {

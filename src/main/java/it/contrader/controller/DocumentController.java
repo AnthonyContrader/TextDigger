@@ -48,7 +48,7 @@ public class DocumentController implements Controller {
 			break;
 			
 		case "DELETE":
-			id = Integer.parseInt(request.get("id").toString());
+			id = Integer.parseInt(request.get("iddocument").toString());
 			
 			documentService.delete(id);
 			request = new Request();
@@ -57,7 +57,7 @@ public class DocumentController implements Controller {
 			break;
 			
 		case "UPDATE":
-			id = Integer.parseInt(request.get("id").toString());
+			id = Integer.parseInt(request.get("iddocument").toString());
 			text = request.get("text").toString();
 			DocumentDTO documentDTOToUpdate = new DocumentDTO(text);
 			documentDTOToUpdate.setIdDocument(id);
