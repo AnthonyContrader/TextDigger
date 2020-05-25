@@ -8,7 +8,7 @@ public class TagDeleteView extends AbstractView {
 	
 	private Request request;
 	
-	private int id;
+	private int idTags;
 	private final String mode = "DELETE";
 	
 	public TagDeleteView() {
@@ -24,13 +24,13 @@ public class TagDeleteView extends AbstractView {
 
 	public void showOptions() {
 		System.out.println("Inserisci IDTag del tag: ");
-		id = Integer.parseInt(getInput());
+		idTags = Integer.parseInt(getInput());
 		
 	}
 
 	public void submit() {
 		request = new Request();
-		request.put("id", id);
+		request.put("idtags", idTags);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Tag", "doControl", request);
 	}
