@@ -90,13 +90,19 @@ public class DocumentDAO {
 	
 	public boolean updateDocument(Document document) {
 		Connection connection = ConnectionSingleton.getInstance();
-		if(document.getIdDocument() == 0) {
+		if(document.getIdDocument() == 0) 
 			return false;
-		}
 		
+		Document documentRead = readDocumentById(document.getIdDocument());
+		
+		if(!documentRead.equals(document)) {
 		try {
+			if (document.getText() == null || document.getText().equals("")) {
+				document.setText(documentRead.getText());
+			}
+			
 			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-			preparedStatement.setInt(1, document.getIdDocument());
+			preparedStatement.setString(1, document.getText());
 			int a = preparedStatement.executeUpdate();
 			if(a > 0) {
 				return true;
@@ -106,6 +112,9 @@ public class DocumentDAO {
 		}catch (SQLException e) {
 			return false;
 		}
+	}
+		
+		return false;
 	}
 	
 	public boolean deleteDocument(Integer id) {

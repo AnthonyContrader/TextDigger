@@ -46,7 +46,7 @@ public class TagController implements Controller {
 			break;
 			
 		case "DELETE":
-			id = Integer.parseInt(request.get("id").toString());
+			id = Integer.parseInt(request.get("idtags").toString());
 			
 			tagService.delete(id);
 			request = new Request();
