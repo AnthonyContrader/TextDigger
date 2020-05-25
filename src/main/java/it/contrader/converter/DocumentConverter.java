@@ -16,7 +16,7 @@ public class DocumentConverter {
 	}
 	
 	public Document toEntity(DocumentDTO documentDTO) {
-		Document document = new Document(documentDTO.getUser(), documentDTO.getText());
+		Document document = new Document(documentDTO.getIdDocument() ,documentDTO.getUser(), documentDTO.getText());
 		
 		return document;
 	}
