@@ -34,8 +34,8 @@ public class TagDAO implements DAO<Tag> {
 			Tag tag;
 			while (resultSet.next()) {
 				int id = resultSet.getInt("id");
-				String tag = resultSet.getString("tag");
-				tag = new Tag(tag);
+				String tagText = resultSet.getString("tag");
+				tag = new Tag(tagText);
 				tag.setId(id);
 				tagsList.add(tag);
 			}
@@ -67,10 +67,10 @@ public class TagDAO implements DAO<Tag> {
 			preparedStatement.setInt(1, tagId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String tag;
+			String tagText;
 
-			tag = resultSet.getString("tag");
-			Tag tag = new Tag(tag);
+			tagText = resultSet.getString("tag");
+			Tag tag = new Tag(tagText);
 			tag.setId(resultSet.getInt("id"));
 
 			return tag;
@@ -95,8 +95,7 @@ public class TagDAO implements DAO<Tag> {
 					tagToUpdate.setTag(tagRead.getTag());
 				}
 
-				}
-
+				
 				// Update the tag
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, tagToUpdate.getTag());
