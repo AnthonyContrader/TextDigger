@@ -9,18 +9,21 @@ public class Document {
 	private String text;
 
 	public Document(int idDocument, User user, String text) {
-		super();
 		this.idDocument = idDocument;
 		this.user = user;
 		this.text = text;
 	}
 
 	public Document(User user, String text) {
-		super();
 		this.user = user;
 		this.text = text;
 	}
 	
+
+	public Document(int idDocument, String text) {
+		this.idDocument = idDocument;
+		this.text = text;
+	}
 
 	public Document(String text) {
 		super();
@@ -78,7 +81,7 @@ public class Document {
 
 	@Override
 	public String toString() {
-		return "Document [idDocument=" + idDocument + ", user=" + user + ", text=" + text + "]";
+		return "Document [idDocument=" + idDocument + ", user=" + this.getUser().getId() + ", text=" + text + "]";
 	}
 	
 	

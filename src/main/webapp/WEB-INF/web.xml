@@ -34,6 +34,12 @@
   <servlet-name>TagServlet</servlet-name>
   <servlet-class>it.contrader.servlets.TagServlet</servlet-class>
   </servlet>
+  <servlet>
+  <description></description>
+  <display-name>DocumentServlet</display-name>
+  <servlet-name>DocumentServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.DocumentServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
@@ -41,5 +47,9 @@
   <servlet-mapping>
   <servlet-name>TagServlet</servlet-name>
   <url-pattern>TagServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>DocumentServlet</servlet-name>
+  <url-pattern>DocumentServlet</url-pattern>
   </servlet-mapping>
 </web-app>

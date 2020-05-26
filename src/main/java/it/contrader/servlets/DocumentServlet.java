@@ -62,9 +62,14 @@ public class DocumentServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
-			
-			
-
+			idDocument = Integer.parseInt(request.getParameter("id"));
+			text = request.getParameter("text");
+			documentDTO = new DocumentDTO(idDocument,text);
+			ans = service.update(documentDTO);
+			updateList(request);
+			getServletContext().getRequestDispatcher("/document/documentmanager.jsp").forward(request, response);
+			break;
+				
 		case "DELETE":
 			idDocument = Integer.parseInt(request.getParameter("id"));
 			ans = service.delete(idDocument);
