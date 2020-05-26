@@ -102,6 +102,8 @@ public class DocumentDAO implements DAO<Document> {
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
+				preparedStatement.setInt(1, documentToUpdate.getIdDocument());
+				preparedStatement.setString(2, documentToUpdate.getText());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;
@@ -117,8 +119,17 @@ public class DocumentDAO implements DAO<Document> {
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
+			preparedStatement.setInt(1, id);
+			int n = preparedStatement.executeUpdate();
+			if (n != 0)
+				return true;
+
+		} catch (SQLException e) {
+		}
+		return false;	
 	}
 
 }
