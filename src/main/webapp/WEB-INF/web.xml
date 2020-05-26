@@ -28,8 +28,18 @@
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>it.contrader.servlets.UserServlet</servlet-class>
   </servlet>
+  <servlet>
+  <description></description>
+  <display-name>TagServlet</display-name>
+  <servlet-name>TagServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.TagServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>TagServlet</servlet-name>
+  <url-pattern>TagServlet</url-pattern>
   </servlet-mapping>
 </web-app>
