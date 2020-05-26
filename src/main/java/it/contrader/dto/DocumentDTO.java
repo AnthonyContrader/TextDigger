@@ -22,6 +22,12 @@ public class DocumentDTO {
 		this.user = user;
 		this.text = text;
 	}
+	
+
+	public DocumentDTO(String text) {
+		super();
+		this.text = text;
+	}
 
 	public int getIdDocument() {
 		return idDocument;

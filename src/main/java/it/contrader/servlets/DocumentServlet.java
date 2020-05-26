@@ -44,18 +44,35 @@ public class DocumentServlet extends HttpServlet {
 			documentDTO = service.read(idDocument);
 			request.setAttribute("documentDTO", documentDTO);
 			if (request.getParameter("update") == null) {
-				 getServletContext().getRequestDispatcher("/user/readdocument.jsp").forward(request, response);
+				 getServletContext().getRequestDispatcher("/document/readdocument.jsp").forward(request, response);
 				
 			}
 			
-			else getServletContext().getRequestDispatcher("/user/updatedocument.jsp").forward(request, response);
+			else getServletContext().getRequestDispatcher("/document/updatedocument.jsp").forward(request, response);
 			
 			break;
 			
 		case "INSERT":
 			String text = request.getParameter("text").toString();
-			documentDTO = new DocumentDTO(user, text);
+			documentDTO = new DocumentDTO(text);
+			ans = service.insert(documentDTO);
+			request.setAttribute("ans", ans);
+			updateList(request);
+			getServletContext().getRequestDispatcher("/document/documentmanager.jsp").forward(request, response);
+			break;
+			
+		case "UPDATE":
+			
+			
 
+		case "DELETE":
+			idDocument = Integer.parseInt(request.getParameter("id"));
+			ans = service.delete(idDocument);
+			request.setAttribute("ans", ans);
+			updateList(request);
+			getServletContext().getRequestDispatcher("/document/usermanager.jsp").forward(request, response);
+			break;
+			
 		default:
 			break;
 		}

@@ -20,6 +20,12 @@ public class Document {
 		this.user = user;
 		this.text = text;
 	}
+	
+
+	public Document(String text) {
+		super();
+		this.text = text;
+	}
 
 	public int getIdDocument() {
 		return idDocument;
