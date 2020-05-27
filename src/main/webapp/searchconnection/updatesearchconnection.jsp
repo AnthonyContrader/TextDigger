@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import= "it.contrader.dto.SearchConnectionDTO" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="../css/vittoriostyle.css" rel="stylesheet">
+<title>Edit SearchConnection</title>
+</head>
+<body>
+<%@ include file="../css/header.jsp" %>
+<div class="navbar">
+  <a href="homeadmin.jsp">Home</a>
+  <a class="active" href="SearchConnectionServlet?mode=SearchConnectionlist">SearchConnections</a>
+  <a href="LogoutServlet" id="logout">Logout</a>
+</div>
+<br>
+<div class="main">
+
+<%SearchConnectionDTO a = (SearchConnectionDTO) request.getAttribute("SearchConnectionDto");%>
+
+
+<form id="floatleft" action="SearchConnectionServlet?mode=update&id= <%=a.getIdTag()%>" method="post">
+  <div class="row">
+    <div class="col-25">
+      <label for="tag">SearchConnection</label>
+    </div>
+    <div class="col-75">
+      <input type="number" id="idDocument" name="idDocument" value=<%=a.getIdDocument()%>>
+    </div>
+  </div>
+      <button type="submit" >Edit</button>
+</form>
+
+	
+</div>
+<br>
+<%@ include file="../css/footer.jsp" %>	
+
+</body>
+</html>

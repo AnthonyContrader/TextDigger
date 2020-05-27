@@ -40,6 +40,12 @@
   <servlet-name>DocumentServlet</servlet-name>
   <servlet-class>it.contrader.servlets.DocumentServlet</servlet-class>
   </servlet>
+  <servlet>
+  <description></description>
+  <display-name>SearchConnectionServlet</display-name>
+  <servlet-name>SearchConnectionServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.SearchConnectionServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
@@ -51,5 +57,9 @@
   <servlet-mapping>
   <servlet-name>DocumentServlet</servlet-name>
   <url-pattern>DocumentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>SearchConnectionServlet</servlet-name>
+  <url-pattern>SearchConnectionServlet</url-pattern>
   </servlet-mapping>
 </web-app>
