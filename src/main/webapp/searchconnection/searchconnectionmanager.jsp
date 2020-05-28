@@ -45,7 +45,7 @@
     
     </table>
 
-<form id="floatright" action="DocumentServlet?mode=insert" method="post">
+<form id="floatright" action="SearchConnectionServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
       <label for="tag">SearchConnection</label>
