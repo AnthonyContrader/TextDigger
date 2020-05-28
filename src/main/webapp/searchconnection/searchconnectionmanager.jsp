@@ -52,6 +52,9 @@
     </div>
     <div class="col-75">
       <input type="number" id="idDocument" name="idDocument" placeholder="inserisci idDocument">
+       </div>
+       <div class="col-75">
+      <input type="number" id="idTag" name="idTag" placeholder="inserisci idTag">
     </div>
   </div>
 
