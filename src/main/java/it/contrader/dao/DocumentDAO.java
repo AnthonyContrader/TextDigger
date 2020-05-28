@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.model.Document;
-import it.contrader.model.User;
 import it.contrader.utils.ConnectionSingleton;
 
 public class DocumentDAO implements DAO<Document> {
@@ -51,10 +50,11 @@ public class DocumentDAO implements DAO<Document> {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			
-			String user, text;
+			String text;
+			int userId;
 			
 			text = resultSet.getString("text");
-			int userId = resultSet.getInt("user");
+			userId = resultSet.getInt("user");
 			Document document = new Document(userId, text);
 			document.setIdDocument(resultSet.getInt("id"));
 			return document;

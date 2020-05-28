@@ -1,6 +1,6 @@
 package it.contrader.dto;
 
-import it.contrader.model.User;
+
 
 public class DocumentDTO {
 	

@@ -75,7 +75,7 @@ public class DocumentServlet extends HttpServlet {
 			ans = service.delete(idDocument);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/document/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/document/documentmanager.jsp").forward(request, response);
 			break;
 			
 		default:
