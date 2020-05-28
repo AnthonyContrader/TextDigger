@@ -10,13 +10,13 @@ public class DocumentConverter implements Converter<Document, DocumentDTO> {
 
 	@Override
 	public DocumentDTO toDTO(Document document) {
-		DocumentDTO documentDTO = new DocumentDTO(document.getIdDocument(), document.getUser(), document.getText());
+		DocumentDTO documentDTO = new DocumentDTO(document.getIdDocument(), document.getUserId(), document.getText());
 		return documentDTO;
 	}
 
 	@Override
 	public Document toEntity(DocumentDTO documentDto) {
-		Document document = new Document(documentDto.getIdDocument(), documentDto.getUser(), documentDto.getText());
+		Document document = new Document(documentDto.getIdDocument(), documentDto.getUserId(), documentDto.getText());
 		return document;
 	}
 

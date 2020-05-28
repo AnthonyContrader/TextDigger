@@ -4,26 +4,21 @@ public class Document {
 	
 	private int idDocument;
 	
-	private User user;
+	private int userId;
 	
 	private String text;
 
-	public Document(int idDocument, User user, String text) {
+	public Document(int idDocument, int userId, String text) {
 		this.idDocument = idDocument;
-		this.user = user;
+		this.userId = userId;
 		this.text = text;
 	}
 
-	public Document(User user, String text) {
-		this.user = user;
+	public Document(int userId, String text) {
+		this.userId = userId;
 		this.text = text;
 	}
 	
-
-	public Document(int idDocument, String text) {
-		this.idDocument = idDocument;
-		this.text = text;
-	}
 
 	public Document(String text) {
 		super();
@@ -38,12 +33,13 @@ public class Document {
 		this.idDocument = idDocument;
 	}
 
-	public User getUser() {
-		return user;
+
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public String getText() {
@@ -71,17 +67,14 @@ public class Document {
 				return false;
 		} else if (!text.equals(other.text))
 			return false;
-		if (user == null) {
-			if (other.user != null)
-				return false;
-		} else if (!user.equals(other.user))
+		if (userId != other.userId)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Document [idDocument=" + idDocument + ", user=" + this.getUser().getId() + ", text=" + text + "]";
+		return "Document [idDocument=" + idDocument + ", user=" + userId + ", text=" + text + "]";
 	}
 	
 	

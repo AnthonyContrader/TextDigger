@@ -29,12 +29,10 @@ public class DocumentDAO implements DAO<Document> {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Document document;
 			while (resultSet.next()) {
-				int userId = resultSet.getInt("id");
-				User userDocument = new User(null, null, null);
-				userDocument.setId(userId);
+				int userId = resultSet.getInt("user");
 				String text = resultSet.getString("text");
 				
-				document = new Document(userDocument, text);
+				document = new Document(userId, text);
 				document.setIdDocument(resultSet.getInt("id"));
 				documentList.add(document);
 			}
@@ -56,15 +54,9 @@ public class DocumentDAO implements DAO<Document> {
 			String user, text;
 			
 			text = resultSet.getString("text");
-			int userId = resultSet.getInt("id");
-			User userDocument = new User(null, null, null);
-			userDocument.setId(userId);
-			
-			Document document = new Document(userDocument, text);
-			
+			int userId = resultSet.getInt("user");
+			Document document = new Document(userId, text);
 			document.setIdDocument(resultSet.getInt("id"));
-
-
 			return document;
 		} catch (SQLException e) {
 			return null;

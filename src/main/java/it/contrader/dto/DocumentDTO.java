@@ -6,25 +6,18 @@ public class DocumentDTO {
 	
 	private int idDocument;
 	
-	private User user;
+	private int userId;
 	
 	private String text;
 
-	public DocumentDTO(int idDocument, User user, String text) {
+	public DocumentDTO(int idDocument, int userId, String text) {
 		this.idDocument = idDocument;
-		this.user = user;
+		this.userId = userId;
 		this.text = text;
 	}
 	
-
-	public DocumentDTO(int idDocument, String text) {
-		this.idDocument = idDocument;
-		this.text = text;
-	}
-
-
-	public DocumentDTO(User user, String text) {
-		this.user = user;
+	public DocumentDTO(int userId, String text) {
+		this.userId = userId;
 		this.text = text;
 	}
 	
@@ -40,12 +33,13 @@ public class DocumentDTO {
 		this.idDocument = idDocument;
 	}
 
-	public User getUser() {
-		return user;
+	
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public String getText() {
@@ -58,7 +52,7 @@ public class DocumentDTO {
 
 	@Override
 	public String toString() {
-		return "DocumentDTO [idDocument=" + idDocument + ", user=" + this.getUser().getId() + ", text=" + text + "]";
+		return "DocumentDTO [idDocument=" + idDocument + ", user=" + userId + ", text=" + text + "]";
 	}
 	
 
