@@ -17,7 +17,7 @@
 <br>
 
 <div class="main">
-<%DocumentDTO u = (DocumentDTO) request.getAttribute("documentDto");%>
+<%DocumentDTO u = (DocumentDTO) request.getAttribute("documentDTO");%>
 
 
 <table>

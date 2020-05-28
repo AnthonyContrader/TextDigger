@@ -17,7 +17,7 @@
 <br>
 <div class="main">
 
-<%DocumentDTO d = (DocumentDTO) request.getAttribute("documentDto");%>
+<%DocumentDTO d = (DocumentDTO) request.getAttribute("documentDTO");%>
 
 
 <form id="floatleft" action="DocumentServlet?mode=update&id=<%=d.getIdDocument()%>" method="post">
