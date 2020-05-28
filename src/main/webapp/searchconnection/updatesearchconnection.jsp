@@ -28,6 +28,9 @@
     <div class="col-75">
       <input type="number" id="idDocument" name="idDocument" value=<%=a.getIdDocument()%>>
     </div>
+    <div class="col-75">
+      <input type="number" id="idTag" name="idTag" value=<%=a.getIdTag()%>>
+    </div>
   </div>
       <button type="submit" >Edit</button>
 </form>
