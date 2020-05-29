@@ -21,12 +21,12 @@
 
 
 <table>
-	<tr>
-	    <th>UserId</th>
-	</tr>
-	<tr>
-	    <td><%=u.getUserId()%></td>
-	</tr>
+    <tr>
+        <th>UserId</th>
+    </tr>
+    <tr>
+        <td>u.getUserId()</td>
+    </tr>
 	<tr> 
 		<th>Text</th>
 	</tr>

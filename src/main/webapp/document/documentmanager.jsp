@@ -50,7 +50,7 @@
 <form id="floatright" action="DocumentServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="text">Document</label>
+      <label for="text">Document Text</label>
     </div>
     <div class="col-75">
       <input type="text" id="text" name="text" placeholder="Inserisci Text">
