@@ -72,7 +72,7 @@ public class Document {
 
 	@Override
 	public String toString() {
-		return "Document [idDocument=" + idDocument + ", user=" + userId + ", text=" + text + "]";
+		return idDocument + "\t" +userId + "\t" + text ;
 	}
 	
 	
