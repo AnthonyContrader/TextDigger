@@ -54,7 +54,7 @@
       <label for="tag">IdTag</label>
     </div>
     <div class="col-75">
-      <input type="number" id="idTag" name="idTag" placeholder="inserisci idTag">
+      <input type="number" id="tag" name="idTag" placeholder="inserisci idTag">
        </div>
        </div>
         <div class="row">
@@ -62,7 +62,7 @@
       <label for="doc">IdDocument</label>
     </div>
        <div class="col-75">
-      <input type="number" id="idDocument" name="idDocument" placeholder="inserisci idDocument">
+      <input type="number" id="doc" name="idDocument" placeholder="inserisci idDocument">
     </div>
   </div>
 

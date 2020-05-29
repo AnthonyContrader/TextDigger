@@ -58,8 +58,8 @@ public class SearchConnectionServlet extends HttpServlet {
 
 		case "INSERT":
 			
-			idTag = Integer.parseInt(request.getParameter("idTag"));
-			idDocument = Integer.parseInt(request.getParameter("idDocument"));
+			idTag = Integer.parseInt(request.getParameter("idtag"));
+			idDocument = Integer.parseInt(request.getParameter("iddocument"));
 			searchConnectiondto = new SearchConnectionDTO(idTag,idDocument);
 			ans = service.insert(searchConnectiondto);
 			request.setAttribute("ans", ans);
