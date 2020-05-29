@@ -29,7 +29,7 @@ public class SearchConnectionServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Service<SearchConnectionDTO> service = new SearchConnectionService();
 		String mode = request.getParameter("mode");
-		SearchConnectionDTO dto;
+		SearchConnectionDTO searchConnectiondto;
 		int idDocument;
 		int idTag;
 		boolean ans;
@@ -43,9 +43,9 @@ public class SearchConnectionServlet extends HttpServlet {
 
 		case "READ":
 			
-			idTag = Integer.parseInt(request.getParameter("idTag"));
-			dto = service.read(idTag);
-			request.setAttribute("dto", dto);
+			idTag = Integer.parseInt(request.getParameter("idtag"));
+			searchConnectiondto = service.read(idTag);
+			request.setAttribute("dto", searchConnectiondto);
 			
 			if (request.getParameter("update") == null) {
 				 getServletContext().getRequestDispatcher("/searchconnection/readsearchconnection.jsp").forward(request, response);
@@ -60,8 +60,8 @@ public class SearchConnectionServlet extends HttpServlet {
 			
 			idTag = Integer.parseInt(request.getParameter("idTag"));
 			idDocument = Integer.parseInt(request.getParameter("idDocument"));
-			dto = new SearchConnectionDTO(idTag,idDocument);
-			ans = service.insert(dto);
+			searchConnectiondto = new SearchConnectionDTO(idTag,idDocument);
+			ans = service.insert(searchConnectiondto);
 			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/searchconnection/searchconnectionmanager.jsp").forward(request, response);
@@ -70,10 +70,10 @@ public class SearchConnectionServlet extends HttpServlet {
 			
 		case "UPDATE":
 			
-			idDocument = Integer.parseInt(request.getParameter("idDocument"));
-			idTag = Integer.parseInt(request.getParameter("idTag"));
-			dto = new SearchConnectionDTO(idTag,idDocument);
-			ans = service.update(dto);
+			idDocument = Integer.parseInt(request.getParameter("iddocument"));
+			idTag = Integer.parseInt(request.getParameter("idtag"));
+			searchConnectiondto = new SearchConnectionDTO(idTag,idDocument);
+			ans = service.update(searchConnectiondto);
 			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/searchconnection/searchconnectionmanager.jsp").forward(request, response);
@@ -83,7 +83,7 @@ public class SearchConnectionServlet extends HttpServlet {
 
 		case "DELETE":
 			
-			idTag = Integer.parseInt(request.getParameter("idTag"));
+			idTag = Integer.parseInt(request.getParameter("idtag"));
 			ans = service.delete(idTag);
 			request.setAttribute("ans", ans);
 			updateList(request);

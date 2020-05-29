@@ -23,7 +23,8 @@
 
    <table>
 		<tr>
-			<th>SearchConnection</th>
+			<th>IdTag</th>
+			<th>IdDoc</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -32,7 +33,9 @@
     %>
     	<tr>
 			<td><a href=SearchConnectionServlet?mode=read&id=<%=s.getIdTag()%>>
+			<%=s.getIdDocument()%>
 			</a></td>
+			<td><%=s.getIdTag()%></td>
 			<td><a href=SearchConnectionServlet?mode=read&update=true&id=<%=s.getIdDocument()%>
 			     <%=s.getIdTag()%>>Edit</a></td>
 			<td><a href=SearchConnectionServlet?mode=delete&id=<%=s.getIdTag()%>>Delete</a>
@@ -48,13 +51,18 @@
 <form id="floatright" action="SearchConnectionServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="tag">SearchConnection</label>
+      <label for="tag">IdTag</label>
     </div>
     <div class="col-75">
-      <input type="number" id="idDocument" name="idDocument" placeholder="inserisci idDocument">
-       </div>
-       <div class="col-75">
       <input type="number" id="idTag" name="idTag" placeholder="inserisci idTag">
+       </div>
+       </div>
+        <div class="row">
+    <div class="col-25">
+      <label for="doc">IdDocument</label>
+    </div>
+       <div class="col-75">
+      <input type="number" id="idDocument" name="idDocument" placeholder="inserisci idDocument">
     </div>
   </div>
 
