@@ -62,8 +62,8 @@ public class DocumentServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
-			idDocument = Integer.parseInt(request.getParameter("id"));
 			text = request.getParameter("text");
+			idDocument = Integer.parseInt(request.getParameter("id"));
 			documentDTO = new DocumentDTO(idDocument,text);
 			ans = service.update(documentDTO);
 			updateList(request);

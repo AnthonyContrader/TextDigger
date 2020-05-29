@@ -94,8 +94,8 @@ public class DocumentDAO implements DAO<Document> {
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setInt(1, documentToUpdate.getIdDocument());
-				preparedStatement.setString(2, documentToUpdate.getText());
+				preparedStatement.setString(1, documentToUpdate.getText());
+				preparedStatement.setInt(2, documentToUpdate.getIdDocument());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;
