@@ -16,8 +16,8 @@ public class DocumentDTO {
 		this.text = text;
 	}
 	
-	public DocumentDTO(int userId, String text) {
-		this.userId = userId;
+	public DocumentDTO(int idDocument, String text) {
+		this.idDocument = idDocument;
 		this.text = text;
 	}
 	

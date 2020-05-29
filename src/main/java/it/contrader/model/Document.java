@@ -14,8 +14,8 @@ public class Document {
 		this.text = text;
 	}
 
-	public Document(int userId, String text) {
-		this.userId = userId;
+	public Document(int idDocument, String text) {
+		this.idDocument = idDocument;
 		this.text = text;
 	}
 	
