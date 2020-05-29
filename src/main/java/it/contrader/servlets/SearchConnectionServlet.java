@@ -43,7 +43,8 @@ public class SearchConnectionServlet extends HttpServlet {
 
 		case "READ":
 			
-			idTag = Integer.parseInt(request.getParameter("idtag"));
+
+			idTag = Integer.parseInt(request.getParameter("idTag"));
 			searchConnectiondto = service.read(idTag);
 			request.setAttribute("dto", searchConnectiondto);
 			
@@ -58,9 +59,13 @@ public class SearchConnectionServlet extends HttpServlet {
 
 		case "INSERT":
 			
-			idTag = Integer.parseInt(request.getParameter("idtag"));
-			idDocument = Integer.parseInt(request.getParameter("iddocument"));
-			searchConnectiondto = new SearchConnectionDTO(idTag,idDocument);
+			
+			idTag = Integer.parseInt(request.getParameter("idTag"));
+			
+			idDocument = Integer.parseInt(request.getParameter("idDocument"));
+			
+			
+			searchConnectiondto = new SearchConnectionDTO(idDocument,idTag);
 			ans = service.insert(searchConnectiondto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -70,9 +75,12 @@ public class SearchConnectionServlet extends HttpServlet {
 			
 		case "UPDATE":
 			
-			idDocument = Integer.parseInt(request.getParameter("iddocument"));
-			idTag = Integer.parseInt(request.getParameter("idtag"));
-			searchConnectiondto = new SearchConnectionDTO(idTag,idDocument);
+
+			idDocument = Integer.parseInt(request.getParameter("idDocument"));
+
+			idTag = Integer.parseInt(request.getParameter("idTag"));
+			
+			searchConnectiondto = new SearchConnectionDTO(idDocument,idTag);
 			ans = service.update(searchConnectiondto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -83,7 +91,7 @@ public class SearchConnectionServlet extends HttpServlet {
 
 		case "DELETE":
 			
-			idTag = Integer.parseInt(request.getParameter("idtag"));
+			idTag = Integer.parseInt(request.getParameter("idTag"));
 			ans = service.delete(idTag);
 			request.setAttribute("ans", ans);
 			updateList(request);

@@ -23,8 +23,8 @@
 
    <table>
 		<tr>
-			<th>IdTag</th>
 			<th>IdDoc</th>
+			<th>IdTag</th>
 			<th></th>
 			<th></th>
 		</tr>
