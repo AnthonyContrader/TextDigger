@@ -15,6 +15,10 @@ public class SearchConnection {
 		 this.idTag = idTag;
 	 }
 	 
+	 public SearchConnection(int idDocument) {
+		 this.idDocument = idDocument;
+	 }
+	 
 	public int getIdDocument() {
 		return idDocument;
 	}

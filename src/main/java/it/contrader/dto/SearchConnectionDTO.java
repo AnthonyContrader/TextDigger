@@ -15,6 +15,10 @@ public class SearchConnectionDTO {
 		this.idDocument = idDocument;
 		this.idTag = idTag;
 	}
+	
+	public SearchConnectionDTO(int idDocument) {
+		this.idDocument = idDocument;
+	}
 
 	public int getIdDocument() {
 		return idDocument;

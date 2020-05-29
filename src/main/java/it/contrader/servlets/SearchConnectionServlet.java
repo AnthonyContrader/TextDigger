@@ -80,7 +80,7 @@ public class SearchConnectionServlet extends HttpServlet {
 
 			idTag = Integer.parseInt(request.getParameter("idTag"));
 			
-			searchConnectiondto = new SearchConnectionDTO(idDocument,idTag);
+			searchConnectiondto = new SearchConnectionDTO(idDocument);
 			ans = service.update(searchConnectiondto);
 			request.setAttribute("ans", ans);
 			updateList(request);
