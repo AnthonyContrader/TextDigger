@@ -23,15 +23,21 @@
 <form id="floatleft" action="SearchConnectionServlet?mode=update&id= <%=a.getIdTag()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="tag">SearchConnection</label>
+      <label for="tag">Tag</label>
     </div>
     <div class="col-75">
-      <input type="number" id="idDocument" name="idDocument" value=<%=a.getIdDocument()%>>
-    </div>
-    <div class="col-75">
-      <input type="number" id="idTag" name="idTag" value=<%=a.getIdTag()%>>
+      <input type="text" id="tag" name="idTag" value=<%=a.getIdTag()%>>
     </div>
   </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="doc">Document</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="doc" name="idDocument" value=<%=a.getIdDocument()%>>
+    </div>
+  </div>
+  
       <button type="submit" >Edit</button>
 </form>
 
