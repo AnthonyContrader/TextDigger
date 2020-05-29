@@ -23,7 +23,7 @@
 <form id="floatleft" action="DocumentServlet?mode=update&id=<%=d.getIdDocument()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="tag">Text</label>
+      <label for="text">Text</label>
     </div>
     <div class="col-75">
       <input type="text" id="text" name="text" value=<%=d.getText()%>>

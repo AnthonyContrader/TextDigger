@@ -19,9 +19,7 @@ public class Document {
 		this.text = text;
 	}
 	
-
 	public Document(String text) {
-		super();
 		this.text = text;
 	}
 

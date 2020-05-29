@@ -32,6 +32,7 @@
     %>
     	<tr>
 			<td><a href=DocumentServlet?mode=read&id=<%=d.getIdDocument()%>>
+			        <%=d.getUserId()%>
 					<%=d.getText()%>
 			</a></td>
 			<td><a href=DocumentServlet?mode=read&update=true&id=<%=d.getIdDocument()%>>Edit</a>
@@ -49,13 +50,12 @@
 <form id="floatright" action="DocumentServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="tag">Document</label>
+      <label for="text">Document</label>
     </div>
     <div class="col-75">
-      <input type="text" id="text" name="text" placeholder="inserisci text">
+      <input type="text" id="text" name="text" placeholder="Inserisci Text">
     </div>
   </div>
-
       <button type="submit" >Insert</button>
 </form>
 
