@@ -32,7 +32,6 @@
     %>
     	<tr>
 			<td><a href=DocumentServlet?mode=read&id=<%=d.getIdDocument()%>>
-			        <%=d.getUserId()%>
 					<%=d.getText()%>
 			</a></td>
 			<td><a href=DocumentServlet?mode=read&update=true&id=<%=d.getIdDocument()%>>Edit</a>
