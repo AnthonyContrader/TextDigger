@@ -24,7 +24,7 @@ public class SearchConnectionDTO {
 		return idDocument;
 	}
 
-	public void setIdDocument(int idDocument) {
+	public void setIdDocument (int idDocument) {
 		this.idDocument = idDocument;
 	}
 

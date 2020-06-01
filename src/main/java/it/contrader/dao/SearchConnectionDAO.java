@@ -140,4 +140,5 @@ public class SearchConnectionDAO implements DAO<SearchConnection> {
 		return false;
 	}
 
+
 }

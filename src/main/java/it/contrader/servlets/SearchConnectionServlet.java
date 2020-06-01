@@ -40,7 +40,7 @@ public class SearchConnectionServlet extends HttpServlet {
 			updateList(request);
 			getServletContext().getRequestDispatcher("/searchconnection/searchconnectionmanager.jsp").forward(request, response);
 			break;
-
+/*
 		case "READ":
 			
 
@@ -56,7 +56,7 @@ public class SearchConnectionServlet extends HttpServlet {
 			else getServletContext().getRequestDispatcher("/searchconnection/updatesearchconnection.jsp").forward(request, response);
 			
 			break;
-
+*/
 		case "INSERT":
 			
 			
@@ -65,30 +65,30 @@ public class SearchConnectionServlet extends HttpServlet {
 			idDocument = Integer.parseInt(request.getParameter("idDocument"));
 			
 			
-			searchConnectiondto = new SearchConnectionDTO(idDocument,idTag);
+			searchConnectiondto = new SearchConnectionDTO(idDocument, idTag);
 			ans = service.insert(searchConnectiondto);
 			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/searchconnection/searchconnectionmanager.jsp").forward(request, response);
 			
 			break;
-			
+/*			
 		case "UPDATE":
 			
 
-			idDocument = Integer.parseInt(request.getParameter("idDocument"));
+			idDocument = Integer.parseInt(request.getParameter("iddocument"));
 
-			idTag = Integer.parseInt(request.getParameter("idTag"));
+			idTag = Integer.parseInt(request.getParameter("idtag"));
 			
 			searchConnectiondto = new SearchConnectionDTO(idDocument);
 			ans = service.update(searchConnectiondto);
-			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/searchconnection/searchconnectionmanager.jsp").forward(request, response);
 			
 						
 			break;
-
+			*/
+/*
 		case "DELETE":
 			
 			idTag = Integer.parseInt(request.getParameter("idtag"));
@@ -98,6 +98,7 @@ public class SearchConnectionServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/searchconnection/searchconnectionmanager.jsp").forward(request, response);
 			
 			break;
+			*/
 		}
 	}
 	

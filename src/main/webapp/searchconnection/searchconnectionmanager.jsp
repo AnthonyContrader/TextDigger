@@ -36,10 +36,8 @@
 			<%=s.getIdDocument()%>
 			</a></td>
 			<td><%=s.getIdTag()%></td>
-			<td><a href=SearchConnectionServlet?mode=read&update=true&id=<%=s.getIdDocument()%>
-			     <%=s.getIdTag()%>>Edit</a></td>
-			<td><a href=SearchConnectionServlet?mode=delete&id=<%=s.getIdTag()%>>Delete</a>
-			</td>
+			
+			
 
 		</tr>
    		 <%
@@ -54,7 +52,7 @@
       <label for="tag">IdTag</label>
     </div>
     <div class="col-75">
-      <input type="text" id="tag" name="idTag" placeholder="inserisci idTag">
+      <input type="text" id="tag" name="idtag" placeholder="inserisci idTag">
        </div>
        </div>
         <div class="row">
@@ -62,7 +60,7 @@
       <label for="doc">IdDocument</label>
     </div>
        <div class="col-75">
-      <input type="text" id="doc" name="idDocument" placeholder="inserisci idDocument">
+      <input type="text" id="doc" name="iddocument" placeholder="inserisci idDocument">
     </div>
   </div>
 
