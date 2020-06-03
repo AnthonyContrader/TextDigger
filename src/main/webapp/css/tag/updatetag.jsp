@@ -36,10 +36,9 @@
     </div>
   </div>
      	<input type="hidden" name="id" value =<%=t.getId() %>>
-  </div>
+     	
       <button type="submit" >Edit</button>
 </form>
-
 </div>
 <br>
 <%@ include file="../footer.jsp" %>	
