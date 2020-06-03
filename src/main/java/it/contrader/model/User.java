@@ -37,10 +37,10 @@ public class User {
 
 	private Usertype usertype;
 	
-	/*
+	
 	@OneToMany(mappedBy = "user")
 	@JoinColumn(name = "user_id")
-	private List<Document> documents;
-	*/
+	private List<Document> documentList;
+	
 
 }

@@ -26,12 +26,12 @@ public class Document {
 	@Column(name = "text")
 	private String text;
 	
-	/*
+	
 	@Column(name ="User")
 	@ManyToOne
 	@JoinColumn(name ="user_id")
-	private int idUser;
-	*/
+	private User users;
+	
 	
 
 }
