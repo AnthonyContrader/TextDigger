@@ -26,7 +26,7 @@
 <%DocumentDTO d = (DocumentDTO) request.getSession().getAttribute("dto");%>
 
 
-<form id="floatleft" action="/tag/update" method="post">
+<form id="floatleft" action="/document/update" method="post">
   <div class="row">
     <div class="col-25">
       <label for="text">Text</label>
@@ -36,7 +36,6 @@
     </div>
   </div>
      	<input type="hidden" name="id" value =<%=d.getIdDocument() %>>
-  </div>
       <button type="submit" >Edit</button>
 </form>
 
