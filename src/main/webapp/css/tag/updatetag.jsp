@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<%@ include file="./css/header.jsp" %>
+<%@ include file="../header.jsp" %>
 <div class="navbar">
   <a href="/homeadmin.jsp">Home</a>
   <a class="active" href="/user/getall">Users</a>
@@ -42,6 +42,6 @@
 
 </div>
 <br>
-<%@ include file="./css/footer.jsp" %>	
+<%@ include file="../footer.jsp" %>	
 </body>
 </html>
