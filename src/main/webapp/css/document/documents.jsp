@@ -27,13 +27,13 @@
 	<table>
 		<tr>
 			<th>Text</th>
-			<th></th>
+			<th>Users</th>
 		</tr>
 		<%for (DocumentDTO d : list) {%>
 		<tr>
 				<td><a href="/document/read?id=<%=d.getIdDocument()%>"> 
 				<%=d.getText()%>
-				<%=d.getUser().getId() %>
+				<%=d.getUsers().getId()%>
 				</a></td>
 				<td><%=d.getText()%></td>
 				<td><a href="/document/preupdate?id=<%=d.getIdDocument()%>">Edit</a></td>
