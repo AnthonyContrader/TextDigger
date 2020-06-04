@@ -3,6 +3,7 @@ package it.contrader.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,14 +29,13 @@ public class Document {
 	private String text;
 	
 	
-	@Column(name ="User")
 	@ManyToOne
 	@JoinColumn(name ="user_id")
 	private User users;
 	
-	@Column(name ="folder")
-	@ManyToOne
-	@JoinColumn(name ="idFolder")
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name ="id_folder", nullable = false)
 	private Folder folder;
 
 }
