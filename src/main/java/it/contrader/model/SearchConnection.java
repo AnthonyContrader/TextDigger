@@ -4,7 +4,7 @@ package it.contrader.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -20,10 +20,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "searchconnections")
 public class SearchConnection {
 
-	
-	@Column (name = "idTag")
-	private int idDocument;
+	@Id
 	private int idTag;
+	private int idDocument;
+	
 	
 	
 	@ManyToOne
