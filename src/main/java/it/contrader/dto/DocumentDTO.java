@@ -15,7 +15,7 @@ public class DocumentDTO {
 	
 	private String text;
 	
-	private User users;
+	private User user;
 	
 	private Folder folder;
 
