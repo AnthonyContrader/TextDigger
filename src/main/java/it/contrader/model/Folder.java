@@ -40,7 +40,7 @@ public class Folder {
 	@JoinColumn(name ="id_library",  nullable = false)
 	private Library library;
 	
-	@OneToOne(mappedBy = "folders")
+	@OneToOne(mappedBy = "folder")
 	private Description description;
 
 }
