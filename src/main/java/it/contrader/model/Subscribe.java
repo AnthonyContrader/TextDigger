@@ -1,6 +1,5 @@
 package it.contrader.model;
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,8 +26,8 @@ public class Subscribe {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "user")
 	@ManyToOne 
+	@JoinColumn(name = "id_user")
 	private User user;
 	
 	
