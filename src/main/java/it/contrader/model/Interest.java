@@ -1,15 +1,16 @@
 package it.contrader.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,4 +26,12 @@ public class Interest {
 	@Column(unique = true)
 	private String interest;
 
+	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Interestgroup> interestgroup;
+	
+	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Description> descriptions;
+	
+	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Library> libraries;
 }
