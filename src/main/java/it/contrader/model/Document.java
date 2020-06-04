@@ -22,7 +22,6 @@ public class Document {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name ="idDocument")
 	private Long idDocument;
 	
 	@Column(name = "text")
@@ -31,7 +30,7 @@ public class Document {
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name ="user_id", nullable = false)
-	private User users;
+	private User user;
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
