@@ -39,7 +39,7 @@ public class User {
 	
 	
 	@OneToMany(mappedBy = "user")
-	@JoinColumn(name = "user_id")
+
 	private List<Document> documentList;
 	
 
