@@ -3,6 +3,7 @@ package it.contrader.dto;
 import java.util.List;
 
 import it.contrader.model.Document;
+import it.contrader.model.Subscribe;
 import it.contrader.model.User.Usertype;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,5 +24,7 @@ public class UserDTO {
 	private Usertype usertype;
 	
 	private List<Document> documentsList;
+	
+	private List<Subscribe> subscribes;
 
 }
