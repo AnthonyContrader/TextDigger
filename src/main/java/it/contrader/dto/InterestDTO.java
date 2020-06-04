@@ -2,7 +2,11 @@ package it.contrader.dto;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Description;
+
 import it.contrader.model.Document;
+import it.contrader.model.Interestgroup;
+import it.contrader.model.Library;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

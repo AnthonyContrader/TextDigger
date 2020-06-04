@@ -22,7 +22,7 @@ public class SubscribeController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "name";
+		return "interestgroups";
 	}
 
 	@GetMapping("/delete")
@@ -51,7 +51,7 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name) {
+	public String insert(HttpServletRequest request, @RequestParam("interestgroups") String name) {
 		SubscribeDTO dto = new SubscribeDTO();
 		dto.setName(name);
 		subscribeService.insert(dto);

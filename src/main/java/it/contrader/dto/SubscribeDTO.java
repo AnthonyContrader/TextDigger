@@ -2,6 +2,7 @@ package it.contrader.dto;
 
 import java.util.List;
 
+import it.contrader.model.Interestgroup;
 import it.contrader.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +17,9 @@ public class SubscribeDTO {
 	
 	private String name;
 	
-	private List<User> users;
+	private User user;
+	
+	private Interestgroup interestgroup;
 }
 
 

@@ -2,6 +2,8 @@ package it.contrader.model;
 
 import javax.persistence.*;
 
+import org.springframework.context.annotation.Description;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

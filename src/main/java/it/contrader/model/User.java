@@ -45,7 +45,7 @@ public class User {
 	private List<Document> documentList;
 	
 	@Column(name = "subscribe")
-	@ManyToOne 
+	@OneToMany (mappedBy = "user")
 	@JoinColumn (name = "id_subscribe")
-	private Subscribe subscribe;
+	private List<Subscribe> subscribes;
 }
