@@ -13,7 +13,7 @@ public class InterestConverter extends AbstractConverter<Interest, InterestDTO> 
 	public Interest toEntity(InterestDTO interestDTO) {
 		Interest interest = null;
 		if (interestDTO != null) {
-			interest = new Interest(interestDTO.getId(), interestDTO.getInterest(), interestDTO.getInterestgroups(), interestDTO.getDescriptions(), interestDTO.getLibraries());
+			interest = new Interest(interestDTO.getId(), interestDTO.getInterest(), interestDTO.getInterestGroups(), interestDTO.getDescriptions(), interestDTO.getLibraries());
 		}
 		return interest;
 	}
@@ -22,7 +22,7 @@ public class InterestConverter extends AbstractConverter<Interest, InterestDTO> 
 	public InterestDTO toDTO(Interest interest) {
 		InterestDTO interestDTO = null;
 		if (interest != null) {
-			interestDTO = new InterestDTO(interest.getId(), interest.getInterest(), interestDTO.getInterestgroups(), interestDTO.getDescriptions(), interestDTO.getLibraries());
+			interestDTO = new InterestDTO(interest.getId(), interest.getInterest(), interest.getInterestGroup(), interest.getDescriptions(), interest.getLibraries());
 
 		}
 		return interestDTO;

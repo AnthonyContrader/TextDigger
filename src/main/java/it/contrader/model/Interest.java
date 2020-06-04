@@ -24,7 +24,7 @@ public class Interest {
 	private String interest;
 
 	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Interestgroup> interestgroup;
+    private List<Interestgroup> interestGroup;
 	
 	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Description> descriptions;
