@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -45,6 +46,10 @@ public class Description {
 	
 	@OneToMany(mappedBy = "description", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Tag> tags;
+	
+	@ManyToOne
+	@JoinColumn(name ="id_interest")
+	private Interest interest;
 	
 	
 

@@ -46,6 +46,5 @@ public class User {
 	
 	@Column(name = "subscribe")
 	@OneToMany (mappedBy = "user")
-	@JoinColumn (name = "id_subscribe")
 	private List<Subscribe> subscribes;
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.contrader.model.Description;
 import it.contrader.model.Folder;
+import it.contrader.model.Interest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,5 +21,7 @@ public class LibraryDTO {
 	private List<Folder> folders;
 	
 	private Description description;
+	
+	private Interest interest;
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.contrader.model.Document;
 import it.contrader.model.Folder;
+import it.contrader.model.Interest;
 import it.contrader.model.Library;
 import it.contrader.model.Tag;
 import lombok.AllArgsConstructor;
@@ -26,5 +27,7 @@ public class DescriptionDTO {
 	private Document document;
 	
 	private List<Tag> tags;
+	
+	private Interest interest;
 
 }
