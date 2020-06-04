@@ -13,7 +13,7 @@ public class TagConverter extends AbstractConverter<Tag, TagDTO> {
 	public Tag toEntity(TagDTO tagDTO) {
 		Tag tag = null;
 		if (tagDTO != null) {
-			tag = new Tag(tagDTO.getId(), tagDTO.getTag(), tagDTO.getDescription());
+			tag = new Tag(tagDTO.getId(), tagDTO.getTag(), tagDTO.getSearchconnections() , tagDTO.getDescription());
 		}
 		return tag;
 	}
@@ -22,7 +22,7 @@ public class TagConverter extends AbstractConverter<Tag, TagDTO> {
 	public TagDTO toDTO(Tag tag) {
 		TagDTO tagDTO = null;
 		if (tag != null) {
-			tagDTO = new TagDTO(tag.getId(), tag.getTag(), tag.getDescription());
+			tagDTO = new TagDTO(tag.getId(), tag.getTag(), tag.getDescription(), tag.getSearchconnections());
 
 		}
 		return tagDTO;
