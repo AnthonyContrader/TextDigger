@@ -1,9 +1,11 @@
 package it.contrader.converter;
 
 
+import org.springframework.stereotype.Component;
+
 import it.contrader.dto.SubscribeDTO;
 import it.contrader.model.Subscribe;
-
+@Component
 public class SubscribeConverter extends AbstractConverter<Subscribe, SubscribeDTO> {
 
 	@Override

@@ -1,8 +1,11 @@
 package it.contrader.converter;
 
+import org.springframework.stereotype.Component;
+
 import it.contrader.dto.DescriptionDTO;
 import it.contrader.model.Description;
 
+@Component
 public class DescriptionConverter extends AbstractConverter<Description, DescriptionDTO> {
 
 	@Override

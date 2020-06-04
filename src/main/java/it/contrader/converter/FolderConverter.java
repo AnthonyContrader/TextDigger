@@ -1,8 +1,11 @@
 package it.contrader.converter;
 
+import org.springframework.stereotype.Component;
+
 import it.contrader.dto.FolderDTO;
 import it.contrader.model.Folder;
 
+@Component
 public class FolderConverter extends AbstractConverter<Folder, FolderDTO> {
 
 	@Override
