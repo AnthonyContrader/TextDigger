@@ -1,10 +1,10 @@
-<%@ page import="it.contrader.dto.DocumentDTO" import="java.util.*" %>
+<%@ page import="it.contrader.dto.DescriptionDTO" import="java.util.*" %>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Document Management">
+<meta name="description" content="Description Management">
 <meta name="author" content="Marcello Nichele">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>Document Manager</title>
@@ -19,7 +19,7 @@
 	
 	<div class="main">
 	<%
-			List<DocumentDTO> list = (List<DocumentDTO>) request.getSession().getAttribute("list");
+			List<DescriptionDTO> list = (List<DescriptionDTO>) request.getSession().getAttribute("list");
 	%>
 	
 	<br>
@@ -29,31 +29,29 @@
 			<th>Text</th>
 			<th>Users</th>
 		</tr>
-		<%for (DocumentDTO d : list) {%>
+		<%for (DescriptionDTO d : list) {%>
 		<tr>
-				<td><a href="/document/read?id=<%=d.getIdDocument()%>"> 
-				<%=d.getText()%>
-				<%=d.getUser().getId()%>
+				<td><a href="/description/read?id=<%=d.getIdDescription()%>"> 
+				<%=d.getDescription()%>
 				</a></td>
-				<td><%=d.getText()%></td>
-				<td><a href="/document/preupdate?id=<%=d.getIdDocument()%>">Edit</a></td>
+				<td><a href="/description/preupdate?id=<%=d.getIdDescription()%>">Edit</a></td>
 
 
-				<td><a href="/document/delete?id=<%=d.getIdDocument()%>">Delete</a></td>
+				<td><a href="/description/delete?id=<%=d.getIdDescription()%>">Delete</a></td>
 
 			</tr>
 			<%
 				}
 			%>
 		</table>
-		<form id="floatright" action="/document/insert" method="post">
+		<form id="floatright" action="/description/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="document">Text</label>
+					<label for="description">Description</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="document" name="text"
-						placeholder="inserisci text">
+					<input type="text" id="description" name="description"
+						placeholder="inserisci description">
 				</div>
 			</div>
 			<button type="submit">Insert</button>

@@ -34,7 +34,7 @@ public class DocumentController {
 	
 	@GetMapping("/preupdate")
 	public String preupdate(HttpServletRequest request, @RequestParam("idDocument") Long idDocument) {
-		request.getSession().setAttribute("documentdto", documentService.read(idDocument));
+		request.getSession().setAttribute("dto", documentService.read(idDocument));
 		return "updatedocument";
 	}
 	
@@ -60,7 +60,7 @@ public class DocumentController {
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam ("idDocument") Long idDocument) {
-		request.getSession().setAttribute("documentdto", documentService.read(idDocument));
+		request.getSession().setAttribute("dto", documentService.read(idDocument));
 		return "readdocument";
 	}
 

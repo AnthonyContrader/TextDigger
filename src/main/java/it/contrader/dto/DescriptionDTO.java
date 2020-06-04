@@ -2,9 +2,10 @@ package it.contrader.dto;
 
 import java.util.List;
 
-import it.contrader.model.Description;
 import it.contrader.model.Document;
+import it.contrader.model.Folder;
 import it.contrader.model.Library;
+import it.contrader.model.Tag;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,15 +13,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class FolderDTO {
-
-	private Long idFolder;
+public class DescriptionDTO {
 	
-	private String name;
+	private Long idDescription;
 	
-	private List<Document> documents;
+	private String description;
+	
+	private Folder folder;
 	
 	private Library library;
 	
-	private Description description;
+	private Document document;
+	
+	private List<Tag> tags;
+
 }

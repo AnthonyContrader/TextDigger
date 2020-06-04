@@ -1,5 +1,6 @@
 package it.contrader.dto;
 
+import it.contrader.model.Description;
 import it.contrader.model.Folder;
 import it.contrader.model.User;
 import lombok.AllArgsConstructor;
@@ -18,5 +19,7 @@ public class DocumentDTO {
 	private User user;
 	
 	private Folder folder;
+	
+	private Description description;
 
 }

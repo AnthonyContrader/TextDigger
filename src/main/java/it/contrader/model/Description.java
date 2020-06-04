@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -23,24 +22,30 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "folders")
-public class Folder {
+@Table(name ="descriptions")
+public class Description {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idFolder;
+	private Long idDescription;
 	
-	@Column(name = "name")
-	private String name;
+	@Column(name ="description")
+	private String description;
 	
-
-	@OneToMany(mappedBy = "folder", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Document> documents;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name ="id_folder")
+	private Folder folder;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name ="id_library",  nullable = false)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name ="id_library")
 	private Library library;
 	
-	@OneToOne(mappedBy = "folders")
-	private Description description;
+	@OneToOne(mappedBy = "description", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Document document;
+	
+	@OneToMany(mappedBy = "description", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Tag> tags;
+	
+	
 
 }

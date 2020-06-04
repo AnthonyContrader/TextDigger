@@ -12,7 +12,7 @@ public class LibraryConverter extends AbstractConverter<Library, LibraryDTO> {
 	public Library toEntity(LibraryDTO libraryDto) {
 		Library library = null;
 		if(libraryDto != null) {
-			library = new Library(libraryDto.getIdLibrary(), libraryDto.getName());
+			library = new Library(libraryDto.getIdLibrary(), libraryDto.getName(), libraryDto.getFolders(), libraryDto.getDescription());
 		}
 		return library;
 	}
@@ -21,7 +21,7 @@ public class LibraryConverter extends AbstractConverter<Library, LibraryDTO> {
 	public LibraryDTO toDTO(Library library) {
 		LibraryDTO libraryDTO = null;
 		if(library != null) {
-			libraryDTO = new LibraryDTO(library.getIdLibrary(), library.getName());
+			libraryDTO = new LibraryDTO(library.getIdLibrary(), library.getName(), library.getFolders(), library.getDescription());
 		}
 		return libraryDTO;
 	}

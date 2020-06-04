@@ -39,7 +39,7 @@ public class FolderController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("interest") String name) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name) {
 
 		FolderDTO dto = new FolderDTO();
 		dto.setIdFolder(id);
@@ -51,7 +51,7 @@ public class FolderController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("interest") String name) {
+	public String insert(HttpServletRequest request, @RequestParam("name") String name) {
 		FolderDTO dto = new FolderDTO();
 		dto.setName(name);
 		folderService.insert(dto);
