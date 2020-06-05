@@ -13,12 +13,10 @@
 </head>
 <body>
 	<%@ include file="../css/header.jsp"%>
-
-	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> 
-		<a class="active" href="/user/getall">Users</a> 
-		<a href="/searchconnection/logout" id="logout">Logout</a>
-	</div>
+	<%@ include file="../css/menu.jsp"%>
+	
+	<br>
+	
 	<div class="main">
 		<%
 			List<SearchConnectionDTO> list = (List<SearchConnectionDTO>) request.getSession().getAttribute("list");

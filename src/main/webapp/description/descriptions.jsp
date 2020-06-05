@@ -11,11 +11,9 @@
 </head>
 <body>
 <%@ include file="../css/header.jsp"%>
+<%@ include file="../css/menu.jsp"%>
 
-	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> 
-		<a class="active" href="/user/getall">Users</a> 
-	</div>
+<br>
 	
 	<div class="main">
 	<%

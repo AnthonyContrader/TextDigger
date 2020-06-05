@@ -12,12 +12,8 @@
 </head>
 <body>
 	<%@ include file="../css/header.jsp"%>
-	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> 
-		<a class="active" href="/user/getall">Users</a> 
-		<a href="/user/logout" id="logout">Logout</a>
-			<!-- Manca la mia parte di barra -->
-	</div>
+	<%@ include file="../css/menu.jsp"%>
+	
 	<br>
 
 	<div class="main">
