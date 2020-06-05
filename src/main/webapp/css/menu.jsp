@@ -7,6 +7,7 @@
 </head>
 <body>
 	<div class="navbar">
+	
 		<a href="/homeadmin.jsp">Home</a> 
 		<a class="active" href="/user/getall">Users</a> 
 		<a class="active" href="/document/getall">Documents</a> 
@@ -19,7 +20,7 @@
 		<a class="active" href="/subscribe/getall">Subscribes</a> 
 		<a class="active" href="/searchconnection/getall">Search Connections</a> 
 		<a href="/user/logout" id="logout">Logout</a>
-			<!-- Manca la mia parte di barra -->
 	</div>
+
 </body>
 </html>

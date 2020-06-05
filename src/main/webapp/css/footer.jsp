@@ -6,7 +6,6 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
-	<div class="footer">Stuff about copyright, legal notes and other
-		useless informations...</div>
+	<div class="footer">Material property of Contrader written by Marco Fellone, Marcello Nichele and Vittorio Esposito under supervision of Paolo Mascolo and Antonio De Santis for Sabatino Autorino</div>
 </body>
 </html>
