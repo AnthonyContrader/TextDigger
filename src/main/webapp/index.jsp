@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Sample Login page">
+<meta name="description" content="Text Digger Login page">
 <meta name="author" content="Vittorio Valent">
 
 <title>Login</title>
@@ -19,7 +19,7 @@
 
 <body class="text-center">
 	<form class="login" action="/user/login" method="post">
-		<h1>SAMPLE LOGIN</h1>
+		<h1>Text Digger Login</h1>
 
 		<label for="inputUser" class="sr-only">Username</label> <input
 			type="text" name="username" id="inputUser" class="form-control"
