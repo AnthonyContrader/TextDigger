@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubscribeDTO {
 
-	private Long idSubscribe;
+	private Long id;
 	
 	private String name;
 	

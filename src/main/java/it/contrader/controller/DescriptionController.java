@@ -26,23 +26,23 @@ public class DescriptionController {
 	}
 	
 	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("idDescription") Long idDescription) {
-		descriptionService.delete(idDescription);
+	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+		descriptionService.delete(id);
 		setAll(request);
 		return "/description/descriptions";
 	}
 	
 	@GetMapping("/preupdate")
-	public String preupdate(HttpServletRequest request, @RequestParam("idDescription") Long idDescription) {
-		request.getSession().setAttribute("dto", descriptionService.read(idDescription));
+	public String preupdate(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", descriptionService.read(id));
 		return "/description/updatedescription";
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request , @RequestParam("idDescription") Long idDescription, @RequestParam ("description")
+	public String update(HttpServletRequest request , @RequestParam("id") Long id, @RequestParam ("description")
 	String description) {
 		DescriptionDTO descriptionDTO = new DescriptionDTO();
-		descriptionDTO.setIdDescription(idDescription);
+		descriptionDTO.setId(id);
 		descriptionDTO.setDescription(description);
 		descriptionService.update(descriptionDTO);
 		setAll(request);
@@ -59,8 +59,8 @@ public class DescriptionController {
 	}
 	
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam ("idDescription") Long idDescription) {
-		request.getSession().setAttribute("dto", descriptionService.read(idDescription));
+	public String read(HttpServletRequest request, @RequestParam ("id") Long id) {
+		request.getSession().setAttribute("dto", descriptionService.read(id));
 		return "/description/readdescription";
 	}
 

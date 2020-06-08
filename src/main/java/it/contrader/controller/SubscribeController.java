@@ -26,23 +26,23 @@ public class SubscribeController {
 	}
 
 	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("idSubscribe") Long idSubscribe) {
-		subscribeService.delete(idSubscribe);
+	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+		subscribeService.delete(id);
 		setAll(request);
 		return "/subscribe/subscribes";
 	}
 
 	@GetMapping("/preupdate")
-	public String preUpdate(HttpServletRequest request, @RequestParam("idSubscribe") Long idSubscribe) {
-		request.getSession().setAttribute("dto", subscribeService.read(idSubscribe));
+	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", subscribeService.read(id));
 		return "/subscribe/updatesubscribe";
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("idSubscribe") Long idSubscribe, @RequestParam("subscribe") String name) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("subscribe") String name) {
 
 		SubscribeDTO dto = new SubscribeDTO();
-		dto.setIdSubscribe(idSubscribe);
+		dto.setId(id);
 		dto.setName(name);
 		subscribeService.update(dto);
 		setAll(request);
@@ -60,8 +60,8 @@ public class SubscribeController {
 	}
 
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("idSubscribe") Long idSubscribe) {
-		request.getSession().setAttribute("dto", subscribeService.read(idSubscribe));
+	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", subscribeService.read(id));
 		return "/subscribe/readsubscribe";
 	}
 

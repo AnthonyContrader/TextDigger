@@ -42,7 +42,7 @@ public class FolderController {
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name) {
 
 		FolderDTO dto = new FolderDTO();
-		dto.setIdFolder(id);
+		dto.setId(id);
 		dto.setName(name);
 		folderService.update(dto);
 		setAll(request);

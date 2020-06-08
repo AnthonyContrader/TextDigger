@@ -23,7 +23,7 @@ public class SearchConnection {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idSearchConnection;
+	private Long id;
 
 	
 	@ManyToOne

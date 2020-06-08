@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LibraryDTO {
 	
-	private Long idLibrary;
+	private Long id;
 	
 	private String name;
 	

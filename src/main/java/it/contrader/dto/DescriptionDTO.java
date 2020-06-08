@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DescriptionDTO {
 	
-	private Long idDescription;
+	private Long id;
 	
 	private String description;
 	

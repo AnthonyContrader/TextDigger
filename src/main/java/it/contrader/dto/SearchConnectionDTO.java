@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SearchConnectionDTO {
 	
-	private Long idSearchConnection;
+	private Long id;
 	
 	private Tag tag;
 	

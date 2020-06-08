@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DocumentDTO {
 	
-	private Long idDocument;
+	private Long id;
 	
 	private String text;
 	

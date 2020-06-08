@@ -25,7 +25,7 @@ public class Folder {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idFolder;
+	private Long id;
 	
 	private String name;
 

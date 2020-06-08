@@ -26,39 +26,39 @@ public class SearchConnectionController {
 	}
 	
 	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("idSearchConnection") Long idSearchConnection) {
-		searchconnectionService.delete(idSearchConnection);
+	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+		searchconnectionService.delete(id);
 		setAll(request);
 		return "searchconnection/searchconnections";
 	}
 	
 	@GetMapping("/preupdate")
-	public String preupdate(HttpServletRequest request, @RequestParam("idSearchConnection") Long idSearchConnection) {
-		request.getSession().setAttribute("searhconnectiondto", searchconnectionService.read(idSearchConnection));
+	public String preupdate(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("searhconnectiondto", searchconnectionService.read(id));
 		return "searchconnection/updatesearchconnection";
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request , @RequestParam("idSearchConnection") Long idSearchConnection) {
+	public String update(HttpServletRequest request , @RequestParam("id") Long id) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
-		searchConnectionDTO.setIdSearchConnection(idSearchConnection);
+		searchConnectionDTO.setId(id);
 		searchconnectionService.update(searchConnectionDTO);
 		setAll(request);
 		return "searchconnection/searchconnections";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request,@RequestParam("idSearchConnection") Long idSearchConnection) {
+	public String insert(HttpServletRequest request,@RequestParam("id") Long id) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
-		searchConnectionDTO.setIdSearchConnection(idSearchConnection);
+		searchConnectionDTO.setId(id);
 		searchconnectionService.insert(searchConnectionDTO);
 		setAll(request);
 		return "searchconnection/searchconnections";
 	}
 	
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("idSearchConnection") int idSearchConnection) {
-		request.getSession().setAttribute("searchconnectiondto", searchconnectionService.read(idSearchConnection));
+	public String read(HttpServletRequest request, @RequestParam("id") int id) {
+		request.getSession().setAttribute("searchconnectiondto", searchconnectionService.read(id));
 		return "searchconnection/readsearchconnection";
 	}
 

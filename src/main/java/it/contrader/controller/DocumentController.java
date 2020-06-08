@@ -26,23 +26,23 @@ public class DocumentController {
 	}
 	
 	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("idDocument") Long idDocument) {
-		documentService.delete(idDocument);
+	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+		documentService.delete(id);
 		setAll(request);
 		return "/document/documents";
 	}
 	
 	@GetMapping("/preupdate")
-	public String preupdate(HttpServletRequest request, @RequestParam("idDocument") Long idDocument) {
-		request.getSession().setAttribute("dto", documentService.read(idDocument));
+	public String preupdate(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", documentService.read(id));
 		return "/document/updatedocument";
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request , @RequestParam("idDocument") Long idDocument, @RequestParam ("text")
+	public String update(HttpServletRequest request , @RequestParam("id") Long id, @RequestParam ("text")
 	String text) {
 		DocumentDTO documentDTO = new DocumentDTO();
-		documentDTO.setIdDocument(idDocument);
+		documentDTO.setId(id);
 		documentDTO.setText(text);
 		documentService.update(documentDTO);
 		setAll(request);
@@ -59,8 +59,8 @@ public class DocumentController {
 	}
 	
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam ("idDocument") Long idDocument) {
-		request.getSession().setAttribute("dto", documentService.read(idDocument));
+	public String read(HttpServletRequest request, @RequestParam ("id") Long id) {
+		request.getSession().setAttribute("dto", documentService.read(id));
 		return "/document/readdocument";
 	}
 

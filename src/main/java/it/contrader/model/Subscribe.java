@@ -20,7 +20,7 @@ public class Subscribe {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idSubscribe;
+	private Long id;
 	
 	private String name;
 	

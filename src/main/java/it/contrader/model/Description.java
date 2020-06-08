@@ -25,7 +25,7 @@ public class Description {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idDescription;
+	private Long id;
 	
 	private String description;
 	

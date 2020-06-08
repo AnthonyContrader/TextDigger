@@ -42,7 +42,7 @@ public class LibraryController {
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("library") String name) {
 
 		LibraryDTO dto = new LibraryDTO();
-		dto.setIdLibrary(id);
+		dto.setId(id);
 		dto.setName(name);
 		libraryService.update(dto);
 		setAll(request);
