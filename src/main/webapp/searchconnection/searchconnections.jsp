@@ -35,10 +35,10 @@
 				for (SearchConnectionDTO s : list) {
 			%>
 			<tr>
-				<td><a href="/searchconnection/read?id=<%=s.getIdSearchConnection()%>">
+				<td><a href="/searchconnection/read?id=<%=s.getId()%>">
 				</a></td>
 				<td><%=s.getTag().getId()%></td>
-				<td><%=s.getDocument().getIdDocument()%></td>
+				<td><%=s.getDocument().getId()%></td>
 				
 			</tr>
 			<%

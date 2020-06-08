@@ -32,9 +32,9 @@
 				for (LibraryDTO l : list) {
 			%>
 			<tr>
-				<td><a href="/library/read?id=<%=l.getIdLibrary()%>"> <%=l.getName()%></a></td>
-				<td><a href="/library/preupdate?id=<%=l.getIdLibrary()%>">Edit</a></td>
-				<td><a href="/library/delete?id=<%=l.getIdLibrary()%>">Delete</a></td>
+				<td><a href="/library/read?id=<%=l.getId()%>"> <%=l.getName()%></a></td>
+				<td><a href="/library/preupdate?id=<%=l.getId()%>">Edit</a></td>
+				<td><a href="/library/delete?id=<%=l.getId()%>">Delete</a></td>
 			</tr>
 			<%
 				}

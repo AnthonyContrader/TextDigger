@@ -26,7 +26,7 @@
 				<th>Interest</th>
 			</tr>
 			<tr>
-				<td><%=l.getIdLibrary()%></td>
+				<td><%=l.getId()%></td>
 				<td><%=l.getName()%></td>
 			</tr>
 		</table>

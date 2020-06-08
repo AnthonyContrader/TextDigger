@@ -27,7 +27,7 @@
 				<th>Text</th>
 			</tr>
 			<tr>
-				<td><%=d.getIdDocument()%></td>
+				<td><%=d.getId()%></td>
 				<td><%=d.getText()%></td>
 			</tr>
 		</table>

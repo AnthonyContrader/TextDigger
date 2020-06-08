@@ -30,7 +30,7 @@
       <input type="text" id="name" name="name" value=<%=l.getName()%>>
     </div>
   </div>
-     	<input type="hidden" name="id" value =<%=l.getIdLibrary() %>>
+     	<input type="hidden" name="id" value =<%=l.getId() %>>
      	
       <button type="submit" >Edit</button>
 </form>

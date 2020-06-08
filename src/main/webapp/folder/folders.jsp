@@ -33,9 +33,9 @@
 				for (FolderDTO f : list) {
 			%>
 			<tr>
-				<td><a href="/folder/read?id=<%=f.getIdFolder()%>"> <%=f.getName()%></a></td>
-				<td><a href="/folder/preupdate?id=<%=f.getIdFolder()%>">Edit</a></td>
-				<td><a href="/folder/delete?id=<%=f.getIdFolder()%>">Delete</a></td>
+				<td><a href="/folder/read?id=<%=f.getId()%>"> <%=f.getName()%></a></td>
+				<td><a href="/folder/preupdate?id=<%=f.getId()%>">Edit</a></td>
+				<td><a href="/folder/delete?id=<%=f.getId()%>">Delete</a></td>
 			</tr>
 			<%
 				}

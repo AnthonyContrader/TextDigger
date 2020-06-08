@@ -30,13 +30,13 @@
 		</tr>
 		<%for (DescriptionDTO d : list) {%>
 		<tr>
-				<td><a href="/description/read?id=<%=d.getIdDescription()%>"> 
+				<td><a href="/description/read?id=<%=d.getId()%>"> 
 				<%=d.getDescription()%>
 				</a></td>
-				<td><a href="/description/preupdate?id=<%=d.getIdDescription()%>">Edit</a></td>
+				<td><a href="/description/preupdate?id=<%=d.getId()%>">Edit</a></td>
 
 
-				<td><a href="/description/delete?id=<%=d.getIdDescription()%>">Delete</a></td>
+				<td><a href="/description/delete?id=<%=d.getId()%>">Delete</a></td>
 
 			</tr>
 			<%

@@ -27,7 +27,7 @@
 				<th>Name</th>
 			</tr>
 			<tr>
-				<td><%=s.getIdSubscribe()%></td>
+				<td><%=s.getId()%></td>
 				<td><%=s.getName()%></td>
 			</tr>
 		</table>

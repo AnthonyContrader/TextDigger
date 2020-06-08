@@ -26,7 +26,7 @@
 				<th>Name</th>
 			</tr>
 			<tr>
-				<td><%=f.getIdFolder()%></td>
+				<td><%=f.getId()%></td>
 				<td><%=f.getName()%></td>
 			</tr>
 		</table>

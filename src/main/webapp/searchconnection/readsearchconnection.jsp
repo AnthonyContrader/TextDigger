@@ -28,8 +28,8 @@
 				<th>IdTag</th>
 			</tr>
 			<tr>
-				<td><%=c.getIdSearchConnection() %></td>
-				<td><%=c.getDocument().getIdDocument()%></td>
+				<td><%=c.getId() %></td>
+				<td><%=c.getDocument().getId()%></td>
 				<td><%=c.getTag().getId()%></td>
 			</tr>
 		</table>

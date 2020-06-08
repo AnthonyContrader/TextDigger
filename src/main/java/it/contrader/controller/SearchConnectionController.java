@@ -58,7 +58,7 @@ public class SearchConnectionController {
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") int id) {
-		request.getSession().setAttribute("searchconnectiondto", searchconnectionService.read(id));
+		request.getSession().setAttribute("dto", searchconnectionService.read(id));
 		return "searchconnection/readsearchconnection";
 	}
 

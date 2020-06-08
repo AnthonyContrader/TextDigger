@@ -31,7 +31,7 @@
       <input type="text" id="name" name="name" value=<%=c.getName()%>>
     </div>
   </div>
-     	<input type="hidden" name="idSubscribe" value =<%=c.getIdSubscribe()%>>
+     	<input type="hidden" name="idSubscribe" value =<%=c.getId()%>>
      	
       <button type="submit" >Edit</button>
 </form>

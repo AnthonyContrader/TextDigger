@@ -30,14 +30,14 @@
 		</tr>
 		<%for (DocumentDTO d : list) {%>
 		<tr>
-				<td><a href="/document/read?id=<%=d.getIdDocument()%>"> 
+				<td><a href="/document/read?id=<%=d.getId()%>"> 
 				<%=d.getText()%>
 				</a></td>
 				<td><%=d.getText()%></td>
-				<td><a href="/document/preupdate?id=<%=d.getIdDocument()%>">Edit</a></td>
+				<td><a href="/document/preupdate?id=<%=d.getId()%>">Edit</a></td>
 
 
-				<td><a href="/document/delete?id=<%=d.getIdDocument()%>">Delete</a></td>
+				<td><a href="/document/delete?id=<%=d.getId()%>">Delete</a></td>
 
 			</tr>
 			<%

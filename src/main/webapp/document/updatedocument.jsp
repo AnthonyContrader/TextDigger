@@ -31,7 +31,7 @@
       <input type="text" id="text" name="text" value=<%=d.getText()%>>
     </div>
   </div>
-     	<input type="hidden" name="id" value =<%=d.getIdDocument() %>>
+     	<input type="hidden" name="id" value =<%=d.getId() %>>
       <button type="submit" >Edit</button>
 </form>
 

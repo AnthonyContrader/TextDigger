@@ -30,7 +30,7 @@
       <input type="text" id="name" name="name" value=<%=f.getName()%>>
     </div>
   </div>
-     	<input type="hidden" name="id" value =<%=f.getIdFolder()%>>
+     	<input type="hidden" name="id" value =<%=f.getId()%>>
      	
       <button type="submit" >Edit</button>
 </form>
