@@ -1,6 +1,5 @@
 package it.contrader.dto;
 
-import java.util.List;
 
 import it.contrader.model.Interestgroup;
 import it.contrader.model.User;

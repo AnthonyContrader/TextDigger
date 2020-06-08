@@ -11,9 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SearchConnectionDTO {
 	
-	private Long idDocument;
-	
-	private Long idTag;
+	private Long idSearchConnection;
 	
 	private Tag tag;
 	

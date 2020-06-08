@@ -23,12 +23,14 @@
 
 		<table>
 			<tr>
+				<th>IdSearchConnection</th>
 				<th>IdDocument</th>
 				<th>IdTag</th>
 			</tr>
 			<tr>
-				<td><%=c.getIdDocument()%></td>
-				<td><%=c.getIdTag()%></td>
+				<td><%=c.getIdSearchConnection() %></td>
+				<td><%=c.getDocument().getIdDocument()%></td>
+				<td><%=c.getTag().getId()%></td>
 			</tr>
 		</table>
 

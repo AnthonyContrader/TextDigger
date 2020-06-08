@@ -17,8 +17,8 @@ public class SearchConnectionService extends AbstractService<SearchConnection, S
 	@Autowired
 	SearchConnectionRepository repository;
 	
-	public SearchConnectionDTO findByIdDocumentAndIdTag(int idDocument, int idTag) {
-		return converter.toDTO(repository.findByIdDocumentAndIdTag(idDocument, idTag));
+	public SearchConnectionDTO findByIdSearchConnection(Long idSearchConnection) {
+		return converter.toDTO(repository.findByIdSearchConnection(idSearchConnection));
 	}
 
 }

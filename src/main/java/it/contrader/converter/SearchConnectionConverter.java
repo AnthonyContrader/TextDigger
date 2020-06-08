@@ -11,7 +11,7 @@ public class SearchConnectionConverter extends AbstractConverter <SearchConnecti
 	public SearchConnection toEntity(SearchConnectionDTO searchConnectionDto) {
 		SearchConnection searchConnection = null;
 		if(searchConnectionDto != null) {
-			searchConnection = new SearchConnection(searchConnectionDto.getIdDocument(), searchConnectionDto.getIdTag(), searchConnectionDto.getTag(), searchConnectionDto.getDocument());
+			searchConnection = new SearchConnection(searchConnectionDto.getIdSearchConnection(), searchConnectionDto.getTag(), searchConnectionDto.getDocument());
 		}
 		return searchConnection;
 	}
@@ -21,7 +21,7 @@ public class SearchConnectionConverter extends AbstractConverter <SearchConnecti
 		
 		SearchConnectionDTO searchConnectionDTO = null;
 		if(searchConnection != null) {
-			searchConnectionDTO = new SearchConnectionDTO(searchConnection.getIdDocument(), searchConnection.getIdTag(), searchConnection.getTag(), searchConnection.getDocument());
+			searchConnectionDTO = new SearchConnectionDTO(searchConnection.getIdSearchConnection(), searchConnection.getTag(), searchConnection.getDocument());
 		}
 		return searchConnectionDTO;
 		
