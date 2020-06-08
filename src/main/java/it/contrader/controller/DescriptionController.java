@@ -22,20 +22,20 @@ public class DescriptionController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 	setAll(request);
-	return "descriptions";
+	return "/description/descriptions";
 	}
 	
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("idDescription") Long idDescription) {
 		descriptionService.delete(idDescription);
 		setAll(request);
-		return "descriptions";
+		return "/description/descriptions";
 	}
 	
 	@GetMapping("/preupdate")
 	public String preupdate(HttpServletRequest request, @RequestParam("idDescription") Long idDescription) {
 		request.getSession().setAttribute("dto", descriptionService.read(idDescription));
-		return "updatedescription";
+		return "/description/updatedescription";
 	}
 	
 	@PostMapping("/update")
@@ -46,7 +46,7 @@ public class DescriptionController {
 		descriptionDTO.setDescription(description);
 		descriptionService.update(descriptionDTO);
 		setAll(request);
-		return "descriptions";
+		return "/description/descriptions";
 	}
 	
 	@PostMapping("/insert")
@@ -55,13 +55,13 @@ public class DescriptionController {
 		descriptionDTO.setDescription(description);
 		descriptionService.insert(descriptionDTO);
 		setAll(request);
-		return "descriptions";
+		return "/description/descriptions";
 	}
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam ("idDescription") Long idDescription) {
 		request.getSession().setAttribute("dto", descriptionService.read(idDescription));
-		return "readdescription";
+		return "/description/readdescription";
 	}
 
 	

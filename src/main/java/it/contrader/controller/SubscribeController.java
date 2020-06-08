@@ -22,20 +22,20 @@ public class SubscribeController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "interestgroups";
+		return "/subscribe/subscribes";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("idSubscribe") Long idSubscribe) {
 		subscribeService.delete(idSubscribe);
 		setAll(request);
-		return "subscribes";
+		return "/subscribe/subscribes";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("idSubscribe") Long idSubscribe) {
 		request.getSession().setAttribute("dto", subscribeService.read(idSubscribe));
-		return "updatesubscribe";
+		return "/subscribe/updatesubscribe";
 	}
 
 	@PostMapping("/update")
@@ -46,7 +46,7 @@ public class SubscribeController {
 		dto.setName(name);
 		subscribeService.update(dto);
 		setAll(request);
-		return "subscribes";
+		return "/subscribe/subscribes";
 
 	}
 
@@ -56,13 +56,13 @@ public class SubscribeController {
 		dto.setName(name);
 		subscribeService.insert(dto);
 		setAll(request);
-		return "subscribes";
+		return "/subscribe/subscribes";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("idSubscribe") Long idSubscribe) {
 		request.getSession().setAttribute("dto", subscribeService.read(idSubscribe));
-		return "readfolder";
+		return "/subscribe/readsubscribe";
 	}
 
 

@@ -22,20 +22,20 @@ public class LibraryController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "libraries";
+		return "/library/libraries";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		libraryService.delete(id);
 		setAll(request);
-		return "libraries";
+		return "/library/libraries";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", libraryService.read(id));
-		return "updatelibrary";
+		return "/library/updatelibrary";
 	}
 
 	@PostMapping("/update")
@@ -46,7 +46,7 @@ public class LibraryController {
 		dto.setName(name);
 		libraryService.update(dto);
 		setAll(request);
-		return "libraries";
+		return "/library/libraries";
 
 	}
 
@@ -56,13 +56,13 @@ public class LibraryController {
 		dto.setName(name);
 		libraryService.insert(dto);
 		setAll(request);
-		return "libraries";
+		return "/library/libraries";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", libraryService.read(id));
-		return "readlibrary";
+		return "/library/readlibrary";
 	}
 
 

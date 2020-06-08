@@ -22,20 +22,20 @@ public class InterestgroupController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "interestgroups";
+		return "/interestgroup/interestgroups";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "interestgroups";
+		return "/interestgroup/interestgroups";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updateinterestgroup";
+		return "/interestgroup/updateinterestgroup";
 	}
 
 	@PostMapping("/update")
@@ -46,7 +46,7 @@ public class InterestgroupController {
 		dto.setInterestgroup(interestgroup);
 		service.update(dto);
 		setAll(request);
-		return "interestgroups";
+		return "/interestgroup/interestgroups";
 
 	}
 
@@ -56,13 +56,13 @@ public class InterestgroupController {
 		dto.setInterestgroup(interestgroup);
 		service.insert(dto);
 		setAll(request);
-		return "interestgroups";
+		return "/interestgroup/interestgroups";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readinterestgroup";
+		return "/interestgroup/readinterestgroup";
 	}
 
 

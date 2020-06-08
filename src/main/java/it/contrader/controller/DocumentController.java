@@ -22,20 +22,20 @@ public class DocumentController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 	setAll(request);
-	return "documents";
+	return "/document/documents";
 	}
 	
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("idDocument") Long idDocument) {
 		documentService.delete(idDocument);
 		setAll(request);
-		return "documents";
+		return "/document/documents";
 	}
 	
 	@GetMapping("/preupdate")
 	public String preupdate(HttpServletRequest request, @RequestParam("idDocument") Long idDocument) {
 		request.getSession().setAttribute("dto", documentService.read(idDocument));
-		return "updatedocument";
+		return "/document/updatedocument";
 	}
 	
 	@PostMapping("/update")
@@ -46,7 +46,7 @@ public class DocumentController {
 		documentDTO.setText(text);
 		documentService.update(documentDTO);
 		setAll(request);
-		return "documents";
+		return "/document/documents";
 	}
 	
 	@PostMapping("/insert")
@@ -55,13 +55,13 @@ public class DocumentController {
 		documentDTO.setText(text);
 		documentService.insert(documentDTO);
 		setAll(request);
-		return "documents";
+		return "/document/documents";
 	}
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam ("idDocument") Long idDocument) {
 		request.getSession().setAttribute("dto", documentService.read(idDocument));
-		return "readdocument";
+		return "/document/readdocument";
 	}
 
 	

@@ -22,20 +22,20 @@ public class TagController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "tags";
+		return "/tag/tags";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "tags";
+		return "/tag/tags";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updatetag";
+		return "/tag/updatetag";
 	}
 
 	@PostMapping("/update")
@@ -46,7 +46,7 @@ public class TagController {
 		dto.setTag(tag);
 		service.update(dto);
 		setAll(request);
-		return "tags";
+		return "/tag/tags";
 
 	}
 
@@ -56,13 +56,13 @@ public class TagController {
 		dto.setTag(tag);
 		service.insert(dto);
 		setAll(request);
-		return "tags";
+		return "/tag/tags";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readtag";
+		return "/tag/readtag";
 	}
 
 

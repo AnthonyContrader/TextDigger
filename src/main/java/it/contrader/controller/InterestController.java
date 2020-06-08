@@ -22,20 +22,20 @@ public class InterestController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "interests";
+		return "/interest/interests";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "interests";
+		return "/interest/interests";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updateinterest";
+		return "/interest/updateinterest";
 	}
 
 	@PostMapping("/update")
@@ -46,7 +46,7 @@ public class InterestController {
 		dto.setInterest(interest);
 		service.update(dto);
 		setAll(request);
-		return "interests";
+		return "/interest/interests";
 
 	}
 
@@ -56,13 +56,13 @@ public class InterestController {
 		dto.setInterest(interest);
 		service.insert(dto);
 		setAll(request);
-		return "interests";
+		return "/interest/interests";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readinterest";
+		return "/interest/readinterest";
 	}
 
 
