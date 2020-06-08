@@ -12,6 +12,6 @@ import it.contrader.model.SearchConnection;
 @Transactional
 public interface SearchConnectionRepository extends CrudRepository<SearchConnection, Long> {
 
-	SearchConnection findByIdSearchConnection(Long idSearchConnection);
+	
 
 }
