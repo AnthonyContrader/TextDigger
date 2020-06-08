@@ -7,7 +7,7 @@
 <meta name="description" content="Interest Management">
 <meta name="author" content="Marco Fellone">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Interest Manager</title>
+<title>Folder Manager</title>
 
 </head>
 <body>
@@ -25,7 +25,7 @@
 
 		<table>
 			<tr>
-				<th>Interest</th>
+				<th>Folders</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -45,11 +45,11 @@
 		<form id="floatright" action="/folder/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Name</label>
+					<label for="name">Folder</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="name" name="name"
-						placeholder="inserisci name folder">
+					<input type="text" id="folder" name="folder"
+						placeholder="insert folder">
 				</div>
 			</div>
 			

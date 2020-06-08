@@ -25,7 +25,7 @@
 
 		<table>
 			<tr>
-				<th>Interest</th>
+				<th>Interests</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -49,7 +49,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="interest" name="interest"
-						placeholder="inserisci interest">
+						placeholder="insert interest">
 				</div>
 			</div>
 			

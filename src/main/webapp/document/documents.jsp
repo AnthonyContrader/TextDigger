@@ -24,14 +24,14 @@
 	
 	<table>
 		<tr>
-			<th>Text</th>
-			<th>Users</th>
+			<th>Documents</th>
+			<th></th>
+			<th></th>
 		</tr>
 		<%for (DocumentDTO d : list) {%>
 		<tr>
 				<td><a href="/document/read?id=<%=d.getIdDocument()%>"> 
 				<%=d.getText()%>
-				<%=d.getUser().getId()%>
 				</a></td>
 				<td><%=d.getText()%></td>
 				<td><a href="/document/preupdate?id=<%=d.getIdDocument()%>">Edit</a></td>
@@ -51,7 +51,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="document" name="text"
-						placeholder="inserisci text">
+						placeholder="insert text">
 				</div>
 			</div>
 			<button type="submit">Insert</button>

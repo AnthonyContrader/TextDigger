@@ -55,7 +55,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="doc" name="IdDocument"
-						placeholder="inserisci IdDocument">
+						placeholder="insert IdDocument">
 				</div>
 			</div>
 			<div class="row">
@@ -64,15 +64,10 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="tag" name="IdTag"
-						placeholder="inserisci IdTag">
+						placeholder="insert IdTag">
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="type">Usertype</label>
-				</div>
-				
-			</div>
+
 			<button type="submit">Insert</button>
 		</form>
 

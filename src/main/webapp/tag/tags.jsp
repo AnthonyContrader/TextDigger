@@ -25,7 +25,7 @@
 
 		<table>
 			<tr>
-				<th>Tag</th>
+				<th>Tags</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -49,7 +49,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="tag" name="tag"
-						placeholder="inserisci tag">
+						placeholder="insert tag">
 				</div>
 			</div>
 			

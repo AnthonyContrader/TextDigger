@@ -8,7 +8,7 @@
 <meta name="description" content="Interestgroup Management">
 <meta name="author" content="Vittorio Esposito">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Interest Manager</title>
+<title>Subscribe Manager</title>
 
 </head>
 <body>
@@ -26,7 +26,7 @@
 
 		<table>
 			<tr>
-				<th>Interest</th>
+				<th>Subscribes</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -46,11 +46,11 @@
 		<form id="floatright" action="/subscribe/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Name</label>
+					<label for="name">Subscribe</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="name" name="name"
-						placeholder="inserisci name subscribe">
+					<input type="text" id="subscribe" name="subscribe"
+						placeholder="insert subscribe">
 				</div>
 			</div>
 			

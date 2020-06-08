@@ -7,7 +7,7 @@
 <meta name="description" content="Description Management">
 <meta name="author" content="Marcello Nichele">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Document Manager</title>
+<title>Description Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp"%>
@@ -24,8 +24,9 @@
 	
 	<table>
 		<tr>
-			<th>Text</th>
-			<th>Users</th>
+			<th>Descriptions</th>
+			<th></th>
+			<th></th>
 		</tr>
 		<%for (DescriptionDTO d : list) {%>
 		<tr>
@@ -49,7 +50,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="description" name="description"
-						placeholder="inserisci description">
+						placeholder="insert description">
 				</div>
 			</div>
 			<button type="submit">Insert</button>

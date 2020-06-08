@@ -8,7 +8,7 @@
 <meta name="description" content="Library Management">
 <meta name="author" content="Marcello Nichele">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Interest Manager</title>
+<title>Library Manager</title>
 
 </head>
 <body>
@@ -24,7 +24,7 @@
 
 		<table>
 			<tr>
-				<th>Interest</th>
+				<th>Libraries</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -44,11 +44,11 @@
 		<form id="floatright" action="/library/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Name</label>
+					<label for="name">Library</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="name" name="name"
-						placeholder="inserisci name">
+					<input type="text" id="library" name="library"
+						placeholder="insert library">
 				</div>
 			</div>
 			

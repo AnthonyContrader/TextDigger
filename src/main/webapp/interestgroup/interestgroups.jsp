@@ -23,7 +23,7 @@
 
 		<table>
 			<tr>
-				<th>Interest Group</th>
+				<th>Interest Groups</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -47,7 +47,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="interestgroup" name="interestgroup"
-						placeholder="inserisci interestgroup">
+						placeholder="insert interest group">
 				</div>
 			</div>
 			
