@@ -23,15 +23,11 @@ public class Subscribe {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idSubscribe;
 	
-	@Column(name = "name")
 	private String name;
 	
 	@ManyToOne 
-	@JoinColumn(name = "id_user")
 	private User user;
 	
-	
 	@ManyToOne 
-	@JoinColumn (name = "interestgroup")
 	private Interestgroup interestgroup;
 }

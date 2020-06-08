@@ -31,25 +31,20 @@ public class Document {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idDocument;
 	
-	@Column(name = "text")
 	private String text;
 	
-	@Column(name = "searchconnection")
-	@OneToMany (mappedBy = "document")
+	@OneToMany
 	private List<SearchConnection> searchconnections;
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name ="user_id", nullable = false)
+	@ManyToOne
 	private User user;
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name ="id_folder", nullable = false)
+	@ManyToOne
 	private Folder folder;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="id_description")
+	@OneToOne
 	private Description description;
 
 }

@@ -23,12 +23,12 @@ public class Interest {
 	@Column(unique = true)
 	private String interest;
 
-	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
     private List<Interestgroup> interestGroup;
 	
-	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
     private List<Description> descriptions;
 	
-	@OneToMany(mappedBy = "interest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
     private List<Library> libraries;
 }

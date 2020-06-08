@@ -22,11 +22,10 @@ public class Interestgroup {
 	@Column(unique = true)
 	private String interestgroup;
 	
-	@OneToMany(mappedBy = "interestgroup", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
     private List<Subscribe> subscribes;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name ="interest_id", nullable = false)
+	@ManyToOne
 	private Interest interest;
 
 }

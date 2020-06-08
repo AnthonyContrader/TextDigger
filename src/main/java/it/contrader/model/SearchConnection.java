@@ -21,17 +21,13 @@ import lombok.NoArgsConstructor;
 public class SearchConnection {
 
 	@Id
-	private int idTag;
-	private int idDocument;
-	
-	
+	private long idTag;
+	private long idDocument;
 	
 	@ManyToOne
-	@JoinColumn(name = "Tag_Id")
 	private Tag tag;
 	
 	@ManyToOne
-	@JoinColumn(name = "Document_Id")
 	private Document document;
 	
 }

@@ -25,22 +25,20 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "folders")
 public class Folder {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFolder;
 	
-	@Column(name = "name")
 	private String name;
-	
 
-	@OneToMany(mappedBy = "folder", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
 	private List<Document> documents;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name ="id_library",  nullable = false)
+	@ManyToOne
 	private Library library;
 	
-	@OneToOne(mappedBy = "folder")
+	@OneToOne
 	private Description description;
 
 }

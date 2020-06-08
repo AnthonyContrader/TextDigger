@@ -38,11 +38,9 @@ public class User {
 
 	private Usertype usertype;
 	
-	
-	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
 	private List<Document> documentList;
 	
-	@Column(name = "subscribe")
-	@OneToMany (mappedBy = "user")
+	@OneToMany
 	private List<Subscribe> subscribes;
 }

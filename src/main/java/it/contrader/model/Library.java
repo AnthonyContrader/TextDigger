@@ -26,22 +26,20 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "libraries")
 public class Library {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idLibrary;
 	
-	@Column(name ="name")
 	private String name;
 	
-	@OneToMany(mappedBy = "library", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
 	private List<Folder> folders;
 	
-	
-	@OneToOne(mappedBy = "library", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne
 	private Description description;
 	
 	@ManyToOne
-	@JoinColumn(name="id_interest")
 	private Interest interest;
 	
 }

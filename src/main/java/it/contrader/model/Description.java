@@ -30,25 +30,21 @@ public class Description {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idDescription;
 	
-	@Column(name ="description")
 	private String description;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="id_folder")
+	@OneToOne
 	private Folder folder;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="id_library")
+	@OneToOne
 	private Library library;
 	
-	@OneToOne(mappedBy = "description", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne
 	private Document document;
 	
-	@OneToMany(mappedBy = "description", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany
 	private List<Tag> tags;
 	
 	@ManyToOne
-	@JoinColumn(name ="id_interest")
 	private Interest interest;
 	
 	

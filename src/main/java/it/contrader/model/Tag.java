@@ -31,12 +31,10 @@ public class Tag {
 	@Column(unique = true)
 	private String tag;
 	
-	@Column(name = "searchconnection")
-	@OneToMany (mappedBy = "tag")
+	@OneToMany
 	private List<SearchConnection> searchconnections;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name ="id_description")
+	@ManyToOne
 	private Description description;
 
 }
