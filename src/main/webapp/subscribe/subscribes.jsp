@@ -46,7 +46,7 @@
 		<form id="floatright" action="/subscribe/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Subscribe</label>
+					<label for="subscribe">Subscribe</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="subscribe" name="subscribe"

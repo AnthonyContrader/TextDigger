@@ -45,7 +45,7 @@
 		<form id="floatright" action="/folder/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Folder</label>
+					<label for="folder">Folder</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="folder" name="folder"

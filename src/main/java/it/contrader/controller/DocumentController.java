@@ -39,20 +39,20 @@ public class DocumentController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request , @RequestParam("idDocument") Long idDocument, @RequestParam ("text")
-	String text) {
+	public String update(HttpServletRequest request , @RequestParam("idDocument") Long idDocument, @RequestParam ("description")
+	String description) {
 		DocumentDTO documentDTO = new DocumentDTO();
 		documentDTO.setIdDocument(idDocument);
-		documentDTO.setText(text);
+		documentDTO.setText(description);
 		documentService.update(documentDTO);
 		setAll(request);
 		return "/document/documents";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("text") String text) {
+	public String insert(HttpServletRequest request, @RequestParam("description") String description) {
 		DocumentDTO documentDTO = new DocumentDTO();
-		documentDTO.setText(text);
+		documentDTO.setText(description);
 		documentService.insert(documentDTO);
 		setAll(request);
 		return "/document/documents";

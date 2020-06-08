@@ -50,7 +50,7 @@
 					<label for="document">Text</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="text" name="text"
+					<input type="text" id="document" name="text"
 						placeholder="insert text">
 				</div>
 			</div>

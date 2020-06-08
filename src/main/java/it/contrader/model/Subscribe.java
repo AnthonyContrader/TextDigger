@@ -1,7 +1,6 @@
 package it.contrader.model;
 
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,9 +24,11 @@ public class Subscribe {
 	
 	private String name;
 	
-	@ManyToOne 
+	@ManyToOne
+	@JoinColumn(name ="id_user")
 	private User user;
 	
-	@ManyToOne 
+	@ManyToOne
+	@JoinColumn(name = "id_interestgroup")
 	private Interestgroup interestgroup;
 }

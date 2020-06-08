@@ -26,6 +26,7 @@ public class Interestgroup {
     private List<Subscribe> subscribes;
 	
 	@ManyToOne
+	@JoinColumn(name = "id_interest")
 	private Interest interest;
 
 }

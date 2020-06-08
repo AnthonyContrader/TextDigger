@@ -2,7 +2,6 @@ package it.contrader.model;
 
 
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -25,9 +24,11 @@ public class SearchConnection {
 	private Long idDocument;
 	
 	@ManyToOne
+	@JoinColumn(name ="id_tag")
 	private Tag tag;
 	
 	@ManyToOne
+	@JoinColumn(name ="id_document")
 	private Document document;
 	
 }

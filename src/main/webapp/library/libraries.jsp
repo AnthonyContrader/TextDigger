@@ -47,7 +47,7 @@
 					<label for="name">Library</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="name" name="name"
+					<input type="text" id="library" name="library"
 						placeholder="insert library name">
 				</div>
 			</div>
