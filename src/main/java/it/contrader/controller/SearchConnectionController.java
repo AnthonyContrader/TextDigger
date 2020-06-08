@@ -22,46 +22,44 @@ public class SearchConnectionController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 	setAll(request);
-	return "searchconnections";
+	return "searchconnection/searchconnections";
 	}
 	
-/*@GetMapping("/delete")
+	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("idDocument") Long idDocument) {
-		documentService.delete(idDocument);
+		searchconnectionService.delete(idDocument);
 		setAll(request);
-		return "documents";
+		return "searchconnection/searchconnections";
 	}
 	
 	@GetMapping("/preupdate")
 	public String preupdate(HttpServletRequest request, @RequestParam("idDocument") Long idDocument) {
-		request.getSession().setAttribute("documentdto", documentService.read(idDocument));
-		return "updatedocument";
+		request.getSession().setAttribute("documentdto", searchconnectionService.read(idDocument));
+		return "searchconnection/updatedocument";
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request , @RequestParam("idDocument") Long idDocument, @RequestParam ("text")
-	String text) {
-		DocumentDTO documentDTO = new DocumentDTO();
-		documentDTO.setIdDocument(idDocument);
-		documentDTO.setText(text);
-		documentService.update(documentDTO);
+	public String update(HttpServletRequest request , @RequestParam("idDocument") Long idDocument) {
+		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
+		searchConnectionDTO.setIdDocument(idDocument);
+		searchconnectionService.update(searchConnectionDTO);
 		setAll(request);
-		return "documents";
-	}*/
+		return "searchconnection/searchconnections";
+	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("idTag") int  idTag, @RequestParam("idDocument") int idDocument) {
+	public String insert(HttpServletRequest request, @RequestParam("idTag") Long  idTag, @RequestParam("idDocument") Long idDocument) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
 		searchConnectionDTO.setIdTag(idTag);
 		searchconnectionService.insert(searchConnectionDTO);
 		setAll(request);
-		return "searchconnections";
+		return "searchconnection/searchconnections";
 	}
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("idTag") int  idTag, @RequestParam("idDocument") int idDocument) {
 		request.getSession().setAttribute("searchconnectiondto", searchconnectionService.read(idDocument));
-		return "readsearchconnection";
+		return "searchconnection/readsearchconnection";
 	}
 
 	
