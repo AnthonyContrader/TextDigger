@@ -21,8 +21,8 @@ import lombok.NoArgsConstructor;
 public class SearchConnection {
 
 	@Id
-	private long idTag;
-	private long idDocument;
+	private Long idTag;
+	private Long idDocument;
 	
 	@ManyToOne
 	private Tag tag;
