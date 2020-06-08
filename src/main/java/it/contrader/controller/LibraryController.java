@@ -51,7 +51,7 @@ public class LibraryController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("interest") String name) {
+	public String insert(HttpServletRequest request, @RequestParam("name") String name) {
 		LibraryDTO dto = new LibraryDTO();
 		dto.setName(name);
 		libraryService.insert(dto);
