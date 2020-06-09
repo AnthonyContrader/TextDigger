@@ -34,7 +34,7 @@ public class SearchConnectionController {
 	
 	@GetMapping("/preupdate")
 	public String preupdate(HttpServletRequest request, @RequestParam("id") Long id) {
-		request.getSession().setAttribute("searhconnectiondto", searchconnectionService.read(id));
+		request.getSession().setAttribute("dto", searchconnectionService.read(id));
 		return "searchconnection/updatesearchconnection";
 	}
 	

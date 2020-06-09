@@ -25,10 +25,10 @@
 <form id="floatleft" action="/interest/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="name">Name</label>
+      <label for="subscribe">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="name" name="name" value=<%=c.getName()%>>
+      <input type="text" id="subscribe" name="subscribe" value=<%=c.getName()%>>
     </div>
   </div>
      	<input type="hidden" name="idSubscribe" value =<%=c.getId()%>>
