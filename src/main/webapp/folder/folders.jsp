@@ -33,7 +33,10 @@
 				for (FolderDTO f : list) {
 			%>
 			<tr>
-				<td><a href="/folder/read?id=<%=f.getId()%>"> <%=f.getName()%></a></td>
+				<td><a href="/folder/read?id=<%=f.getId()%>"> <%=f.getName()%>
+				</a></td>
+				<td><%=f.getLibrary().getId() %></td>
+				<td><%=f.getDescription().getId()%></td>
 				<td><a href="/folder/preupdate?id=<%=f.getId()%>">Edit</a></td>
 				<td><a href="/folder/delete?id=<%=f.getId()%>">Delete</a></td>
 			</tr>

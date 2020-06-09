@@ -26,6 +26,7 @@
 
 		<table>
 			<tr>
+				<th>IdSearchConnection</th>
 				<th>IdDocument</th>
 				<th>IdTag</th>
 				<th></th>

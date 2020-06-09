@@ -21,7 +21,7 @@
 <%FolderDTO f = (FolderDTO) request.getSession().getAttribute("dto");%>
 
 
-<form id="floatleft" action="/interest/update" method="post">
+<form id="floatleft" action="/folder/update" method="post">
   <div class="row">
     <div class="col-25">
       <label for="name">Name</label>

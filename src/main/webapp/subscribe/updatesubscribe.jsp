@@ -22,7 +22,7 @@
 <%SubscribeDTO c = (SubscribeDTO) request.getSession().getAttribute("dto");%>
 
 
-<form id="floatleft" action="/interest/update" method="post">
+<form id="floatleft" action="/subscribe/update" method="post">
   <div class="row">
     <div class="col-25">
       <label for="name">Name</label>
