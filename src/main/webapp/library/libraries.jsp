@@ -44,10 +44,10 @@
 		<form id="floatright" action="/library/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="library">Library Name</label>
+					<label for="name">Library Name</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="library" name="library"
+					<input type="text" id="name" name="name"
 						placeholder="insert library name">
 				</div>
 			</div>

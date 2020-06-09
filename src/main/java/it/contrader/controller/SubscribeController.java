@@ -39,7 +39,7 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("subscribe") String name) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name) {
 
 		SubscribeDTO dto = new SubscribeDTO();
 		dto.setId(id);
@@ -51,7 +51,7 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("subscribe") String name) {
+	public String insert(HttpServletRequest request, @RequestParam("name") String name) {
 		SubscribeDTO dto = new SubscribeDTO();
 		dto.setName(name);
 		subscribeService.insert(dto);

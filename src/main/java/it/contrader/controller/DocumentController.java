@@ -39,7 +39,7 @@ public class DocumentController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request , @RequestParam("id") Long id, @RequestParam ("document")
+	public String update(HttpServletRequest request , @RequestParam("id") Long id, @RequestParam ("text")
 	String text) {
 		DocumentDTO documentDTO = new DocumentDTO();
 		documentDTO.setId(id);
@@ -50,7 +50,7 @@ public class DocumentController {
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("document") String text) {
+	public String insert(HttpServletRequest request, @RequestParam("text") String text) {
 		DocumentDTO documentDTO = new DocumentDTO();
 		documentDTO.setText(text);
 		documentService.insert(documentDTO);

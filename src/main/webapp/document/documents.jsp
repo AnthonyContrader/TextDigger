@@ -47,10 +47,10 @@
 		<form id="floatright" action="/document/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="document">Text</label>
+					<label for="text">Text</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="document" name="text"
+					<input type="text" id="text" name="text"
 						placeholder="insert text">
 				</div>
 			</div>

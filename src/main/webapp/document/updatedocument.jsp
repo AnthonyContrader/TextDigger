@@ -25,10 +25,10 @@
 <form id="floatleft" action="/document/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="document">Text</label>
+      <label for="text">Text</label>
     </div>
     <div class="col-75">
-      <input type="text" id="document" name="text" value=<%=d.getText()%>>
+      <input type="text" id="text" name="text" value=<%=d.getText()%>>
     </div>
   </div>
      	<input type="hidden" name="id" value =<%=d.getId() %>>

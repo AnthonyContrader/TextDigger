@@ -24,10 +24,10 @@
 <form id="floatleft" action="/library/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="library">Name</label>
+      <label for="name">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="library" name="library" value=<%=l.getName()%>>
+      <input type="text" id="name" name="name" value=<%=l.getName()%>>
     </div>
   </div>
      	<input type="hidden" name="id" value =<%=l.getId() %>>
