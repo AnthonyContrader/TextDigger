@@ -38,10 +38,10 @@ public class Description {
 	@OneToOne
 	private Document document;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "description")
 	private List<Tag> tags;
 	
-	@ManyToOne
+	@ManyToOne 
 	@JoinColumn(name ="id_interest")
 	private Interest interest;
 	

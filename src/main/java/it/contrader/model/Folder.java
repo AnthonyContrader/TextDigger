@@ -29,7 +29,7 @@ public class Folder {
 	
 	private String name;
 
-	@OneToMany
+	@OneToMany (mappedBy = "folder")
 	private List<Document> documents;
 	
 	@ManyToOne

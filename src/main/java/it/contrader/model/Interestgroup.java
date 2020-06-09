@@ -22,7 +22,7 @@ public class Interestgroup {
 	@Column(unique = true)
 	private String interestgroup;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "interestgroup")
     private List<Subscribe> subscribes;
 	
 	@ManyToOne

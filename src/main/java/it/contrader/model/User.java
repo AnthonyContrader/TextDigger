@@ -36,9 +36,9 @@ public class User {
 
 	private Usertype usertype;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "user")
 	private List<Document> documentList;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "user")
 	private List<Subscribe> subscribes;
 }

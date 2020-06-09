@@ -30,7 +30,7 @@ public class Library {
 	
 	private String name;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "library")
 	private List<Folder> folders;
 	
 	@OneToOne

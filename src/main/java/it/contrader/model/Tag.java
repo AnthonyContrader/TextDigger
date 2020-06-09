@@ -30,7 +30,7 @@ public class Tag {
 	@Column(unique = true)
 	private String tag;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "tag")
 	private List<SearchConnection> searchconnections;
 	
 	@ManyToOne

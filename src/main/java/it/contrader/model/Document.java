@@ -30,7 +30,7 @@ public class Document {
 	
 	private String text;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "document")
 	private List<SearchConnection> searchconnections;
 	
 	

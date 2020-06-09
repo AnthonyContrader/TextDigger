@@ -23,12 +23,12 @@ public class Interest {
 	@Column(unique = true)
 	private String interest;
 
-	@OneToMany
+	@OneToMany (mappedBy = "interest")
     private List<Interestgroup> interestGroup;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "interest")
     private List<Description> descriptions;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "interest")
     private List<Library> libraries;
 }
