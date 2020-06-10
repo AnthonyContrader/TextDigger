@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name ="subscribe")
+@Entity
 public class Subscribe {
 
 	@Id

@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name ="interestgroup")
+@Entity
 public class Interestgroup {
 
 	@Id
