@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name = "interestgroups")
 public class Interestgroup {
 
 	@Id
