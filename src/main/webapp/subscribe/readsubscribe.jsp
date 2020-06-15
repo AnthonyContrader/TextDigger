@@ -24,7 +24,6 @@
 		<table>
 			<tr>
 				<th>ID</th>
-				<th>Name</th>
 			</tr>
 			<tr>
 				<td><%=s.getId()%></td>
