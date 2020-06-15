@@ -14,8 +14,6 @@ public class SubscribeDTO {
 
 	private Long id;
 	
-	private String name;
-	
 	private User user;
 	
 	private Interestgroup interestgroup;

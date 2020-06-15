@@ -34,7 +34,7 @@
 				for (SubscribeDTO b : list) {
 			%>
 			<tr>
-				<td><a href="/subscribe/read?id=<%=b.getId()%>"> <%=b.getName()%></a></td>
+				<td><a href="/subscribe/read?id=<%=b.getId()%>"></a></td>
 				<td><a href="/subscribe/preupdate?id=<%=b.getId()%>">Edit</a></td>
 				<td><a href="/subscribe/delete?id=<%=b.getId()%>">Delete</a></td>
 			</tr>
@@ -46,11 +46,11 @@
 		<form id="floatright" action="/subscribe/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Subscribe Name</label>
+					<label for="id">Subscribe Id</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="name" name="name"
-						placeholder="insert subscribe name">
+					<input type="number" id="id" name="id"
+						placeholder="insert subscribe id">
 				</div>
 			</div>
 			

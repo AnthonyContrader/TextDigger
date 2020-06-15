@@ -12,7 +12,7 @@ public class SubscribeConverter extends AbstractConverter<Subscribe, SubscribeDT
 	public Subscribe toEntity(SubscribeDTO subscribeDto) {
 		Subscribe subscribe = null;
 		if(subscribeDto != null) {
-			subscribe = new Subscribe(subscribeDto.getId(), subscribeDto.getName(), subscribeDto.getUser(), subscribeDto.getInterestgroup());
+			subscribe = new Subscribe(subscribeDto.getId(), subscribeDto.getUser(), subscribeDto.getInterestgroup());
 		}
 		return subscribe;
 	}
@@ -21,7 +21,7 @@ public class SubscribeConverter extends AbstractConverter<Subscribe, SubscribeDT
 	public SubscribeDTO toDTO(Subscribe subscribe) {
 		SubscribeDTO subscribeDTO = null;
 		if(subscribe != null) {
-			subscribeDTO = new SubscribeDTO(subscribe.getId(), subscribe.getName(), subscribe.getUser(), subscribe.getInterestgroup());
+			subscribeDTO = new SubscribeDTO(subscribe.getId(), subscribe.getUser(), subscribe.getInterestgroup());
 		}
 		return subscribeDTO;
 	}

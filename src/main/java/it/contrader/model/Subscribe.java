@@ -22,7 +22,6 @@ public class Subscribe {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String name;
 	
 	@ManyToOne
 	@JoinColumn(name ="id_user")
