@@ -28,7 +28,6 @@
 			</tr>
 			<tr>
 				<td><%=s.getId()%></td>
-				<td><%=s.getName()%></td>
 			</tr>
 		</table>
 
