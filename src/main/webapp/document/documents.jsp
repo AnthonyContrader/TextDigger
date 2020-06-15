@@ -33,7 +33,6 @@
 				<td><a href="/document/read?id=<%=d.getId()%>"> 
 				<%=d.getText()%>
 				</a></td>
-				<td><%=d.getText()%></td>
 				<td><a href="/document/preupdate?id=<%=d.getId()%>">Edit</a></td>
 
 
