@@ -16,9 +16,6 @@ public class SubscribeService extends AbstractService<Subscribe, SubscribeDTO> {
 	
 	@Autowired
 	private SubscribeRepository subscribeRepository;
-	
-	private SubscribeDTO findSubscribeByName(String name) {
-		return subscribeConverter.toDTO(subscribeRepository.findSubscribeByName(name));
-	}
+
 
 }
