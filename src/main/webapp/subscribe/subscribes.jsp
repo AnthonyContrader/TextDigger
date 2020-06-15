@@ -42,7 +42,7 @@
 				}
 			%>
 		</table>
-
+<!-- 
 		<form id="floatright" action="/subscribe/insert" method="post">
 			<div class="row">
 				<div class="col-25">
@@ -56,6 +56,7 @@
 			
 			<button type="submit">Insert</button>
 		</form>
+-->
 
 	</div>
 	<br>
