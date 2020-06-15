@@ -26,8 +26,8 @@ public class Interest {
 	@OneToMany (mappedBy = "interest")
     private List<Interestgroup> interestGroup;
 	
-	@OneToMany (mappedBy = "interest")
-    private List<Description> descriptions;
+	@OneToOne (mappedBy = "interest")
+    private Description description;
 	
 	@OneToMany (mappedBy = "interest")
     private List<Library> libraries;

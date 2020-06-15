@@ -21,7 +21,7 @@ public class InterestDTO {
 
 	private List<Interestgroup> interestGroups;
 	
-	private List<Description> descriptions;
+	private Description description;
 	
 	private List<Library> libraries;
 }
