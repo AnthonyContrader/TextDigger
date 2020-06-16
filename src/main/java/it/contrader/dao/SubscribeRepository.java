@@ -10,6 +10,5 @@ import it.contrader.model.Subscribe;
 @Transactional
 public interface SubscribeRepository extends CrudRepository<Subscribe, Long> {
 	
-	Subscribe findSubscribeByName(String name);
-
+	
 }

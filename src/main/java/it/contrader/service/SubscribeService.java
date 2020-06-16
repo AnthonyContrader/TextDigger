@@ -17,5 +17,5 @@ public class SubscribeService extends AbstractService<Subscribe, SubscribeDTO> {
 	@Autowired
 	private SubscribeRepository subscribeRepository;
 
-
+	
 }
