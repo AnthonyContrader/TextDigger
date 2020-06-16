@@ -26,15 +26,18 @@
 
 		<table>
 			<tr>
-				<th>Subscribes</th>
-				<th></th>
-				<th></th>
+				<th>IDSubscribe</th>
+				<th>IDUser</th>
+				<th>IDInterestGroup</th>
 			</tr>
 			<%
 				for (SubscribeDTO b : list) {
 			%>
 			<tr>
-				<td><a href="/subscribe/read?id=<%=b.getId()%>"></a></td>
+				<td><a href="/subscribe/read?id=<%=b.getId()%>">
+				</a></td>
+				<td><%=b.getUser().getId()%></td>
+				<td><%=b.getInterestgroup().getId()%></td>
 				<td><a href="/subscribe/preupdate?id=<%=b.getId()%>">Edit</a></td>
 				<td><a href="/subscribe/delete?id=<%=b.getId()%>">Delete</a></td>
 			</tr>

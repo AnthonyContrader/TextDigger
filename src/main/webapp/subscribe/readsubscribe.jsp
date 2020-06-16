@@ -23,10 +23,14 @@
 
 		<table>
 			<tr>
-				<th>ID</th>
+				<th>IDSubscribe</th>
+				<th>IDUser</th>
+				<th>IDInterestGroup</th>
 			</tr>
 			<tr>
 				<td><%=s.getId()%></td>
+				<td><%=s.getUser().getId()%></td>
+				<td><%=s.getInterestgroup().getId()%></td>
 			</tr>
 		</table>
 
