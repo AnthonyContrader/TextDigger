@@ -38,7 +38,6 @@
 				</a></td>
 				<td><%=b.getUser().getId()%></td>
 				<td><%=b.getInterestgroup().getId()%></td>
-				<td><a href="/subscribe/preupdate?id=<%=b.getId()%>">Edit</a></td>
 				<td><a href="/subscribe/delete?id=<%=b.getId()%>">Delete</a></td>
 			</tr>
 			<%
