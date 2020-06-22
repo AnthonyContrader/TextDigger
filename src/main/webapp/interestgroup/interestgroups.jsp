@@ -27,7 +27,6 @@
 			<tr>
 				<th>Interest Groups</th>
 				<th>Interests</th>
-				<th>Subscribes</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -35,7 +34,8 @@
 				for (InterestgroupDTO ig : list) {
 			%>
 			<tr>
-				<td><a href="/interestgroup/read?id=<%=ig.getId()%>"> <%=ig.getInterestgroup()%> <%ig.getInterest();%> <%ig.getSubscribes();%></a></td>
+				<td><a href="/interestgroup/read?id=<%=ig.getId()%>"> <%=ig.getInterestgroup()%></a></td>
+				<td><%ig.getInterest().getInterest();%></td>
 				<td><a href="/interestgroup/preupdate?id=<%=ig.getId()%>">Edit</a></td>
 				<td><a href="/interestgroup/delete?id=<%=ig.getId()%>">Delete</a></td>
 			</tr>
@@ -60,14 +60,12 @@
 					<label for="interest">Interest</label>
 				</div>
 				<div class="col-75">
-		 			<select id="interest" name="interest">
-		 			<%
-		 				for (InterestDTO i : interests) {
-					%>
-		  				<option value="<%=i.getId()%>"><%=i.getInterest()%></option>
-					<%
-						}
-					%>
+		 			<select id="interest" name="interest" required>
+		 			<option value="" disabled selected>Select Interest</option>
+ 					<% 			
+						for (InterestDTO i : interests) {
+							%> <option value="<%=i.getId()%>"><%=i.getInterest()%></option> <%
+						}%> 
 					</select>
     			</div>
 			</div>

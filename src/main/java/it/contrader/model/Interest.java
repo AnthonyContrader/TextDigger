@@ -2,12 +2,9 @@ package it.contrader.model;
 
 import javax.persistence.*;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,12 +20,4 @@ public class Interest {
 	@Column(unique = true)
 	private String interest;
 
-	@OneToMany (mappedBy = "interest")
-    private List<Interestgroup> interestGroup;
-	
-	@OneToOne (mappedBy = "interest")
-    private Description description;
-	
-	@OneToMany (mappedBy = "interest")
-    private List<Library> libraries;
 }

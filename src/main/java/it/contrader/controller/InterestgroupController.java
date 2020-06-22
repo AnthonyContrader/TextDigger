@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.InterestgroupDTO;
 import it.contrader.service.InterestgroupService;
+import it.contrader.model.Interest;
+import it.contrader.service.InterestService;
 
 @Controller
 @RequestMapping("/interestgroup")
@@ -18,6 +20,9 @@ public class InterestgroupController {
 
 	@Autowired
 	private InterestgroupService service;
+	
+	@Autowired
+	private InterestService serviceInterest;
 
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -39,11 +44,12 @@ public class InterestgroupController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("interestgroup") String interestgroup) {
+	public String update(HttpServletRequest request, @RequestParam("interest") Interest interest, @RequestParam("id") Long id, @RequestParam("interestgroup") String interestgroup) {
 
 		InterestgroupDTO dto = new InterestgroupDTO();
 		dto.setId(id);
 		dto.setInterestgroup(interestgroup);
+		dto.setInterest(interest);
 		service.update(dto);
 		setAll(request);
 		return "/interestgroup/interestgroups";
@@ -51,9 +57,10 @@ public class InterestgroupController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("interestgroup") String interestgroup) {
+	public String insert(HttpServletRequest request, @RequestParam("interest") Interest interest, @RequestParam("interestgroup") String interestgroup) {
 		InterestgroupDTO dto = new InterestgroupDTO();
 		dto.setInterestgroup(interestgroup);
+		dto.setInterest(interest);
 		service.insert(dto);
 		setAll(request);
 		return "/interestgroup/interestgroups";
@@ -68,5 +75,6 @@ public class InterestgroupController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+		request.getSession().setAttribute("listInterest", serviceInterest.getAll());
 	}
 }

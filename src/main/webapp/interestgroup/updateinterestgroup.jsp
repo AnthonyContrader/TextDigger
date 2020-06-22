@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.InterestgroupDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.InterestgroupDTO" 
+    import="it.contrader.dto.InterestDTO" import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,8 @@
 <br>
 <div class="main">
 
-<%InterestgroupDTO ig = (InterestgroupDTO) request.getSession().getAttribute("dto");%>
+<%InterestgroupDTO ig = (InterestgroupDTO) request.getSession().getAttribute("dto");
+List<InterestDTO> list_i = (List<InterestDTO>) request.getSession().getAttribute("interests");%>
 
 
 <form id="floatleft" action="/interestgroup/update" method="post">
@@ -29,10 +31,27 @@
     <div class="col-75">
       <input type="text" id="interestgroup" name="interestgroup" value=<%=ig.getInterestgroup()%>>
     </div>
+    <input type="hidden" name="id" value =<%=ig.getId() %>>
   </div>
-     	<input type="hidden" name="id" value =<%=ig.getId() %>>
-     	
-      <button type="submit" >Edit</button>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="interest">Interest</label>
+    </div>
+    <div class="col-75">
+     <select id="tool" name="tool">
+ 		<%
+			for (InterestDTO i : list_i) {
+		%>
+			<option value="<%=i.getId()%>"  <%if(i.getId()==ig.getInterest().getId()) {%>selected<%} %>  ><%=i.getInterest()%></option>
+		<%
+			}
+		%>
+	</select>
+    </div>
+  </div>
+  
+  <button type="submit" >Edit</button>
 </form>
 </div>
 <br>

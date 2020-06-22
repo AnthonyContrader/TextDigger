@@ -13,7 +13,7 @@ public class InterestgroupConverter extends AbstractConverter<Interestgroup, Int
 	public Interestgroup toEntity(InterestgroupDTO interestgroupDTO) {
 		Interestgroup interestgroup = null;
 		if (interestgroupDTO != null) {
-			interestgroup = new Interestgroup(interestgroupDTO.getId(), interestgroupDTO.getInterestgroup(), interestgroupDTO.getSubscribes(), interestgroupDTO.getInterest());
+			interestgroup = new Interestgroup(interestgroupDTO.getId(), interestgroupDTO.getInterestgroup(), interestgroupDTO.getInterest());
 		}
 		return interestgroup;
 	}
@@ -22,7 +22,7 @@ public class InterestgroupConverter extends AbstractConverter<Interestgroup, Int
 	public InterestgroupDTO toDTO(Interestgroup interestgroup) {
 		InterestgroupDTO interestgroupDTO = null;
 		if (interestgroup != null) {
-			interestgroupDTO = new InterestgroupDTO(interestgroup.getId(), interestgroup.getInterestgroup(), interestgroup.getSubscribes(), interestgroup.getInterest());
+			interestgroupDTO = new InterestgroupDTO(interestgroup.getId(), interestgroup.getInterestgroup(), interestgroup.getInterest());
 
 		}
 		return interestgroupDTO;

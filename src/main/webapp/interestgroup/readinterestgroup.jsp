@@ -24,10 +24,12 @@
 			<tr>
 				<th>ID</th>
 				<th>Interest Group</th>
+				<th>Interest</th>
 			</tr>
 			<tr>
 				<td><%=ig.getId()%></td>
 				<td><%=ig.getInterestgroup()%></td>
+				<td><%=ig.getInterest()%></td>
 			</tr>
 		</table>
 
