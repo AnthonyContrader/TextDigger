@@ -8,7 +8,6 @@ import it.contrader.converter.InterestgroupConverter;
 import it.contrader.dao.InterestgroupRepository;
 import it.contrader.dto.InterestgroupDTO;
 import it.contrader.model.Interestgroup;
-import it.contrader.model.Interest;
 
 @Service
 public class InterestgroupService extends AbstractService<Interestgroup, InterestgroupDTO> {

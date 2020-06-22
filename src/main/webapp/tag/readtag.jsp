@@ -24,10 +24,12 @@
 			<tr>
 				<th>ID</th>
 				<th>Tag</th>
+				<th>Description</th>
 			</tr>
 			<tr>
 				<td><%=t.getId()%></td>
 				<td><%=t.getTag()%></td>
+				<td><%=t.getDescription()%></td>
 			</tr>
 		</table>
 

@@ -30,9 +30,9 @@
       <input type="text" id="interest" name="interest" value=<%=i.getInterest()%>>
     </div>
   </div>
-     	<input type="hidden" name="id" value =<%=i.getId() %>>
-     	
-      <button type="submit" >Edit</button>
+     
+     <input type="hidden" name="id" value =<%=i.getId() %>>
+     <button type="submit" >Edit</button>
 </form>
 </div>
 <br>

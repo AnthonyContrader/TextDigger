@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.TagDTO;
 import it.contrader.service.TagService;
+import it.contrader.model.Description;
+import it.contrader.service.DescriptionService;
 
 @Controller
 @RequestMapping("/tag")
@@ -18,6 +20,9 @@ public class TagController {
 
 	@Autowired
 	private TagService service;
+	
+	@Autowired
+	private DescriptionService serviceDescription;
 
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -39,11 +44,12 @@ public class TagController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("tag") String tag) {
+	public String update(HttpServletRequest request, @RequestParam("description") Description description, @RequestParam("id") Long id, @RequestParam("tag") String tag) {
 
 		TagDTO dto = new TagDTO();
 		dto.setId(id);
 		dto.setTag(tag);
+		dto.setDescription(description);
 		service.update(dto);
 		setAll(request);
 		return "/tag/tags";
@@ -51,7 +57,7 @@ public class TagController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("tag") String tag) {
+	public String insert(HttpServletRequest request, @RequestParam("description") Description description, @RequestParam("tag") String tag) {
 		TagDTO dto = new TagDTO();
 		dto.setTag(tag);
 		service.insert(dto);
@@ -68,5 +74,6 @@ public class TagController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+		request.getSession().setAttribute("listDescription", serviceDescription.getAll());
 	}
 }

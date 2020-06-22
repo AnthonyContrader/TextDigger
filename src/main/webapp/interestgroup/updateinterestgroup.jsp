@@ -31,7 +31,6 @@ List<InterestDTO> list_i = (List<InterestDTO>) request.getSession().getAttribute
     <div class="col-75">
       <input type="text" id="interestgroup" name="interestgroup" value=<%=ig.getInterestgroup()%>>
     </div>
-    <input type="hidden" name="id" value =<%=ig.getId() %>>
   </div>
   
   <div class="row">
@@ -39,7 +38,7 @@ List<InterestDTO> list_i = (List<InterestDTO>) request.getSession().getAttribute
       <label for="interest">Interest</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="interest" name="interest">
  		<%
 			for (InterestDTO i : list_i) {
 		%>
@@ -51,6 +50,7 @@ List<InterestDTO> list_i = (List<InterestDTO>) request.getSession().getAttribute
     </div>
   </div>
   
+  <input type="hidden" name="id" value =<%=ig.getId() %>>
   <button type="submit" >Edit</button>
 </form>
 </div>

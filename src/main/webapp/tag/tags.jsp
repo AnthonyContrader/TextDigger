@@ -1,4 +1,4 @@
-<%@ page import="it.contrader.dto.TagDTO" import="java.util.*"%>
+<%@ page import="it.contrader.dto.TagDTO" import="it.contrader.dto.DescriptionDTO" import="java.util.*"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -19,6 +19,7 @@
 	<div class="main">
 		<%
 			List<TagDTO> list = (List<TagDTO>) request.getSession().getAttribute("list");
+			List<DescriptionDTO> descriptions = (List<DescriptionDTO>) request.getSession().getAttribute("descriptions");
 		%>
 
 		<br>
@@ -27,7 +28,6 @@
 			<tr>
 				<th>Tags</th>
 				<th>Descriptions</th>
-				<th>Search Connections</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -35,7 +35,7 @@
 				for (TagDTO t : list) {
 			%>
 			<tr>
-				<td><a href="/tag/read?id=<%=t.getId()%>"> <%=t.getTag()%> <%t.getDescription();%> <%t.getSearchconnections();%></a></td>
+				<td><a href="/tag/read?id=<%=t.getId()%>"> <%=t.getTag()%> <%t.getDescription();%></a></td>
 				<td><a href="/tag/preupdate?id=<%=t.getId()%>">Edit</a></td>
 				<td><a href="/tag/delete?id=<%=t.getId()%>">Delete</a></td>
 			</tr>
@@ -53,6 +53,21 @@
 					<input type="text" id="tag" name="tag"
 						placeholder="insert tag">
 				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-25">
+					<label for="description">Description</label>
+				</div>
+				<div class="col-75">
+		 			<select id="description" name="description">
+		 			<option value="" disabled selected>Select Description</option>
+ 					<% 			
+						for (DescriptionDTO d : descriptions) {
+							%> <option value="<%=d.getId()%>"><%=d.getDescription()%></option> <%
+						}%> 
+					</select>
+    			</div>
 			</div>
 			
 			<button type="submit">Insert</button>
