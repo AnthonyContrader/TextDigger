@@ -26,6 +26,8 @@
 		<table>
 			<tr>
 				<th>Interests</th>
+				<th>Interest Groups</th>
+				<th>Libraries</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -33,7 +35,7 @@
 				for (InterestDTO i : list) {
 			%>
 			<tr>
-				<td><a href="/interest/read?id=<%=i.getId()%>"> <%=i.getInterest()%></a></td>
+				<td><a href="/interest/read?id=<%=i.getId()%>"> <%=i.getInterest()%> <%=i.getInterestGroups()%> <%i.getLibraries();%></a></td>
 				<td><a href="/interest/preupdate?id=<%=i.getId()%>">Edit</a></td>
 				<td><a href="/interest/delete?id=<%=i.getId()%>">Delete</a></td>
 			</tr>
@@ -52,7 +54,6 @@
 						placeholder="insert interest">
 				</div>
 			</div>
-			
 			<button type="submit">Insert</button>
 		</form>
 

@@ -26,6 +26,8 @@
 		<table>
 			<tr>
 				<th>Tags</th>
+				<th>Descriptions</th>
+				<th>Search Connections</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -33,7 +35,7 @@
 				for (TagDTO t : list) {
 			%>
 			<tr>
-				<td><a href="/tag/read?id=<%=t.getId()%>"> <%=t.getTag()%></a></td>
+				<td><a href="/tag/read?id=<%=t.getId()%>"> <%=t.getTag()%> <%t.getDescription();%> <%t.getSearchconnections();%></a></td>
 				<td><a href="/tag/preupdate?id=<%=t.getId()%>">Edit</a></td>
 				<td><a href="/tag/delete?id=<%=t.getId()%>">Delete</a></td>
 			</tr>
