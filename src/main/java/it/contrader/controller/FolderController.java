@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.FolderDTO;
+import it.contrader.model.Description;
+import it.contrader.model.Library;
 import it.contrader.service.FolderService;
 
 @Controller
@@ -39,11 +41,14 @@ public class FolderController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
+			@RequestParam("library") Library library, @RequestParam("description") Description description) {
 
 		FolderDTO dto = new FolderDTO();
 		dto.setId(id);
 		dto.setName(name);
+		dto.setLibrary(library);
+		dto.setDescription(description);
 		folderService.update(dto);
 		setAll(request);
 		return "/folder/folders";
@@ -51,10 +56,13 @@ public class FolderController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name) {
+	public String insert(HttpServletRequest request, @RequestParam("name") String name,
+			@RequestParam("library") Library library, @RequestParam("description") Description description) {
 		FolderDTO dto = new FolderDTO();
 		dto.setName(name);
 		folderService.insert(dto);
+		dto.setLibrary(library);
+		dto.setDescription(description);
 		setAll(request);
 		return "/folder/folders";
 	}

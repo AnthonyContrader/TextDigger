@@ -13,7 +13,7 @@ public class DescriptionConverter extends AbstractConverter<Description, Descrip
 		Description description = null;
 		if(descriptionDto != null) {
 			description = new Description(descriptionDto.getId(), descriptionDto.getDescription(), descriptionDto.getFolder(),
-					descriptionDto.getLibrary(), descriptionDto.getDocument(), descriptionDto.getTags(), descriptionDto.getInterest());
+					descriptionDto.getLibrary(), descriptionDto.getDocument(), descriptionDto.getInterest());
 		}
 		return description;
 	}
@@ -23,7 +23,7 @@ public class DescriptionConverter extends AbstractConverter<Description, Descrip
 		DescriptionDTO descriptionDTO = null;
 		if(description != null) {
 			descriptionDTO = new DescriptionDTO(description.getId(), description.getDescription(), description.getFolder(),
-					description.getLibrary(), description.getDocument(), description.getTags(), description.getInterest());
+					description.getLibrary(), description.getDocument(), description.getInterest());
 		}
 		return descriptionDTO;
 	}

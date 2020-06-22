@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.LibraryDTO;
+import it.contrader.model.Description;
+import it.contrader.model.Interest;
 import it.contrader.service.LibraryService;
 
 @Controller
@@ -39,11 +41,14 @@ public class LibraryController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
+			@RequestParam("description") Description description, @RequestParam("interest") Interest interest) {
 
 		LibraryDTO dto = new LibraryDTO();
 		dto.setId(id);
 		dto.setName(name);
+		dto.setInterest(interest);
+		dto.setDescription(description);
 		libraryService.update(dto);
 		setAll(request);
 		return "/library/libraries";
@@ -51,10 +56,13 @@ public class LibraryController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name) {
+	public String insert(HttpServletRequest request, @RequestParam("name") String name,
+			@RequestParam("description") Description description, @RequestParam("interest") Interest interest) {
 		LibraryDTO dto = new LibraryDTO();
 		dto.setName(name);
 		libraryService.insert(dto);
+		dto.setInterest(interest);
+		dto.setDescription(description);
 		setAll(request);
 		return "/library/libraries";
 	}

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.DocumentDTO;
+import it.contrader.model.Description;
+import it.contrader.model.Folder;
+import it.contrader.model.User;
 import it.contrader.service.DocumentService;
 
 @Controller
@@ -40,19 +43,27 @@ public class DocumentController {
 	
 	@PostMapping("/update")
 	public String update(HttpServletRequest request , @RequestParam("id") Long id, @RequestParam ("text")
-	String text) {
+	String text, @RequestParam("user") User user,
+	@RequestParam("folder") Folder folder, @RequestParam("description") Description description) {
 		DocumentDTO documentDTO = new DocumentDTO();
 		documentDTO.setId(id);
 		documentDTO.setText(text);
+		documentDTO.setUser(user);
+		documentDTO.setFolder(folder);
+		documentDTO.setDescription(description);
 		documentService.update(documentDTO);
 		setAll(request);
 		return "/document/documents";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("text") String text) {
+	public String insert(HttpServletRequest request, @RequestParam("text") String text, @RequestParam("user") User user,
+			@RequestParam("folder") Folder folder, @RequestParam("description") Description description) {
 		DocumentDTO documentDTO = new DocumentDTO();
 		documentDTO.setText(text);
+		documentDTO.setUser(user);
+		documentDTO.setFolder(folder);
+		documentDTO.setDescription(description);
 		documentService.insert(documentDTO);
 		setAll(request);
 		return "/document/documents";

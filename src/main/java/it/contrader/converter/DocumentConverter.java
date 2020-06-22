@@ -12,7 +12,7 @@ public class DocumentConverter extends AbstractConverter<Document, DocumentDTO> 
 	public Document toEntity(DocumentDTO documentDto) {
 		Document document = null;
 		if(documentDto != null) {
-			document = new Document(documentDto.getId(), documentDto.getText(), documentDto.getSearchconnections(), documentDto.getUser(), documentDto.getFolder(), documentDto.getDescription());
+			document = new Document(documentDto.getId(), documentDto.getText(), documentDto.getUser(), documentDto.getFolder(), documentDto.getDescription());
 		}
 		return document;
 	}
@@ -22,7 +22,7 @@ public class DocumentConverter extends AbstractConverter<Document, DocumentDTO> 
 		
 		DocumentDTO documentDTO = null;
 		if(document != null) {
-			documentDTO = new DocumentDTO(document.getId(), document.getText(), document.getUser(), document.getFolder(),document.getDescription(), document.getSearchconnections());
+			documentDTO = new DocumentDTO(document.getId(), document.getText(), document.getUser(), document.getFolder(),document.getDescription());
 		}
 		return documentDTO;
 		

@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.DescriptionDTO;
+import it.contrader.model.Document;
+import it.contrader.model.Folder;
+import it.contrader.model.Interest;
+import it.contrader.model.Library;
 import it.contrader.service.DescriptionService;
 
 @Controller
@@ -40,19 +44,29 @@ public class DescriptionController {
 	
 	@PostMapping("/update")
 	public String update(HttpServletRequest request , @RequestParam("id") Long id, @RequestParam ("description")
-	String description) {
+	String description, @RequestParam("folder") Folder folder, @RequestParam("library") Library library, 
+	@RequestParam("document") Document document, @RequestParam("interest") Interest interest) {
 		DescriptionDTO descriptionDTO = new DescriptionDTO();
 		descriptionDTO.setId(id);
 		descriptionDTO.setDescription(description);
+		descriptionDTO.setInterest(interest);
+		descriptionDTO.setFolder(folder);
+		descriptionDTO.setLibrary(library);
+		descriptionDTO.setDocument(document);
 		descriptionService.update(descriptionDTO);
 		setAll(request);
 		return "/description/descriptions";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("description") String description) {
+	public String insert(HttpServletRequest request, @RequestParam("description") String description, @RequestParam("folder") Folder folder, @RequestParam("library") Library library, 
+			@RequestParam("document") Document document, @RequestParam("interest") Interest interest) {
 		DescriptionDTO descriptionDTO = new DescriptionDTO();
 		descriptionDTO.setDescription(description);
+		descriptionDTO.setInterest(interest);
+		descriptionDTO.setFolder(folder);
+		descriptionDTO.setLibrary(library);
+		descriptionDTO.setDocument(document);
 		descriptionService.insert(descriptionDTO);
 		setAll(request);
 		return "/description/descriptions";
