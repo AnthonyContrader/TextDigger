@@ -23,7 +23,5 @@ public class UserDTO {
 
 	private Usertype usertype;
 	
-	private List<Document> documentsList;
-	
 
 }

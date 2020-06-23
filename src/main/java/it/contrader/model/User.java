@@ -36,7 +36,5 @@ public class User {
 
 	private Usertype usertype;
 	
-	@OneToMany (mappedBy = "user")
-	private List<Document> documentList;
 	
 }
