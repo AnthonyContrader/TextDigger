@@ -1,7 +1,6 @@
 <%@page import="it.contrader.dto.SubscribeDTO"%>
 <%@page import="it.contrader.dto.UserDTO"%>
-<%@page import="it.contrader.dto.InterestgroupDTO"%>
-<%@ page import="it.contrader.dto.FolderDTO" import="java.util.*"%>
+<%@page import="it.contrader.dto.InterestgroupDTO" import="java.util.*"%>
 <html>
 <head>
 <meta charset="utf-8">
