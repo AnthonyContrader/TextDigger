@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="it.contrader.dto.DescriptionDTO"
- import="it.contrader.dto.FolderDTO" 
- import="it.contrader.dto.LibraryDTO" 
- import="it.contrader.dto.DocumentDTO"
- import="it.contrader.dto.InterestDTO"
  import="java.util.*"%>
+ <%@page import="it.contrader.dto.LibraryDTO"  import="java.util.*" %>
+ <%@page import="it.contrader.dto.FolderDTO" import="java.util.*" %>
+ <%@page import="it.contrader.dto.FolderDTO" import="java.util.*" %>
+ <%@page import="it.contrader.dto.DocumentDTO" import="java.util.*"%>
+  <%@page import="it.contrader.dto.InterestDTO" import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>

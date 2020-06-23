@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="it.contrader.dto.FolderDTO"
-    import="java.util.*" import="it.contrader.dto.DescriptionDTO"
-    import="it.contrader.dto.LibraryDTO"%>
+    import="java.util.*"%>
+<%@page import ="it.contrader.dto.UserDTO" %>
+<%@page import="it.contrader.dto.LibraryDTO" %>
+<%@page import="it.contrader.dto.DescriptionDTO"%>
 <!DOCTYPE html>
 <html>
 <head>

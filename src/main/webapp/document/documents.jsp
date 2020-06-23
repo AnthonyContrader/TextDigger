@@ -1,5 +1,7 @@
-<%@ page import="it.contrader.dto.DocumentDTO" import="java.util.*" 
-import ="it.contrader.dto.UserDTO" import="it.contrader.dto.FolderDTO" import="it.contrader.dto.DescriptionDTO"%>
+<%@ page import="it.contrader.dto.DocumentDTO" import="java.util.*"%>
+<%@page import ="it.contrader.dto.UserDTO" %>
+<%@page import="it.contrader.dto.FolderDTO" %>
+<%@page import="it.contrader.dto.DescriptionDTO" %>
 <html>
 <head>
 <meta charset="utf-8">
