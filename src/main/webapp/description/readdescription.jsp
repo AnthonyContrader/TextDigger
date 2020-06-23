@@ -29,6 +29,11 @@
 			<tr>
 				<td><%=d.getId()%></td>
 				<td><%=d.getDescription()%></td>
+				<td><%=d.getInterest()%></td>
+				<td><%=d.getDocument()%></td>
+				<td><%=d.getFolder()%></td>
+				<td><%=d.getLibrary()%></td>
+				<td></td>
 			</tr>
 		</table>
 

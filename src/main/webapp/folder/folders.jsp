@@ -1,11 +1,13 @@
-<%@ page import="it.contrader.dto.FolderDTO" import="java.util.*"%>
+<%@page import="it.contrader.dto.DescriptionDTO"%>
+<%@ page import="it.contrader.dto.FolderDTO" import="java.util.*"
+import="it.contrader.dto.LibraryDTO" import="it.contrader.dto.DescripitonDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Interest Management">
-<meta name="author" content="Marco Fellone">
+<meta name="description" content="Folder Management">
+<meta name="author" content="Marcello Nichele">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>Folder Manager</title>
 
@@ -19,6 +21,8 @@
 	<div class="main">
 		<%
 			List<FolderDTO> list = (List<FolderDTO>) request.getSession().getAttribute("list");
+			List<DescriptionDTO> descriptions = (List<DescriptionDTO>) request.getSession().getAttribute("descriptions");
+			List<LibraryDTO> libraries = (List<LibraryDTO>) request.getSession().getAttribute("libraries");
 		%>
 
 		<br>
@@ -26,17 +30,19 @@
 		<table>
 			<tr>
 				<th>Folders</th>
-				<th></th>
-				<th></th>
+				<th>Descriptions</th>
+				<th>Libraries</th>
 			</tr>
 			<%
-				for (FolderDTO f : list) {
+				for (FolderDTO fdto : list) {
 			%>
 			<tr>
-				<td><a href="/folder/read?id=<%=f.getId()%>"> <%=f.getName()%>
+				<td><a href="/folder/read?id=<%=fdto.getId()%>"> <%=fdto.getName()%>
 				</a></td>
-				<td><a href="/folder/preupdate?id=<%=f.getId()%>">Edit</a></td>
-				<td><a href="/folder/delete?id=<%=f.getId()%>">Delete</a></td>
+				<td><%fdto.getDescription().getId(); fdto.getDescription().getDescription();%></td>
+				<td><%fdto.getLibrary().getId(); fdto.getLibrary().getName();%></td>
+				<td><a href="/folder/preupdate?id=<%=fdto.getId()%>">Edit</a></td>
+				<td><a href="/folder/delete?id=<%=fdto.getId()%>">Delete</a></td>
 			</tr>
 			<%
 				}
@@ -52,6 +58,36 @@
 					<input type="text" id="name" name="name"
 						placeholder="insert folder name">
 				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-25">
+					<label for="description">Description</label>
+				</div>
+				<div class="col-75">
+		 			<select id="description" name="description" required>
+		 			<option value="" disabled selected>Select Description</option>
+ 					<% 			
+						for (DescriptionDTO dto: descriptions) {
+							%> <option value="<%=dto.getId()%>"><%=dto.getDescription()%></option> <%
+						}%> 
+					</select>
+    			</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-25">
+					<label for="library">Library</label>
+				</div>
+				<div class="col-75">
+		 			<select id="library" name="library" required>
+		 			<option value="" disabled selected>Select Library</option>
+ 					<% 			
+						for (LibraryDTO dto: libraries) {
+							%> <option value="<%=dto.getId()%>"><%=dto.getName()%></option> <%
+						}%> 
+					</select>
+    			</div>
 			</div>
 			
 			<button type="submit">Insert</button>

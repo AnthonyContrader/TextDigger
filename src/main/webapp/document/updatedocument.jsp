@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.DocumentDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.DocumentDTO"
+    import="java.util.*" import="it.contrader.dto.FolderDTO"
+    import="it.contrader.dto.UserDTO" import="it.contrader.dto.DescriptionDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,10 @@
 <br>
 <div class="main">
 
-<%DocumentDTO d = (DocumentDTO) request.getSession().getAttribute("dto");%>
+<%DocumentDTO d = (DocumentDTO) request.getSession().getAttribute("dto");
+List<UserDTO> users = (List<UserDTO>) request.getSession().getAttribute("users");
+List<FolderDTO> folders = (List<FolderDTO>) request.getSession().getAttribute("folders");
+List<DescriptionDTO> descriptions = (List<DescriptionDTO>) request.getSession().getAttribute("descriptions");%>
 
 
 <form id="floatleft" action="/document/update" method="post">
@@ -29,6 +34,54 @@
     </div>
     <div class="col-75">
       <input type="text" id="text" name="text" value=<%=d.getText()%>>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="user">User</label>
+    </div>
+    <div class="col-75">
+     <select id="tool" name="tool">
+ 		<%
+			for (UserDTO user : users) {
+		%>
+			<option value="<%=user.getId()%>"  <%if(user.getId()==d.getUser().getId()) {%>selected<%} %>  ><%=user.getUsername()%></option>
+		<%
+			}
+		%>
+	</select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="folder">Folder</label>
+    </div>
+    <div class="col-75">
+     <select id="tool" name="tool">
+ 		<%
+			for (FolderDTO folder : folders) {
+		%>
+			<option value="<%=folder.getId()%>"  <%if(folder.getId()==d.getFolder().getId()) {%>selected<%} %>  ><%=folder.getName()%></option>
+		<%
+			}
+		%>
+	</select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="description">Description</label>
+    </div>
+    <div class="col-75">
+     <select id="tool" name="tool">
+ 		<%
+			for (DescriptionDTO desc : descriptions) {
+		%>
+			<option value="<%=desc.getId()%>"  <%if(desc.getId()==d.getDescription().getId()) {%>selected<%} %>  ><%=desc.getDescription()%></option>
+		<%
+			}
+		%>
+	</select>
     </div>
   </div>
      	<input type="hidden" name="id" value =<%=d.getId() %>>

@@ -76,8 +76,8 @@
 		 			<select id="folder" name="folder" required>
 		 			<option value="" disabled selected>Select Folder</option>
  					<% 			
-						for (FolderDTO f : folders) {
-							%> <option value="<%=f.getId()%>"><%=f.getName()%></option> <%
+						for (FolderDTO fdto : folders) {
+							%> <option value="<%=fdto.getId()%>"><%=fdto.getName()%></option> <%
 						}%> 
 					</select>
     			</div>

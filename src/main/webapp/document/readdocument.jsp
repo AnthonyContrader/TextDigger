@@ -29,6 +29,9 @@
 			<tr>
 				<td><%=d.getId()%></td>
 				<td><%=d.getText()%></td>
+				<td><%=d.getUser()%></td>
+				<td><%=d.getFolder()%></td>
+				<td><%=d.getDescription()%></td>
 			</tr>
 		</table>
 

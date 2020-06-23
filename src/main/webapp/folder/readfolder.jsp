@@ -24,10 +24,14 @@
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
+				<th>Description</th>
+				<th>Library</th>
 			</tr>
 			<tr>
 				<td><%=f.getId()%></td>
 				<td><%=f.getName()%></td>
+				<td><%=f.getDescription()%></td>
+				<td><%=f.getLibrary()%></td>
 			</tr>
 		</table>
 

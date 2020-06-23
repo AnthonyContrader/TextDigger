@@ -25,7 +25,7 @@
 <div class="main">
 
 <%DescriptionDTO d = (DescriptionDTO) request.getSession().getAttribute("dto");
-List<FolderDTO> f = (List<FolderDTO>) request.getSession().getAttribute("folders");
+List<FolderDTO> fdto = (List<FolderDTO>) request.getSession().getAttribute("folders");
 List<LibraryDTO> l = (List<LibraryDTO>) request.getSession().getAttribute("libraries");
 List<DocumentDTO> documents = (List<DocumentDTO>) request.getSession().getAttribute("documents");
 List<InterestDTO> list_i = (List<InterestDTO>) request.getSession().getAttribute("interests");%>
@@ -40,18 +40,14 @@ List<InterestDTO> list_i = (List<InterestDTO>) request.getSession().getAttribute
       <input type="text" id="description" name="description" value=<%=d.getDescription()%>>
     </div>
   </div>
-     	<input type="hidden" name="id" value =<%=d.getId() %>>
-      <button type="submit" >Edit</button>
-</form>
-
-  <div class="row">
+    <div class="row">
     <div class="col-25">
       <label for="folder">Folder</label>
     </div>
     <div class="col-75">
      <select id="tool" name="tool">
  		<%
-			for (FolderDTO folder : f) {
+			for (FolderDTO folder : fdto) {
 		%>
 			<option value="<%=folder.getId()%>"  <%if(folder.getId()==d.getFolder().getId()) {%>selected<%} %>  ><%=folder.getName()%></option>
 		<%
@@ -114,7 +110,9 @@ List<InterestDTO> list_i = (List<InterestDTO>) request.getSession().getAttribute
 	</select>
     </div>
   </div>
-
+     	<input type="hidden" name="id" value =<%=d.getId() %>>
+      <button type="submit" >Edit</button>
+</form>
 </div>
 <br>
 <%@ include file="../css/footer.jsp" %>	
