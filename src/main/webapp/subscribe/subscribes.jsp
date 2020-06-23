@@ -29,9 +29,9 @@
 
 		<table>
 			<tr>
-				<th>IDSubscribe</th>
-				<th>IDUser</th>
-				<th>IDInterestGroup</th>
+				<th>ID Subscribe</th>
+				<th>ID User</th>
+				<th>ID InterestGroup</th>
 			</tr>
 			<%
 				for (SubscribeDTO b : list) {
@@ -39,7 +39,7 @@
 			<tr>
 				<td><a href="/subscribe/read?id=<%=b.getId()%>">
 				</a></td>
-				<td><%=b.getUser().getId()%></td>
+				<td><%=b.getUser().getId() %></td>
 				<td><%=b.getInterestgroup().getId()%></td>
 				<td><a href="/subscribe/delete?id=<%=b.getId()%>">Delete</a></td>
 			</tr>
@@ -54,7 +54,7 @@
 					<label for="id">Subscribe Id</label>
 				</div>
 				<div class="col-75">
-					<input type="number" id="id" name="id"
+					<input type="text" id="id" name="id"
 						placeholder="insert subscribe id">
 				</div>
 			</div>
