@@ -1,4 +1,6 @@
 <%@page import="it.contrader.dto.SearchConnectionDTO"%>
+<%@ page import="it.contrader.dto.DocumentDTO" import="java.util.*"%>
+<%@ page import="it.contrader.dto.TagDTO" import="java.util.*"%>
 <%@ page import="it.contrader.dto.UserDTO" import="java.util.*"%>
 <html>
 <head>
@@ -20,6 +22,8 @@
 	<div class="main">
 		<%
 			List<SearchConnectionDTO> list = (List<SearchConnectionDTO>) request.getSession().getAttribute("list");
+			List<DocumentDTO> documents = (List<DocumentDTO>) request.getSession().getAttribute("documents");
+			List<TagDTO> tags = (List<TagDTO>) request.getSession().getAttribute("tags");
 		%>
 
 		<br>
@@ -48,30 +52,22 @@
 		</table>
 
 
-<!-- 
+ 
 		<form id="floatright" action="/searchconnection/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="doc">IdDocument</label>
+					<label for="doc"> SearchConnection Id</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="doc" name="IdDocument"
-						placeholder="insert IdDocument">
+					<input type="text" id="doc" name="IdSearchConnection"
+						placeholder="insert Id SearchConnection">
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="tag">IdTag</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="tag" name="IdTag"
-						placeholder="insert IdTag">
-				</div>
-			</div>
+			
 
 			<button type="submit">Insert</button>
 		</form>
-		 -->
+		
 
 	</div>
 	<br>

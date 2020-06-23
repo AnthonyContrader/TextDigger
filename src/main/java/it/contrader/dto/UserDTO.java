@@ -25,6 +25,5 @@ public class UserDTO {
 	
 	private List<Document> documentsList;
 	
-	private List<Subscribe> subscribes;
 
 }

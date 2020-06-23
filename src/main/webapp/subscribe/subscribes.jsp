@@ -1,4 +1,6 @@
 <%@page import="it.contrader.dto.SubscribeDTO"%>
+<%@page import="it.contrader.dto.UserDTO"%>
+<%@page import="it.contrader.dto.InterestgroupDTO"%>
 <%@ page import="it.contrader.dto.FolderDTO" import="java.util.*"%>
 <html>
 <head>
@@ -20,6 +22,8 @@
 	<div class="main">
 		<%
 			List<SubscribeDTO> list = (List<SubscribeDTO>) request.getSession().getAttribute("list");
+		   	List<UserDTO> users = (List<UserDTO>) request.getSession().getAttribute("users");
+		   	List<InterestgroupDTO> interestgroups = (List<InterestgroupDTO>) request.getSession().getAttribute("interestgroups");
 		%>
 
 		<br>
@@ -44,7 +48,7 @@
 				}
 			%>
 		</table>
-<!-- 
+ 
 		<form id="floatright" action="/subscribe/insert" method="post">
 			<div class="row">
 				<div class="col-25">
@@ -58,7 +62,7 @@
 			
 			<button type="submit">Insert</button>
 		</form>
--->
+
 
 	</div>
 	<br>
