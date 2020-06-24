@@ -34,7 +34,7 @@
 				for (InterestgroupDTO ig : list) {
 			%>
 			<tr>
-				<td><a href="/interestgroup/read?id=<%=ig.getId()%>"> <%=ig.getInterestgroup()%> <%ig.getInterest().getInterest();%></a></td>
+				<td><a href="/interestgroup/read?id=<%=ig.getId()%>"> <%=ig.getInterestgroup()%> <%=ig.getInterest().getInterest()%></a></td>
 				<td><a href="/interestgroup/preupdate?id=<%=ig.getId()%>">Edit</a></td>
 				<td><a href="/interestgroup/delete?id=<%=ig.getId()%>">Delete</a></td>
 			</tr>

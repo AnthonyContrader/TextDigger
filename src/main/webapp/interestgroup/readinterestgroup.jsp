@@ -29,7 +29,7 @@
 			<tr>
 				<td><%=ig.getId()%></td>
 				<td><%=ig.getInterestgroup()%></td>
-				<td><%=ig.getInterest()%></td>
+				<td><%=ig.getInterest().getInterest()%></td>
 			</tr>
 		</table>
 

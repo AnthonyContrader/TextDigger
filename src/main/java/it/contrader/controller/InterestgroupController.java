@@ -75,6 +75,6 @@ public class InterestgroupController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
-		request.getSession().setAttribute("listInterest", serviceInterest.getAll());
+		request.getSession().setAttribute("interests", serviceInterest.getAll());
 	}
 }
