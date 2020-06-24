@@ -74,6 +74,6 @@ public class TagController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
-		request.getSession().setAttribute("listDescription", serviceDescription.getAll());
+		request.getSession().setAttribute("descriptions", serviceDescription.getAll());
 	}
 }

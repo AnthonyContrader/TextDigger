@@ -29,7 +29,7 @@
 			<tr>
 				<td><%=t.getId()%></td>
 				<td><%=t.getTag()%></td>
-				<td><%=t.getDescription()%></td>
+				<td><%=t.getDescription().getDescription()%></td>
 			</tr>
 		</table>
 
