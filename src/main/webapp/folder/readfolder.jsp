@@ -30,8 +30,8 @@
 			<tr>
 				<td><%=f.getId()%></td>
 				<td><%=f.getName()%></td>
-				<td><%=f.getDescription()%></td>
-				<td><%=f.getLibrary()%></td>
+				<td><%=f.getDescription().getDescription()%></td>
+				<td><%=f.getLibrary().getName()%></td>
 			</tr>
 		</table>
 

@@ -41,8 +41,8 @@
 			<tr>
 				<td><a href="/folder/read?id=<%=fdto.getId()%>"> <%=fdto.getName()%>
 				</a></td>
-				<td><%fdto.getDescription().getId(); fdto.getDescription().getDescription();%></td>
-				<td><%fdto.getLibrary().getId(); fdto.getLibrary().getName();%></td>
+				<td><%=fdto.getDescription().getId()%> <%=fdto.getDescription().getDescription()%></td>
+				<td><%=fdto.getLibrary().getId()%> <%=fdto.getLibrary().getName()%></td>
 				<td><a href="/folder/preupdate?id=<%=fdto.getId()%>">Edit</a></td>
 				<td><a href="/folder/delete?id=<%=fdto.getId()%>">Delete</a></td>
 			</tr>

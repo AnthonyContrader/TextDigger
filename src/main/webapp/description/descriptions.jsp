@@ -43,10 +43,10 @@
 				<td><a href="/description/read?id=<%=d.getId()%>"> 
 				<%=d.getDescription()%>
 				</a></td>
-				<td><%d.getFolder().getId(); d.getFolder().getName();%></td>
-				<td><%d.getLibrary().getId();d.getLibrary().getName();%></td>
-				<td><%d.getDocument().getId();d.getDocument().getDescription();%></td>
-				<td><%d.getInterest().getId();d.getInterest().getInterest();%></td>
+				<td><%=d.getFolder().getId()%> <%=d.getFolder().getName()%></td>
+				<td><%=d.getLibrary().getId()%> <%=d.getLibrary().getName()%></td>
+				<td><%=d.getDocument().getId()%> <%=d.getDocument().getDescription()%></td>
+				<td><%=d.getInterest().getId()%> <%=d.getInterest().getInterest()%></td>
 				<td><a href="/description/preupdate?id=<%=d.getId()%>">Edit</a></td>
 
 

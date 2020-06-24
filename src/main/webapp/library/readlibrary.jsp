@@ -31,7 +31,7 @@
 				<td><%=l.getId()%></td>
 				<td><%=l.getName()%></td>
 				<td><%=l.getDescription().getId()%> <%=l.getDescription().getDescription()%></td>
-				<td><%l.getInterest().getId(); l.getInterest().getInterest();%></td>
+				<td><%=l.getInterest().getId()%> <%=l.getInterest().getInterest()%></td>
 			</tr>
 		</table>
 

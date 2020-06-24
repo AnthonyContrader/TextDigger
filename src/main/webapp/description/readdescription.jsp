@@ -24,15 +24,19 @@
 		<table>
 			<tr>
 				<th>ID</th>
-				<th>Text</th>
+				<th>Description</th>
+				<th>Interest</th>
+				<th>Document</th>
+				<th>Folder</th>
+				<th>Library</th>
 			</tr>
 			<tr>
 				<td><%=d.getId()%></td>
 				<td><%=d.getDescription()%></td>
-				<td><%=d.getInterest()%></td>
-				<td><%=d.getDocument()%></td>
-				<td><%=d.getFolder()%></td>
-				<td><%=d.getLibrary()%></td>
+				<td><%=d.getInterest().getInterest()%></td>
+				<td><%=d.getDocument().getText()%></td>
+				<td><%=d.getFolder().getName()%></td>
+				<td><%=d.getLibrary().getName()%></td>
 				<td></td>
 			</tr>
 		</table>

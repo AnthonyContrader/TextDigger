@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.LibraryDTO;
 import it.contrader.model.Description;
 import it.contrader.model.Interest;
+import it.contrader.service.DescriptionService;
+import it.contrader.service.InterestService;
 import it.contrader.service.LibraryService;
 
 @Controller
@@ -19,7 +21,13 @@ import it.contrader.service.LibraryService;
 public class LibraryController {
 	
 	@Autowired
-	LibraryService libraryService;
+	private LibraryService libraryService;
+	
+	@Autowired
+	private DescriptionService descriptionService;
+	
+	@Autowired
+	private InterestService interestService;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -76,6 +84,8 @@ public class LibraryController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", libraryService.getAll());
+		request.getSession().setAttribute("descriptions", descriptionService.getAll());
+		request.getSession().setAttribute("interests", interestService.getAll());
 	}
 
 }

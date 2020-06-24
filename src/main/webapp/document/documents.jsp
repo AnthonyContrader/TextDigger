@@ -40,9 +40,9 @@
 				<td><a href="/document/read?id=<%=d.getId()%>"> 
 				<%=d.getText()%>
 				</a></td>
-				<td><%d.getUser().getId(); d.getUser().getUsername(); %></td>
-				<td><%d.getFolder().getId(); d.getFolder().getName(); %></td>
-				<td><%d.getDescription().getId(); d.getDescription().getDescription(); %></td>
+				<td><%=d.getUser().getId()%> <%=d.getUser().getUsername()%></td>
+				<td><%=d.getFolder().getId()%> <%=d.getFolder().getName()%></td>
+				<td><%=d.getDescription().getId()%> <%=d.getDescription().getDescription()%></td>
 				<td><a href="/document/preupdate?id=<%=d.getId()%>">Edit</a></td>
 
 

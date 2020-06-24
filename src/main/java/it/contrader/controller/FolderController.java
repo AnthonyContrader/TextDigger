@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.FolderDTO;
 import it.contrader.model.Description;
 import it.contrader.model.Library;
+import it.contrader.service.DescriptionService;
 import it.contrader.service.FolderService;
+import it.contrader.service.LibraryService;
 
 @Controller
 @RequestMapping("/folder")
@@ -20,6 +22,12 @@ public class FolderController {
 	
 	@Autowired
 	private FolderService folderService;
+	
+	@Autowired
+	private LibraryService libraryService;
+	
+	@Autowired
+	private DescriptionService descriptionService;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -76,6 +84,8 @@ public class FolderController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", folderService.getAll());
+		request.getSession().setAttribute("descriptions", descriptionService.getAll());
+		request.getSession().setAttribute("libraries", libraryService.getAll());
 	}
 
 }

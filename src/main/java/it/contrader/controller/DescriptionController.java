@@ -15,6 +15,10 @@ import it.contrader.model.Folder;
 import it.contrader.model.Interest;
 import it.contrader.model.Library;
 import it.contrader.service.DescriptionService;
+import it.contrader.service.DocumentService;
+import it.contrader.service.FolderService;
+import it.contrader.service.InterestService;
+import it.contrader.service.LibraryService;
 
 @Controller
 @RequestMapping("/description")
@@ -22,6 +26,18 @@ public class DescriptionController {
 	
 	@Autowired
 	private DescriptionService descriptionService;
+	
+	@Autowired
+	private FolderService folderService;
+	
+	@Autowired
+	private LibraryService libraryService;
+	
+	@Autowired
+	private DocumentService documentService;
+	
+	@Autowired
+	private InterestService interestService;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -82,6 +98,10 @@ public class DescriptionController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", descriptionService.getAll());
+		request.getSession().setAttribute("folders", folderService.getAll());
+		request.getSession().setAttribute("libraries", libraryService.getAll());
+		request.getSession().setAttribute("documents", documentService.getAll());
+		request.getSession().setAttribute("interests", interestService.getAll());
 	}
 
 }

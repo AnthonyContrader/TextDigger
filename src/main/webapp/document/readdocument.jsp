@@ -25,13 +25,16 @@
 			<tr>
 				<th>ID</th>
 				<th>Text</th>
+				<th>User</th>
+				<th>Folder</th>
+				<th>Description</th>
 			</tr>
 			<tr>
 				<td><%=d.getId()%></td>
 				<td><%=d.getText()%></td>
-				<td><%=d.getUser()%></td>
-				<td><%=d.getFolder()%></td>
-				<td><%=d.getDescription()%></td>
+				<td><%=d.getUser().getUsername()%></td>
+				<td><%=d.getFolder().getName()%></td>
+				<td><%=d.getDescription().getDescription()%></td>
 			</tr>
 		</table>
 

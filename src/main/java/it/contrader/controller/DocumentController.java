@@ -13,7 +13,10 @@ import it.contrader.dto.DocumentDTO;
 import it.contrader.model.Description;
 import it.contrader.model.Folder;
 import it.contrader.model.User;
+import it.contrader.service.DescriptionService;
 import it.contrader.service.DocumentService;
+import it.contrader.service.FolderService;
+import it.contrader.service.UserService;
 
 @Controller
 @RequestMapping("/document")
@@ -21,6 +24,15 @@ public class DocumentController {
 	
 	@Autowired
 	private DocumentService documentService;
+	
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private FolderService folderService;
+	
+	@Autowired
+	private DescriptionService descriptionService;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -79,6 +91,9 @@ public class DocumentController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", documentService.getAll());
+		request.getSession().setAttribute("users", userService.getAll());
+		request.getSession().setAttribute("folders", folderService.getAll());
+		request.getSession().setAttribute("descriptions", descriptionService.getAll());
 	}
 }
 
