@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.SearchConnectionDTO;
+import it.contrader.model.Document;
+import it.contrader.model.Tag;
+import it.contrader.service.DocumentService;
 import it.contrader.service.SearchConnectionService;
+import it.contrader.service.TagService;
 
 @Controller
 @RequestMapping("/searchconnection")
@@ -18,6 +22,12 @@ public class SearchConnectionController {
 	
 	@Autowired
 	private SearchConnectionService searchconnectionService;
+	
+	@Autowired
+	private TagService serviceTag;
+	
+	@Autowired
+	private DocumentService serviceDocument;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -39,18 +49,22 @@ public class SearchConnectionController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request , @RequestParam("id") Long id) {
+	public String update(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("id") Long id, @RequestParam("document") Document document) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
 		searchConnectionDTO.setId(id);
+		searchConnectionDTO.setTag(tag);
+		searchConnectionDTO.setDocument(document);
 		searchconnectionService.update(searchConnectionDTO);
 		setAll(request);
 		return "searchconnection/searchconnections";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request,@RequestParam("id") Long id) {
+	public String insert(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("id") Long id, @RequestParam("document") Document document) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
 		searchConnectionDTO.setId(id);
+		searchConnectionDTO.setTag(tag);
+		searchConnectionDTO.setDocument(document);
 		searchconnectionService.insert(searchConnectionDTO);
 		setAll(request);
 		return "searchconnection/searchconnections";
@@ -66,6 +80,8 @@ public class SearchConnectionController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", searchconnectionService.getAll());
+		request.getSession().setAttribute("tags", searchconnectionService.getAll());
+		request.getSession().setAttribute("documents",searchconnectionService.getAll());
 	}
 }
 

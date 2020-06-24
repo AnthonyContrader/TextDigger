@@ -1,7 +1,7 @@
 <%@page import="it.contrader.dto.SearchConnectionDTO"%>
 <%@ page import="it.contrader.dto.DocumentDTO" import="java.util.*"%>
 <%@ page import="it.contrader.dto.TagDTO" import="java.util.*"%>
-<%@ page import="it.contrader.dto.UserDTO" import="java.util.*"%>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -31,8 +31,8 @@
 		<table>
 			<tr>
 				<th>IdSearchConnection</th>
-				<th>IdDocument</th>
-				<th>IdTag</th>
+				<th>Document</th>
+				<th>Tag</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -40,10 +40,8 @@
 				for (SearchConnectionDTO s : list) {
 			%>
 			<tr>
-				<td><a href="/searchconnection/read?id=<%=s.getId()%>">
-				</a></td>
-				<td><%=s.getTag().getId()%></td>
-				<td><%=s.getDocument().getId()%></td>
+				
+				<td><a href="/searchconnection/read?id=<%=s.getId()%>"><%=s.getTag().getTag()%><%=s.getDocument().getText()%></a></td>
 				
 			</tr>
 			<%
@@ -56,14 +54,43 @@
 		<form id="floatright" action="/searchconnection/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="doc"> SearchConnection Id</label>
+					<label for="doc"> Search Connection </label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="doc" name="IdSearchConnection"
-						placeholder="insert Id SearchConnection">
+					<input type="text" id="doc" name="SearchConnection"
+						placeholder="insert SearchConnection">
 				</div>
 			</div>
 			
+			<div class="row">
+				<div class="col-25">
+					<label for="tag">Tag</label>
+				</div>
+				<div class="col-75">
+		 			<select id="tag" name="tag" required>
+		 			<option value="" disabled selected>Select Tag</option>
+ 					<% 			
+						for (TagDTO t : tags) {
+							%> <option value="<%=t.getId()%>"><%=t.getTag()%></option> <%
+						}%> 
+					</select>
+    			</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-25">
+					<label for="document">Document</label>
+				</div>
+				<div class="col-75">
+		 			<select id="document" name="document" required>
+		 			<option value="" disabled selected>Select Document</option>
+ 					<% 			
+						for (DocumentDTO d : documents) {
+							%> <option value="<%=d.getId()%>"><%=d.getText()%></option> <%
+						}%> 
+					</select>
+    			</div>
+			</div>
 
 			<button type="submit">Insert</button>
 		</form>

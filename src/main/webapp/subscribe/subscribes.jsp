@@ -1,12 +1,12 @@
-<%@page import="it.contrader.dto.SubscribeDTO"%>
-<%@page import="it.contrader.dto.UserDTO"%>
+<%@page import="it.contrader.dto.SubscribeDTO" import="java.util.*"%>
+<%@page import="it.contrader.dto.UserDTO" import="java.util.*"%>
 <%@page import="it.contrader.dto.InterestgroupDTO" import="java.util.*"%>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Interestgroup Management">
+<meta name="description" content="Subscribe Management">
 <meta name="author" content="Vittorio Esposito">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>Subscribe Manager</title>
@@ -21,8 +21,8 @@
 	<div class="main">
 		<%
 			List<SubscribeDTO> list = (List<SubscribeDTO>) request.getSession().getAttribute("list");
-		   	List<UserDTO> users = (List<UserDTO>) request.getSession().getAttribute("users");
-		   	List<InterestgroupDTO> interestgroups = (List<InterestgroupDTO>) request.getSession().getAttribute("interestgroups");
+			List<UserDTO> users = (List<UserDTO>) request.getSession().getAttribute("users");
+			List<InterestgroupDTO> interestgroups = (List<InterestgroupDTO>) request.getSession().getAttribute("interestgroups");
 		%>
 
 		<br>
@@ -30,17 +30,14 @@
 		<table>
 			<tr>
 				<th>ID Subscribe</th>
-				<th>ID User</th>
-				<th>ID InterestGroup</th>
+				<th>User</th>
+				<th>InterestGroup</th>
 			</tr>
 			<%
 				for (SubscribeDTO b : list) {
 			%>
 			<tr>
-				<td><a href="/subscribe/read?id=<%=b.getId()%>">
-				</a></td>
-				<td><%=b.getUser().getId() %></td>
-				<td><%=b.getInterestgroup().getId()%></td>
+				<td><a href="/subscribe/read?id=<%=b.getId()%>"><%=b.getUser().getUsername() %> <%=b.getInterestgroup().getInterestgroup()%></a></td>			
 				<td><a href="/subscribe/delete?id=<%=b.getId()%>">Delete</a></td>
 			</tr>
 			<%
@@ -54,9 +51,39 @@
 					<label for="id">Subscribe Id</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="id" name="id"
+					<input type="number" id="id" name="id Subscribe"
 						placeholder="insert subscribe id">
 				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-25">
+					<label for="user">User</label>
+				</div>
+				<div class="col-75">
+		 			<select id="user" name="user" required>
+		 			<option value="" disabled selected>Select User</option>
+ 					<% 			
+						for (UserDTO u : users) {
+							%> <option value="<%=u.getId()%>"><%=u.getUsername()%></option> <%
+						}%> 
+					</select>
+    			</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-25">
+					<label for="interestgroup">Interestgroup</label>
+				</div>
+				<div class="col-75">
+		 			<select id="interestgroup" name="interestgroup" required>
+		 			<option value="" disabled selected>Select InterestGroup</option>
+ 					<% 			
+						for (InterestgroupDTO g : interestgroups) {
+							%> <option value="<%=g.getId()%>"><%=g.getInterestgroup()%></option> <%
+						}%> 
+					</select>
+    			</div>
 			</div>
 			
 			<button type="submit">Insert</button>
