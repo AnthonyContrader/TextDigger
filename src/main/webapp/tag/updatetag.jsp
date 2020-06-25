@@ -42,7 +42,7 @@ List<DescriptionDTO> list_d = (List<DescriptionDTO>) request.getSession().getAtt
  		<%
 			for (DescriptionDTO d : list_d) {
 		%>
-			<option value="<%=d.getId()%>"  <%if(d.getId()==t.getDescription().getId()) {%>selected<%} %>  ><%=d.getInterest()%></option>
+			<option value="<%=d.getId()%>"  <%if(d.getId()==t.getDescription().getId()) {%>selected<%} %>  ><%=d.getDescription()%></option>
 		<%
 			}
 		%>
