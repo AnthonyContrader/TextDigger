@@ -50,7 +50,7 @@ public class FolderController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
-			@RequestParam("library") Library library, @RequestParam("description") Description description) {
+			 Library library, Description description) {
 
 		FolderDTO dto = new FolderDTO();
 		dto.setId(id);
@@ -65,7 +65,7 @@ public class FolderController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("library") Library library, @RequestParam("description") Description description) {
+			 Library library, Description description) {
 		FolderDTO dto = new FolderDTO();
 		dto.setName(name);
 		dto.setLibrary(library);

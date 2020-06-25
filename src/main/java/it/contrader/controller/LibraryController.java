@@ -50,7 +50,7 @@ public class LibraryController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
-			@RequestParam("description") Description description, @RequestParam("interest") Interest interest) {
+			 Description description, Interest interest) {
 
 		LibraryDTO dto = new LibraryDTO();
 		dto.setId(id);
@@ -65,7 +65,7 @@ public class LibraryController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("description") Description description, @RequestParam("interest") Interest interest) {
+			Description description, Interest interest) {
 		LibraryDTO dto = new LibraryDTO();
 		dto.setName(name);
 		dto.setInterest(interest);
