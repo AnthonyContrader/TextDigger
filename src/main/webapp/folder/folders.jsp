@@ -33,6 +33,8 @@
 				<th>Folders</th>
 				<th>Descriptions</th>
 				<th>Libraries</th>
+				<th></th>
+				<th></th>
 			</tr>
 			<%
 				for (FolderDTO fdto : list) {
@@ -40,8 +42,8 @@
 			<tr>
 				<td><a href="/folder/read?id=<%=fdto.getId()%>"> <%=fdto.getName()%>
 				</a></td>
-				<td><%=fdto.getDescription().getId()%> <%=fdto.getDescription().getDescription()%></td>
-				<td><%=fdto.getLibrary().getId()%> <%=fdto.getLibrary().getName()%></td>
+				<td><%=fdto.getDescription().getDescription()%></td>
+				<td><%=fdto.getLibrary().getName()%></td>
 				<td><a href="/folder/preupdate?id=<%=fdto.getId()%>">Edit</a></td>
 				<td><a href="/folder/delete?id=<%=fdto.getId()%>">Delete</a></td>
 			</tr>
@@ -66,7 +68,7 @@
 					<label for="description">Description</label>
 				</div>
 				<div class="col-75">
-		 			<select id="description" name="description" required>
+		 			<select id="description" name="description" >
 		 			<option value="" disabled selected>Select Description</option>
  					<% 			
 						for (DescriptionDTO dto: descriptions) {

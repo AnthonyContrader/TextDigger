@@ -68,9 +68,9 @@ public class FolderController {
 			@RequestParam("library") Library library, @RequestParam("description") Description description) {
 		FolderDTO dto = new FolderDTO();
 		dto.setName(name);
-		folderService.insert(dto);
 		dto.setLibrary(library);
 		dto.setDescription(description);
+		folderService.insert(dto);
 		setAll(request);
 		return "/folder/folders";
 	}

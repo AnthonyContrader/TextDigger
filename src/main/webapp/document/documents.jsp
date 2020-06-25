@@ -34,18 +34,18 @@
 			<th>Users</th>
 			<th>Folders</th>
 			<th>Description</th>
+			<th></th>
+			<th></th>
 		</tr>
 		<%for (DocumentDTO d : list) {%>
 		<tr>
 				<td><a href="/document/read?id=<%=d.getId()%>"> 
 				<%=d.getText()%>
 				</a></td>
-				<td><%=d.getUser().getId()%> <%=d.getUser().getUsername()%></td>
-				<td><%=d.getFolder().getId()%> <%=d.getFolder().getName()%></td>
-				<td><%=d.getDescription().getId()%> <%=d.getDescription().getDescription()%></td>
+				<td><%=d.getUser().getUsername()%></td>
+				<td><%=d.getFolder().getName()%></td>
+				<td><%=d.getDescription().getDescription()%></td>
 				<td><a href="/document/preupdate?id=<%=d.getId()%>">Edit</a></td>
-
-
 				<td><a href="/document/delete?id=<%=d.getId()%>">Delete</a></td>
 
 			</tr>

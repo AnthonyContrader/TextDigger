@@ -31,14 +31,16 @@
 				<th>Libraries</th>
 				<th>Descriptions</th>
 				<th>Interests</th>
+				<th></th>
+				<th></th>
 			</tr>
 			<%
 				for (LibraryDTO l : list) {
 			%>
 			<tr>
 				<td><a href="/library/read?id=<%=l.getId()%>"> <%=l.getName()%></a></td>
-				<td><%=l.getDescription().getId()%> <%=l.getDescription().getDescription()%></td>
-				<td><%=l.getInterest().getId()%> <%=l.getInterest().getInterest()%></td>
+				<td><%=l.getDescription().getDescription()%></td>
+				<td><%=l.getInterest().getInterest()%></td>
 				<td><a href="/library/preupdate?id=<%=l.getId()%>">Edit</a></td>
 				<td><a href="/library/delete?id=<%=l.getId()%>">Delete</a></td>
 			</tr>

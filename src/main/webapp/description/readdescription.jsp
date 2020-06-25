@@ -29,7 +29,6 @@
 			<tr>
 				<td><%=d.getId()%></td>
 				<td><%=d.getDescription()%></td>
-				<td></td>
 			</tr>
 		</table>
 

@@ -24,7 +24,6 @@
 	
 	<table>
 		<tr>
-			<th>ID</th>
 			<th>Descriptions</th>
 			<th></th>
 			<th></th>
