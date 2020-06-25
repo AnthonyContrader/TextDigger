@@ -1,6 +1,5 @@
-<%@page import="it.contrader.dto.SearchConnectionDTO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.DocumentDTO"%>
+	pageEncoding="ISO-8859-1" import="it.contrader.dto.SearchConnectionDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,7 +8,7 @@
 <meta name="description" content="SearchConnection Read">
 <meta name="author" content="Vittorio Esposito">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Read Tag</title>
+<title>Read SearchConnection</title>
 </head>
 <body>
 	<%@ include file="../css/header.jsp"%>
@@ -23,13 +22,15 @@
 
 		<table>
 			<tr>
-				<th>IdSearchConnection</th>
-				<th>IdDocument</th>
-				<th>IdTag</th>
+				<th>ID</th>
+				<th>SearchConnection</th>
+				<th>Document</th>
+				<th>Tag</th>
 			</tr>
 			<tr>
 				<td><%=c.getId() %></td>
-				<td><%=c.getDocument().getId()%></td>
+				<td><%=c.getText() %></td>
+				<td><%=c.getDocument().getText()%></td>
 				<td><%=c.getTag().getId()%></td>
 			</tr>
 		</table>

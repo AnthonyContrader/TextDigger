@@ -13,6 +13,8 @@ public class SearchConnectionDTO {
 	
 	private Long id;
 	
+	private String text;
+	
 	private Tag tag;
 	
 	private Document document;

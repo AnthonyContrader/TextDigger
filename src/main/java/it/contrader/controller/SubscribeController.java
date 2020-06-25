@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.SubscribeDTO;
 import it.contrader.model.Interestgroup;
 import it.contrader.model.User;
-import it.contrader.service.InterestService;
 import it.contrader.service.InterestgroupService;
 import it.contrader.service.SubscribeService;
 import it.contrader.service.UserService;
@@ -50,12 +49,14 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("id") Long id, @RequestParam("interestgroup") Interestgroup interestgroup) {
+	public String update(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("id") Long id, @RequestParam("interestgroup") Interestgroup interestgroup,
+			@RequestParam ("text")String text) {
 
 		SubscribeDTO dto = new SubscribeDTO();
 		dto.setId(id);
 		dto.setUser(user);
 		dto.setInterestgroup(interestgroup);
+		dto.setText(text);
 		subscribeService.update(dto);
 		setAll(request);
 		return "/subscribe/subscribes";
@@ -63,9 +64,9 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("id") Long id, @RequestParam("interestgroup") Interestgroup interestgroup) {
+	public String insert(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("text") String text, @RequestParam("interestgroup") Interestgroup interestgroup) {
 		SubscribeDTO dto = new SubscribeDTO();
-		dto.setId(id);
+		dto.setText(text);
 		dto.setUser(user);
 		dto.setInterestgroup(interestgroup);
 		subscribeService.insert(dto);

@@ -10,7 +10,7 @@
 <meta name="description" content="SearchConnection Management">
 <meta name="author" content="Vittorio Esposito">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>User Manager</title>
+<title>SearchConnection Manager</title>
 
 </head>
 <body>
@@ -30,7 +30,8 @@
 
 		<table>
 			<tr>
-				<th>IdSearchConnection</th>
+				<th>Id</th>
+				<th>SearchConnection</th>
 				<th>Document</th>
 				<th>Tag</th>
 				<th></th>
@@ -41,8 +42,9 @@
 			%>
 			<tr>
 				
-				<td><a href="/searchconnection/read?id=<%=s.getId()%>"><%=s.getTag().getTag()%><%=s.getDocument().getText()%></a></td>
-				
+				<td><a href="/searchconnection/read?id=<%=s.getId()%>"><%=s.getText()%><%=s.getTag().getTag()%><%=s.getDocument().getText()%></a></td>
+				<td><a href="/searchconnection/preupdate?id=<%=s.getId()%>">Edit</a></td>
+				<td><a href="/searchconnection/delete?id=<%=s.getId()%>">Delete</a></td>
 			</tr>
 			<%
 				}

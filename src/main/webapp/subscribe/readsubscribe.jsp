@@ -1,6 +1,6 @@
-<%@page import="it.contrader.dto.SubscribeDTO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.FolderDTO"%>
+	pageEncoding="ISO-8859-1" import="it.contrader.dto.SubscribeDTO"%>
+	
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,7 +9,7 @@
 <meta name="description" content="Subscribe Read">
 <meta name="author" content="Vittorio Esposito">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Read Interest</title>
+<title>Read Subscribe</title>
 </head>
 <body>
 	<%@ include file="../css/header.jsp"%>
@@ -23,14 +23,16 @@
 
 		<table>
 			<tr>
-				<th>IDSubscribe</th>
-				<th>IDUser</th>
-				<th>IDInterestGroup</th>
+				<th>ID</th>
+				<th>Subscribe</th>
+				<th>User</th>
+				<th>InterestGroup</th>
 			</tr>
 			<tr>
 				<td><%=s.getId()%></td>
-				<td><%=s.getUser().getId()%></td>
-				<td><%=s.getInterestgroup().getId()%></td>
+				<td><%=s.getText() %></td>
+				<td><%=s.getUser().getUsername()%></td>
+				<td><%=s.getInterestgroup().getInterestgroup()%></td>
 			</tr>
 		</table>
 

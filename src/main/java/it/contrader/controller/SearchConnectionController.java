@@ -49,20 +49,22 @@ public class SearchConnectionController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("id") Long id, @RequestParam("document") Document document) {
+	public String update(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("id") Long id, @RequestParam("document") Document document,
+			@RequestParam ("text")String text) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
 		searchConnectionDTO.setId(id);
 		searchConnectionDTO.setTag(tag);
 		searchConnectionDTO.setDocument(document);
+		searchConnectionDTO.setText(text);
 		searchconnectionService.update(searchConnectionDTO);
 		setAll(request);
 		return "searchconnection/searchconnections";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("id") Long id, @RequestParam("document") Document document) {
+	public String insert(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("document") Document document, @RequestParam("text")String text) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
-		searchConnectionDTO.setId(id);
+		searchConnectionDTO.setText(text);
 		searchConnectionDTO.setTag(tag);
 		searchConnectionDTO.setDocument(document);
 		searchconnectionService.insert(searchConnectionDTO);
@@ -80,8 +82,8 @@ public class SearchConnectionController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", searchconnectionService.getAll());
-		request.getSession().setAttribute("tags", searchconnectionService.getAll());
-		request.getSession().setAttribute("documents",searchconnectionService.getAll());
+		request.getSession().setAttribute("tags", serviceTag.getAll());
+		request.getSession().setAttribute("documents",serviceDocument.getAll());
 	}
 }
 
