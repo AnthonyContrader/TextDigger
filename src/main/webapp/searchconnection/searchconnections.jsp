@@ -31,8 +31,8 @@
 		<table>
 			<tr>
 				<th>SearchConnection</th>
-				<th>Document</th>
 				<th>Tag</th>
+				<th>Document</th>
 				<th></th>
 				<th></th>
 			</tr>
