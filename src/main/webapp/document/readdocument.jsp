@@ -8,7 +8,7 @@
 <meta name="description" content="Document Read">
 <meta name="author" content="Marcello Nichele">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Read Tag</title>
+<title>Read Document</title>
 </head>
 <body>
 	<%@ include file="../css/header.jsp"%>
