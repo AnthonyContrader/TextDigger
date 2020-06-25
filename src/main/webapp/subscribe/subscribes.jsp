@@ -29,8 +29,7 @@
 
 		<table>
 			<tr>
-				<th>ID</th>
-				<th>Subscribe</th>
+				<th>IDSubscribe</th>
 				<th>User</th>
 				<th>InterestGroup</th>
 			</tr>
@@ -38,7 +37,7 @@
 				for (SubscribeDTO b : list) {
 			%>
 			<tr>
-				<td><a href="/subscribe/read?id=<%=b.getId()%>"><%=b.getText()%><%=b.getUser().getUsername() %> <%=b.getInterestgroup().getInterestgroup()%></a></td>
+				<td><a href="/subscribe/read?id=<%=b.getId()%>"><%=b.getUser().getUsername() %> <%=b.getInterestgroup().getInterestgroup()%></a></td>
 				<td><a href="/subscribe/preupdate?id=<%=b.getId()%>">Edit</a></td>		
 				<td><a href="/subscribe/delete?id=<%=b.getId()%>">Delete</a></td>
 			</tr>
@@ -48,16 +47,6 @@
 		</table>
  
 		<form id="floatright" action="/subscribe/insert" method="post">
-			<div class="row">
-				<div class="col-25">
-					<label for="text">Subscribe Text</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="text" name="Subscribe text"
-						placeholder="insert subscribe text">
-				</div>
-			</div>
-			
 			<div class="row">
 				<div class="col-25">
 					<label for="user">User</label>

@@ -68,9 +68,9 @@ public class LibraryController {
 			@RequestParam("description") Description description, @RequestParam("interest") Interest interest) {
 		LibraryDTO dto = new LibraryDTO();
 		dto.setName(name);
-		libraryService.insert(dto);
 		dto.setInterest(interest);
 		dto.setDescription(description);
+		libraryService.insert(dto);
 		setAll(request);
 		return "/library/libraries";
 	}

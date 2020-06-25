@@ -25,8 +25,6 @@ public class SearchConnection {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String text;
-
 	
 	@ManyToOne
 	@JoinColumn(name ="id_tag")

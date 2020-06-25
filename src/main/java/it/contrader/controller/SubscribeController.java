@@ -56,7 +56,6 @@ public class SubscribeController {
 		dto.setId(id);
 		dto.setUser(user);
 		dto.setInterestgroup(interestgroup);
-		dto.setText(text);
 		subscribeService.update(dto);
 		setAll(request);
 		return "/subscribe/subscribes";
@@ -64,9 +63,8 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("text") String text, @RequestParam("interestgroup") Interestgroup interestgroup) {
+	public String insert(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("interestgroup") Interestgroup interestgroup) {
 		SubscribeDTO dto = new SubscribeDTO();
-		dto.setText(text);
 		dto.setUser(user);
 		dto.setInterestgroup(interestgroup);
 		subscribeService.insert(dto);

@@ -49,22 +49,19 @@ public class SearchConnectionController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("id") Long id, @RequestParam("document") Document document,
-			@RequestParam ("text")String text) {
+	public String update(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("id") Long id, @RequestParam("document") Document document) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
 		searchConnectionDTO.setId(id);
 		searchConnectionDTO.setTag(tag);
 		searchConnectionDTO.setDocument(document);
-		searchConnectionDTO.setText(text);
 		searchconnectionService.update(searchConnectionDTO);
 		setAll(request);
 		return "searchconnection/searchconnections";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("document") Document document, @RequestParam("text")String text) {
+	public String insert(HttpServletRequest request ,@RequestParam ("tag") Tag tag, @RequestParam("document") Document document) {
 		SearchConnectionDTO searchConnectionDTO = new SearchConnectionDTO();
-		searchConnectionDTO.setText(text);
 		searchConnectionDTO.setTag(tag);
 		searchConnectionDTO.setDocument(document);
 		searchconnectionService.insert(searchConnectionDTO);

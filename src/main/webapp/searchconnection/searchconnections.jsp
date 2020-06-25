@@ -42,7 +42,7 @@
 			%>
 			<tr>
 				
-				<td><a href="/searchconnection/read?id=<%=s.getId()%>"><%=s.getText()%><%=s.getTag().getTag()%><%=s.getDocument().getText()%></a></td>
+				<td><a href="/searchconnection/read?id=<%=s.getId()%>"><%=s.getTag().getTag()%><%=s.getDocument().getText()%></a></td>
 				<td><a href="/searchconnection/preupdate?id=<%=s.getId()%>">Edit</a></td>
 				<td><a href="/searchconnection/delete?id=<%=s.getId()%>">Delete</a></td>
 			</tr>
@@ -51,19 +51,7 @@
 			%>
 		</table>
 
-
- 
-		<form id="floatright" action="/searchconnection/insert" method="post">
-			<div class="row">
-				<div class="col-25">
-					<label for="doc"> Search Connection </label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="doc" name="SearchConnection"
-						placeholder="insert SearchConnection">
-				</div>
-			</div>
-			
+	
 			<div class="row">
 				<div class="col-25">
 					<label for="tag">Tag</label>

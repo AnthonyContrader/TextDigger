@@ -32,14 +32,6 @@ List<TagDTO> tags = (List<TagDTO>) request.getSession().getAttribute("tags");
 <form id="floatleft" action="/searchconnection/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="text">Text</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="text" name="text" value=<%=s.getText()%>>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
       <label for="document">Document</label>
     </div>
     <div class="col-75">

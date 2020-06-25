@@ -32,14 +32,6 @@ List<InterestgroupDTO> Interestgroups = (List<InterestgroupDTO>) request.getSess
 <form id="floatleft" action="/subscribe/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="text">Text</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="text" name="text" value=<%=d.getText()%>>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
       <label for="user">User</label>
     </div>
     <div class="col-75">

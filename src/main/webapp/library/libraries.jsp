@@ -63,7 +63,7 @@
 					<label for="description">Description</label>
 				</div>
 				<div class="col-75">
-		 			<select id="description" name="description" required>
+		 			<select id="description" name="description" >
 		 			<option value="" disabled selected>Select Description</option>
  					<% 			
 						for (DescriptionDTO dto: descriptions) {

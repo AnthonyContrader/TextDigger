@@ -23,14 +23,12 @@
 
 		<table>
 			<tr>
-				<th>ID</th>
-				<th>Subscribe</th>
+				<th>IDSubscribe</th>
 				<th>User</th>
 				<th>InterestGroup</th>
 			</tr>
 			<tr>
 				<td><%=s.getId()%></td>
-				<td><%=s.getText() %></td>
 				<td><%=s.getUser().getUsername()%></td>
 				<td><%=s.getInterestgroup().getInterestgroup()%></td>
 			</tr>
