@@ -51,7 +51,7 @@
 			%>
 		</table>
 
-	
+		<form id="floatright" action="/searchconnection/insert" method="post">
 			<div class="row">
 				<div class="col-25">
 					<label for="tag">Tag</label>

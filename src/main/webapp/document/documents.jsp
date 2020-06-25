@@ -68,7 +68,7 @@
 					<label for="user">User</label>
 				</div>
 				<div class="col-75">
-		 			<select id="user" name="User" required>
+		 			<select id="user" name="user" required>
 		 			<option value="" disabled selected>Select User</option>
  					<% 			
 						for (UserDTO u : users) {
