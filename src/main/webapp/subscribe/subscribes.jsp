@@ -29,7 +29,6 @@
 
 		<table>
 			<tr>
-				<th>Subscribe</th>
 				<th>User</th>
 				<th>InterestGroup</th>
 				<th></th>

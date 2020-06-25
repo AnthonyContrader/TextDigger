@@ -30,7 +30,6 @@
 
 		<table>
 			<tr>
-				<th>SearchConnection</th>
 				<th>Tag</th>
 				<th>Document</th>
 				<th></th>
