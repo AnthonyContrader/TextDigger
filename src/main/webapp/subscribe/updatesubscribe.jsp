@@ -35,7 +35,7 @@ List<InterestgroupDTO> Interestgroups = (List<InterestgroupDTO>) request.getSess
       <label for="user">User</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="user" name="user">
  		<%
 			for (UserDTO user : users) {
 		%>
@@ -51,11 +51,11 @@ List<InterestgroupDTO> Interestgroups = (List<InterestgroupDTO>) request.getSess
       <label for="interestgroup">Interestgroup</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="interestgroup" name="interstgroup">
  		<%
-			for (InterestgroupDTO Interestgroup : Interestgroups) {
+			for (InterestgroupDTO interestgroup : Interestgroups) {
 		%>
-			<option value="<%=Interestgroup.getId()%>"  <%if(Interestgroup.getId()==d.getInterestgroup().getId()) {%>selected<%} %>  ><%=Interestgroup.getInterestgroup()%></option>
+			<option value="<%=interestgroup.getId()%>"  <%if(interestgroup.getId()==d.getInterestgroup().getId()) {%>selected<%} %>  ><%=interestgroup.getInterestgroup()%></option>
 		<%
 			}
 		%>

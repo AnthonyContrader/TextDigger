@@ -49,8 +49,7 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("id") Long id, @RequestParam("interestgroup") Interestgroup interestgroup,
-			@RequestParam ("text")String text) {
+	public String update(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("id") Long id, @RequestParam("interestgroup") Interestgroup interestgroup) {
 
 		SubscribeDTO dto = new SubscribeDTO();
 		dto.setId(id);
@@ -58,7 +57,7 @@ public class SubscribeController {
 		dto.setInterestgroup(interestgroup);
 		subscribeService.update(dto);
 		setAll(request);
-		return "/subscribe/subscribes";
+		return "subscribe/subscribes";
 
 	}
 

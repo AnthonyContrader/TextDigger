@@ -35,7 +35,7 @@ List<TagDTO> tags = (List<TagDTO>) request.getSession().getAttribute("tags");
       <label for="document">Document</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="document" name="document">
  		<%
 			for (DocumentDTO document : documents) {
 		%>
@@ -51,7 +51,7 @@ List<TagDTO> tags = (List<TagDTO>) request.getSession().getAttribute("tags");
       <label for="tag">Tag</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="tag" name="tag">
  		<%
 			for (TagDTO tag : tags) {
 		%>
