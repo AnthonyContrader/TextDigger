@@ -25,7 +25,7 @@
 
 <%SubscribeDTO d = (SubscribeDTO) request.getSession().getAttribute("dto");
 List<UserDTO> users = (List<UserDTO>) request.getSession().getAttribute("users");
-List<InterestgroupDTO> Interestgroups = (List<InterestgroupDTO>) request.getSession().getAttribute("Interestgroups");
+List<InterestgroupDTO> interestgroups = (List<InterestgroupDTO>) request.getSession().getAttribute("interestgroups");
 %>
 
 
@@ -51,9 +51,9 @@ List<InterestgroupDTO> Interestgroups = (List<InterestgroupDTO>) request.getSess
       <label for="interestgroup">Interestgroup</label>
     </div>
     <div class="col-75">
-     <select id="interestgroup" name="interstgroup">
+     <select id="interstgroup" name="interestgroup">
  		<%
-			for (InterestgroupDTO interestgroup : Interestgroups) {
+			for (InterestgroupDTO interestgroup : interestgroups) {
 		%>
 			<option value="<%=interestgroup.getId()%>"  <%if(interestgroup.getId()==d.getInterestgroup().getId()) {%>selected<%} %>  ><%=interestgroup.getInterestgroup()%></option>
 		<%
