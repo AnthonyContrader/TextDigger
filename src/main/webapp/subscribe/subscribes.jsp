@@ -39,7 +39,9 @@
 				for (SubscribeDTO b : list) {
 			%>
 			<tr>
-				<td><a href="/subscribe/read?id=<%=b.getId()%>"><%=b.getUser().getUsername() %> <%=b.getInterestgroup().getInterestgroup()%></a></td>
+				<td><a href="/subscribe/read?id=<%=b.getId()%>"></a></td>
+				<td><%=b.getUser().getUsername() %></td>
+				<td><%=b.getInterestgroup().getInterestgroup()%></td>
 				<td><a href="/subscribe/preupdate?id=<%=b.getId()%>">Edit</a></td>		
 				<td><a href="/subscribe/delete?id=<%=b.getId()%>">Delete</a></td>
 			</tr>
