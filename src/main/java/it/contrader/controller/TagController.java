@@ -60,6 +60,7 @@ public class TagController {
 	public String insert(HttpServletRequest request, @RequestParam("description") Description description, @RequestParam("tag") String tag) {
 		TagDTO dto = new TagDTO();
 		dto.setTag(tag);
+		dto.setDescription(description);
 		service.insert(dto);
 		setAll(request);
 		return "/tag/tags";
