@@ -43,7 +43,7 @@ List<DescriptionDTO> descriptions = (List<DescriptionDTO>) request.getSession().
       <label for="user">User</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="user" name="user">
  		<%
 			for (UserDTO user : users) {
 		%>
@@ -59,7 +59,7 @@ List<DescriptionDTO> descriptions = (List<DescriptionDTO>) request.getSession().
       <label for="folder">Folder</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="folder" name="folder">
  		<%
 			for (FolderDTO folder : folders) {
 		%>
@@ -75,7 +75,7 @@ List<DescriptionDTO> descriptions = (List<DescriptionDTO>) request.getSession().
       <label for="description">Description</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="description" name="description">
  		<%
 			for (DescriptionDTO desc : descriptions) {
 		%>

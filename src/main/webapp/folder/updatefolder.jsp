@@ -41,7 +41,7 @@ List<LibraryDTO> libraries = (List<LibraryDTO>) request.getSession().getAttribut
       <label for="description">Description</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="description" name="description">
  		<%
 			for (DescriptionDTO desc : descriptions) {
 		%>
@@ -57,7 +57,7 @@ List<LibraryDTO> libraries = (List<LibraryDTO>) request.getSession().getAttribut
       <label for="library">Library</label>
     </div>
     <div class="col-75">
-     <select id="tool" name="tool">
+     <select id="library" name="library">
  		<%
 			for (LibraryDTO libs : libraries) {
 		%>
