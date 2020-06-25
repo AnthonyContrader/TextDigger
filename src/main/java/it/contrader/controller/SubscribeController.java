@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.SubscribeDTO;
+import it.contrader.model.Interestgroup;
+import it.contrader.model.User;
+import it.contrader.service.InterestService;
+import it.contrader.service.InterestgroupService;
 import it.contrader.service.SubscribeService;
+import it.contrader.service.UserService;
 
 @Controller
 @RequestMapping("/subscribe")
@@ -18,6 +23,12 @@ public class SubscribeController {
 	
 	@Autowired
 	private SubscribeService subscribeService;
+	
+	@Autowired
+	private UserService serviceUser;
+	
+	@Autowired
+	private InterestgroupService serviceInterestgroup;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -39,10 +50,12 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id) {
+	public String update(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("id") Long id, @RequestParam("interestgroup") Interestgroup interestgroup) {
 
 		SubscribeDTO dto = new SubscribeDTO();
 		dto.setId(id);
+		dto.setUser(user);
+		dto.setInterestgroup(interestgroup);
 		subscribeService.update(dto);
 		setAll(request);
 		return "/subscribe/subscribes";
@@ -50,9 +63,11 @@ public class SubscribeController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("id") Long id) {
+	public String insert(HttpServletRequest request,@RequestParam ("user") User user, @RequestParam("id") Long id, @RequestParam("interestgroup") Interestgroup interestgroup) {
 		SubscribeDTO dto = new SubscribeDTO();
 		dto.setId(id);
+		dto.setUser(user);
+		dto.setInterestgroup(interestgroup);
 		subscribeService.insert(dto);
 		setAll(request);
 		return "/subscribe/subscribes";
@@ -67,6 +82,8 @@ public class SubscribeController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", subscribeService.getAll());
+		request.getSession().setAttribute("users", serviceUser.getAll());
+		request.getSession().setAttribute("interestgroups", serviceInterestgroup.getAll());
 	}
 
 }
