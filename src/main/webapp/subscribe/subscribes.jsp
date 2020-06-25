@@ -29,9 +29,11 @@
 
 		<table>
 			<tr>
-				<th>IDSubscribe</th>
+				<th>Subscribe</th>
 				<th>User</th>
 				<th>InterestGroup</th>
+				<th></th>
+				<th></th>
 			</tr>
 			<%
 				for (SubscribeDTO b : list) {

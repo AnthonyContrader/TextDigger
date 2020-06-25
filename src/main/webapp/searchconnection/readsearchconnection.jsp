@@ -22,7 +22,7 @@
 
 		<table>
 			<tr>
-				<th>IDSearchConnection</th>
+				<th>SearchConnection</th>
 				<th>Document</th>
 				<th>Tag</th>
 			</tr>
