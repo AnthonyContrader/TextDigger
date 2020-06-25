@@ -40,8 +40,7 @@
 			%>
 			<tr>
 				
-				<td><a href="/searchconnection/read?id=<%=s.getId()%>"></a></td>
-				<td><%=s.getTag().getTag()%></td>
+				<td><a href="/searchconnection/read?id=<%=s.getId()%>"><%=s.getTag().getTag()%></a></td>
 				<td><%=s.getDocument().getText()%></td>
 				<td><a href="/searchconnection/preupdate?id=<%=s.getId()%>">Edit</a></td>
 				<td><a href="/searchconnection/delete?id=<%=s.getId()%>">Delete</a></td>
