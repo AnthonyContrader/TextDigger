@@ -44,7 +44,7 @@ public class TagController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, Description description, @RequestParam("id") Long id, @RequestParam("tag") String tag) {
+	public String update(HttpServletRequest request, @RequestParam("description")Description description, @RequestParam("id") Long id, @RequestParam("tag") String tag) {
 
 		TagDTO dto = new TagDTO();
 		dto.setId(id);
@@ -57,7 +57,7 @@ public class TagController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, Description description, @RequestParam("tag") String tag) {
+	public String insert(HttpServletRequest request, @RequestParam("description")Description description, @RequestParam("tag") String tag) {
 		TagDTO dto = new TagDTO();
 		dto.setTag(tag);
 		dto.setDescription(description);

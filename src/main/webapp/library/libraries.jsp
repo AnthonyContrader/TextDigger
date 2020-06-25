@@ -65,7 +65,7 @@
 					<label for="description">Description</label>
 				</div>
 				<div class="col-75">
-		 			<select id="description" name="description" >
+		 			<select id="description" name="description" required>
 		 			<option value="" disabled selected>Select Description</option>
  					<% 			
 						for (DescriptionDTO dto: descriptions) {
@@ -80,7 +80,7 @@
 					<label for="interest">Interest</label>
 				</div>
 				<div class="col-75">
-		 			<select id="interest" name="interest" >
+		 			<select id="interest" name="interest" required>
 		 			<option value="" disabled selected>Select Interest</option>
  					<% 			
 						for (InterestDTO dto: interests) {
