@@ -56,7 +56,7 @@
 					<label for="interest">Interest</label>
 				</div>
 				<div class="col-75">
-		 			<select id="interest" name="interest" required>
+		 			<select id="interest" name="interest">
 		 			<option value="" disabled selected>Select Interest</option>
  					<% 			
 						for (InterestDTO dto: interests) {

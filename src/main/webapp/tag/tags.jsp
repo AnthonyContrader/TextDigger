@@ -35,7 +35,8 @@
 				for (TagDTO t : list) {
 			%>
 			<tr>
-				<td><a href="/tag/read?id=<%=t.getId()%>"> <%=t.getTag()%> <%=t.getDescription().getDescription()%></a></td>
+				<td><a href="/tag/read?id=<%=t.getId()%>"> <%=t.getTag()%></a></td>
+				<td> <%=t.getDescription().getDescription()%></td>
 				<td><a href="/tag/preupdate?id=<%=t.getId()%>">Edit</a></td>
 				<td><a href="/tag/delete?id=<%=t.getId()%>">Delete</a></td>
 			</tr>

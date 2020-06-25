@@ -82,7 +82,7 @@
 					<label for="library">Library</label>
 				</div>
 				<div class="col-75">
-		 			<select id="library" name="library" required>
+		 			<select id="library" name="library" >
 		 			<option value="" disabled selected>Select Library</option>
  					<% 			
 						for (LibraryDTO dto: libraries) {

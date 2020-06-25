@@ -82,7 +82,7 @@
 					<label for="folder">Folder</label>
 				</div>
 				<div class="col-75">
-		 			<select id="folder" name="folder" required>
+		 			<select id="folder" name="folder" >
 		 			<option value="" disabled selected>Select Folder</option>
  					<% 			
 						for (FolderDTO fdto : folders) {
@@ -96,7 +96,7 @@
 					<label for="description">Description</label>
 				</div>
 				<div class="col-75">
-		 			<select id="description" name="description" required>
+		 			<select id="description" name="description" >
 		 			<option value="" disabled selected>Select Description</option>
  					<% 			
 						for (DescriptionDTO dto: descriptions) {
