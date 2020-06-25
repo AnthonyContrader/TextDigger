@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Document Read">
+<meta name="description" content="Document Read page">
 <meta name="author" content="Marcello Nichele">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>Read Tag</title>
@@ -25,18 +25,10 @@
 			<tr>
 				<th>ID</th>
 				<th>Description</th>
-				<th>Interest</th>
-				<th>Document</th>
-				<th>Folder</th>
-				<th>Library</th>
 			</tr>
 			<tr>
 				<td><%=d.getId()%></td>
 				<td><%=d.getDescription()%></td>
-				<td><%=d.getInterest().getInterest()%></td>
-				<td><%=d.getDocument().getText()%></td>
-				<td><%=d.getFolder().getName()%></td>
-				<td><%=d.getLibrary().getName()%></td>
 				<td></td>
 			</tr>
 		</table>

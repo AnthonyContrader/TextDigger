@@ -10,15 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.DescriptionDTO;
-import it.contrader.model.Document;
-import it.contrader.model.Folder;
-import it.contrader.model.Interest;
-import it.contrader.model.Library;
 import it.contrader.service.DescriptionService;
-import it.contrader.service.DocumentService;
-import it.contrader.service.FolderService;
-import it.contrader.service.InterestService;
-import it.contrader.service.LibraryService;
 
 @Controller
 @RequestMapping("/description")
@@ -26,18 +18,6 @@ public class DescriptionController {
 	
 	@Autowired
 	private DescriptionService descriptionService;
-	
-	@Autowired
-	private FolderService folderService;
-	
-	@Autowired
-	private LibraryService libraryService;
-	
-	@Autowired
-	private DocumentService documentService;
-	
-	@Autowired
-	private InterestService interestService;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -60,29 +40,19 @@ public class DescriptionController {
 	
 	@PostMapping("/update")
 	public String update(HttpServletRequest request , @RequestParam("id") Long id, @RequestParam ("description")
-	String description, @RequestParam("folder") Folder folder, @RequestParam("library") Library library, 
-	@RequestParam("document") Document document, @RequestParam("interest") Interest interest) {
+	String description) {
 		DescriptionDTO descriptionDTO = new DescriptionDTO();
 		descriptionDTO.setId(id);
 		descriptionDTO.setDescription(description);
-		descriptionDTO.setInterest(interest);
-		descriptionDTO.setFolder(folder);
-		descriptionDTO.setLibrary(library);
-		descriptionDTO.setDocument(document);
 		descriptionService.update(descriptionDTO);
 		setAll(request);
 		return "/description/descriptions";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("description") String description, @RequestParam("folder") Folder folder, @RequestParam("library") Library library, 
-			@RequestParam("document") Document document, @RequestParam("interest") Interest interest) {
+	public String insert(HttpServletRequest request, @RequestParam("description") String description) {
 		DescriptionDTO descriptionDTO = new DescriptionDTO();
 		descriptionDTO.setDescription(description);
-		descriptionDTO.setInterest(interest);
-		descriptionDTO.setFolder(folder);
-		descriptionDTO.setLibrary(library);
-		descriptionDTO.setDocument(document);
 		descriptionService.insert(descriptionDTO);
 		setAll(request);
 		return "/description/descriptions";
@@ -98,10 +68,6 @@ public class DescriptionController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", descriptionService.getAll());
-		request.getSession().setAttribute("folders", folderService.getAll());
-		request.getSession().setAttribute("libraries", libraryService.getAll());
-		request.getSession().setAttribute("documents", documentService.getAll());
-		request.getSession().setAttribute("interests", interestService.getAll());
 	}
 
 }
