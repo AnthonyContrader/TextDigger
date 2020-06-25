@@ -57,7 +57,7 @@ public class SubscribeController {
 		dto.setInterestgroup(interestgroup);
 		subscribeService.update(dto);
 		setAll(request);
-		return "subscribe/subscribes";
+		return "/subscribe/subscribes";
 
 	}
 

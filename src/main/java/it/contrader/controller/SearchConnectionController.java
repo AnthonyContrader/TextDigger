@@ -32,20 +32,20 @@ public class SearchConnectionController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 	setAll(request);
-	return "searchconnection/searchconnections";
+	return "/searchconnection/searchconnections";
 	}
 	
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		searchconnectionService.delete(id);
 		setAll(request);
-		return "searchconnection/searchconnections";
+		return "/searchconnection/searchconnections";
 	}
 	
 	@GetMapping("/preupdate")
 	public String preupdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", searchconnectionService.read(id));
-		return "searchconnection/updatesearchconnection";
+		return "/searchconnection/updatesearchconnection";
 	}
 	
 	@PostMapping("/update")
@@ -56,7 +56,7 @@ public class SearchConnectionController {
 		searchConnectionDTO.setDocument(document);
 		searchconnectionService.update(searchConnectionDTO);
 		setAll(request);
-		return "searchconnection/searchconnections";
+		return "/searchconnection/searchconnections";
 	}
 	
 	@PostMapping("/insert")
@@ -66,13 +66,13 @@ public class SearchConnectionController {
 		searchConnectionDTO.setDocument(document);
 		searchconnectionService.insert(searchConnectionDTO);
 		setAll(request);
-		return "searchconnection/searchconnections";
+		return "/searchconnection/searchconnections";
 	}
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") int id) {
 		request.getSession().setAttribute("dto", searchconnectionService.read(id));
-		return "searchconnection/readsearchconnection";
+		return "/searchconnection/readsearchconnection";
 	}
 
 	
