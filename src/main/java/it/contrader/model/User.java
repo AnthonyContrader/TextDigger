@@ -24,6 +24,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "users")
 public class User {
 	
 	public enum Usertype {
