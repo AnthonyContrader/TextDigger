@@ -14,7 +14,7 @@ import it.contrader.service.DescriptionService;
 @RestController
 @RequestMapping("/description")
 @CrossOrigin(origins = "http://localhost:4200")
-public class DescriptionController {
+public class DescriptionController extends AbstractController<DescriptionDTO> {
 	
 	@Autowired
 	private DescriptionService descriptionService;
