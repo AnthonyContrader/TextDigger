@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-mid-1">
+
+    </div>
+
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>Description</th>
+          <th>Folder</th>
+          <th>Library</th>
+          <th>Document</th>
+          <th>Interest</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="description" [(ngModel)]="descriptiontoinsert.description">
+          </td>
+          <td>
+            <select [(ngModel)]="descriptiontoinsert.folder">
+              <option *ngFor="let folder of folders" [ngValue]="folder">{{folder.name}}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="descriptiontoinsert.library">
+              <option *ngFor="let library of libraries" [ngValue]="library">{{library.name}}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="descriptiontoinsert.document">
+              <option *ngFor="let document of documents" [ngValue]="document">{{document.text}}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="descriptiontoinsert.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(descriptiontoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Delete</button>
+          </td>
+        </tr>
+        <tr *ngFor="let description of descriptions"> 
+            <td>
+              <label>{{description.description}}</label>
+            </td>
+            <td>
+              <label>{{description.folder.name}}</label>
+            </td>
+            <td>
+              <label>{{description.library.name}}</label>
+            </td>
+            <td>
+              <label>{{description.document.text}}</label>
+            </td>
+            <td>
+              <label>{{description.interest.interest}}</label>
+            </td>
+            <td>
+              <button (click)="update(description)">Save</button>
+            </td>
+            <td>
+              <button (click)="delete(description)">Delete</button>
+            </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>
