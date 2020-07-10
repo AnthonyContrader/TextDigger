@@ -45,28 +45,28 @@
             <button (click)="clear()">Delete</button>
           </td>
         </tr>
-        <tr *ngFor="let description of descriptions"> 
-            <td>
-              <label>{{description.description}}</label>
-            </td>
-            <td>
-              <label>{{description.folder.name}}</label>
-            </td>
-            <td>
-              <label>{{description.library.name}}</label>
-            </td>
-            <td>
-              <label>{{description.document.text}}</label>
-            </td>
-            <td>
-              <label>{{description.interest.interest}}</label>
-            </td>
-            <td>
-              <button (click)="update(description)">Save</button>
-            </td>
-            <td>
-              <button (click)="delete(description)">Delete</button>
-            </td>
+        <tr *ngFor="let description of descriptions">
+          <td>
+            <label>{{description.description}}</label>
+          </td>
+          <td>
+            <label>{{description.folder.name}}</label>
+          </td>
+          <td>
+            <label>{{description.library.name}}</label>
+          </td>
+          <td>
+            <label>{{description.document.text}}</label>
+          </td>
+          <td>
+            <label>{{description.interest.interest}}</label>
+          </td>
+          <td>
+            <button (click)=update(description)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(description)">Delete</button>
+          </td>
         </tr>
       </table>
     </div>

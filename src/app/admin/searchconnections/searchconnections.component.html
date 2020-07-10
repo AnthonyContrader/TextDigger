@@ -1,3 +1,53 @@
-<p>
-  searchconnections works!
-</p>
+<div class="container">
+  <div class="row-mt-5">
+    <div class="col-mid-1">
+
+    </div>
+
+    <div class="col-mid-10">
+      <table>
+        <tr>
+          <th>Tag</th>
+          <th>Document</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <td>
+            <select [(ngModel)]="searchconnectiontoinsert.tag">
+              <option *ngFor="let tag of tags" [ngValue]="tag">{{tag.tag}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="searchconnectiontoinsert.document">
+              <option *ngFor="let document of documents" [ngValue]="document">{{document.text}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(searchconnectiontoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Delete</button>
+          </td>
+        </tr>
+        <tr *ngFor="let searchconnection of searchconnections">
+          <td>
+            <label>{{searchconnection.tag.tag}}</label>
+          </td>
+          <td>
+            <label>{{searchconnection.document.text}}</label>
+          </td>
+          <td>
+            <button (click)=update(searchconnection)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(searchconnection)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

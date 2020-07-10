@@ -1,3 +1,69 @@
-<p>
-  documents works!
-</p>
+<div class="container">
+  <div class="row-mt-5">
+    <div class="col-mid-1">
+
+    </div>
+
+    <div class="col-mid-10">
+      <table>
+        <tr>
+          <th>Document</th>
+          <th>User</th>
+          <th>Folder</th>
+          <th>Description</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="text" [(ngModel)]="documenttoinsert.text">
+          </td>
+          <td>
+            <select [(ngModel)]="documenttoinsert.user">
+              <option *ngFor="let user of users" [ngValue]="user">{{user.username}}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="documenttoinsert.folder">
+              <option *ngFor="let folder of folders" [ngValue]="folder">{{folder.name}}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="documenttoinsert.description">
+              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(documenttoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Delete</button>
+          </td>
+        </tr>
+        <tr *ngFor="let document of documents">
+          <td>
+            <label>{{document.text}}</label>
+          </td>
+          <td>
+            <label>{{document.user.username}}</label>
+          </td>
+          <td>
+            <label>{{document.folder.name}}</label>
+          </td>
+          <td>
+            <label>{{document.description.description}}</label>
+          </td>
+          <td>
+            <button (click)=update(document)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(document)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

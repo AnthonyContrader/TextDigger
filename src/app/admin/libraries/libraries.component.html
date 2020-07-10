@@ -1,3 +1,60 @@
-<p>
-  libraries works!
-</p>
+<div class="container">
+  <div class="row-mt-5">
+    <div class="col-mid-1">
+
+    </div>
+
+    <div class="col-mid-10">
+      <table>
+        <tr>
+          <th>Library</th>
+          <th>Description</th>
+          <th>Interest</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="text" [(ngModel)]="librarytoinsert.name">
+          </td>
+          <td>
+            <select [(ngModel)]="librarytoinsert.description">
+              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="librarytoinsert.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(librarytoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Delete</button>
+          </td>
+        </tr>
+        <tr *ngFor="let library of libraries">
+          <td>
+            <label>{{library.name}}</label>
+          </td>
+          <td>
+            <label>{{library.description.description}}</label>
+          </td>
+          <td>
+            <label>{{library.interest.interest}}</label>
+          </td>
+          <td>
+            <button (click)=update(library)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(library)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

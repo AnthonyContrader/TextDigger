@@ -27,20 +27,22 @@ import { TagsComponent } from './tags/tags.component';
  * @see layout
  */
 const routes: Routes = [
-  { path: 'admin-dashboard', component: AdminLayoutComponent, children:[
-    { path: '', component: AdminDashboardComponent},
-    { path: 'users', component: UsersComponent},
-    { path: 'work-in-progress', component: WorkInProgressComponent}, 
-    { path: 'descriptions', component: DescriptionsComponent},
-    { path: 'documents', component: DocumentsComponent}, 
-    { path: 'folders', component: FoldersComponent},
-    { path: 'interestgroups', component: InterestgroupsComponent},
-    { path: 'interests', component: InterestsComponent},
-    { path: 'libraries', component: LibrariesComponent},
-    { path: 'searchconnections', component: SearchconnectionsComponent},
-    { path: 'subscribes', component: SubscribesComponent},
-    { path: 'tags', component: TagsComponent}
-  ]}
+  {
+    path: 'admin-dashboard', component: AdminLayoutComponent, children: [
+      { path: '', component: AdminDashboardComponent },
+      { path: 'users', component: UsersComponent },
+      { path: 'work-in-progress', component: WorkInProgressComponent },
+      { path: 'descriptions', component: DescriptionsComponent },
+      { path: 'documents', component: DocumentsComponent },
+      { path: 'folders', component: FoldersComponent },
+      { path: 'interestgroups', component: InterestgroupsComponent },
+      { path: 'interests', component: InterestsComponent },
+      { path: 'libraries', component: LibrariesComponent },
+      { path: 'searchconnections', component: SearchconnectionsComponent },
+      { path: 'subscribes', component: SubscribesComponent },
+      { path: 'tags', component: TagsComponent }
+    ]
+  }
 ];
 
 @NgModule({

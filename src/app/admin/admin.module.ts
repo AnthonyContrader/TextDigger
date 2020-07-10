@@ -24,8 +24,8 @@ import { TagsComponent } from './tags/tags.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, DescriptionsComponent, DocumentsComponent, FoldersComponent, InterestgroupsComponent, 
-  InterestsComponent, LibrariesComponent, SearchconnectionsComponent, SubscribesComponent, TagsComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, DescriptionsComponent, DocumentsComponent, FoldersComponent, InterestgroupsComponent,
+    InterestsComponent, LibrariesComponent, SearchconnectionsComponent, SubscribesComponent, TagsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

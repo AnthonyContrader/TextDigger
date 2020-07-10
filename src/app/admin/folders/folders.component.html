@@ -1,3 +1,54 @@
-<p>
-  folders works!
-</p>
+<div class="container">
+  <div class="row-mt-5">
+    <div class="col-mid-1">
+
+    </div>
+
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>Folder</th>
+          <th>Library</th>
+          <th>Description</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="name" [(ngModel)]="foldertoinsert.name">
+          </td>
+          <td>
+            <select [(ngModel)]="foldertoinsert.library">
+              <option *ngFor="let library of libraries">{{library.name}}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="foldertoinsert.description">
+              <option *ngFor="let description of descriptions">{{description.description}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(foldertoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Delete</button>
+          </td>
+        </tr>
+        <tr *ngFor="let folder of folders">
+          <td>
+            <label>{{folder.name}}</label>
+          </td>
+          <td>
+            <label>{{folder.library.name}}</label>
+          </td>
+          <td>
+            <label>{{folder.description.description}}</label>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

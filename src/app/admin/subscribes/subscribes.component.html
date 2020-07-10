@@ -1,3 +1,53 @@
-<p>
-  subscribes works!
-</p>
+<div class="container">
+  <div class="row-mt-5">
+    <div class="col-mid-1">
+
+    </div>
+
+    <div class="col-mid-10">
+      <table>
+        <tr>
+          <th>User</th>
+          <th>InterestGroup</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <td>
+            <select [(ngModel)]="subscribetoinsert.user">
+              <option *ngFor="let user of users" [ngValue]="user">{{user.username}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="subscribetoinsert.interestgroup">
+              <option *ngFor="let interestgroup of interestgroups" [ngValue]="interestgroup">{{interestgroup.interestgroup}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(subscribetoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Delete</button>
+          </td>
+        </tr>
+        <tr *ngFor="let subscribe of subscribes">
+          <td>
+            <label>{{subscribe.user.username}}</label>
+          </td>
+          <td>
+            <label>{{subscribe.interestgroup.interestgroup}}</label>
+          </td>
+          <td>
+            <button (click)=update(subscribe)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(subscribe)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>
