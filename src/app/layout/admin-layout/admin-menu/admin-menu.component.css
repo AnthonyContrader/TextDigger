@@ -5,6 +5,7 @@
     left: 0;
     background-color: #1e282d;
     overflow-x: visible;
+    overflow-y: scroll;
     transition: 0.5s;
     padding-top: 0;
   }
