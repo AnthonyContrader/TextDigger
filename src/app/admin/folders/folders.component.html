@@ -35,13 +35,13 @@
         </tr>
         <tr *ngFor="let folder of folders">
           <td>
-            <label>{{folder.name}}</label>
+            <input [(ngModel)]="folder.name">
           </td>
           <td>
-            <label>{{folder.library.name}}</label>
+            <input [(ngModel)]="folder.library.name">
           </td>
           <td>
-            <label>{{folder.description.description}}</label>
+            <input [(ngModel)]="folder.description.description">
           </td>
         </tr>
       </table>

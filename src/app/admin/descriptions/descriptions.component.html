@@ -47,19 +47,19 @@
         </tr>
         <tr *ngFor="let description of descriptions">
           <td>
-            <label>{{description.description}}</label>
+            <input [(ngModel)]="description.description">
           </td>
           <td>
-            <label>{{description.folder.name}}</label>
+            <input [(ngModel)]="description.folder.name">
           </td>
           <td>
-            <label>{{description.library.name}}</label>
+            <input [(ngModel)]="description.library.name">
           </td>
           <td>
-            <label>{{description.document.text}}</label>
+            <input [(ngModel)]="description.document.text">
           </td>
           <td>
-            <label>{{description.interest.interest}}</label>
+            <input [(ngModel)]="description.interest.interest">
           </td>
           <td>
             <button (click)=update(description)>Save</button>

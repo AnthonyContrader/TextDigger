@@ -42,16 +42,16 @@
         </tr>
         <tr *ngFor="let document of documents">
           <td>
-            <label>{{document.text}}</label>
+            <input [(ngModel)]="document.text"]>
           </td>
           <td>
-            <label>{{document.user.username}}</label>
+            <input [(ngModel)]="document.user.username">
           </td>
           <td>
-            <label>{{document.folder.name}}</label>
+            <input [(ngModel)]="document.folder.name">
           </td>
           <td>
-            <label>{{document.description.description}}</label>
+            <input [(ngModel)]="document.description.description">
           </td>
           <td>
             <button (click)=update(document)>Save</button>
