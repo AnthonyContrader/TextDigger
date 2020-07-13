@@ -45,13 +45,20 @@
             <input [(ngModel)]="document.text"]>
           </td>
           <td>
-            <input [(ngModel)]="document.user.username">
+            <select [(ngModel)]="documenttoinsert.user">
+              <option *ngFor="let user of users" [ngValue]="user">{{user.username}}</option>
+            </select>
           </td>
           <td>
-            <input [(ngModel)]="document.folder.name">
+            <select [(ngModel)]="documenttoinsert.folder">
+              <option *ngFor="let folder of folders" [ngValue]="folder">{{folder.name}}</option>
+            </select>
           </td>
           <td>
-            <input [(ngModel)]="document.description.description">
+            <select [(ngModel)]="documenttoinsert.description">
+              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
+              </option>
+            </select>
           </td>
           <td>
             <button (click)=update(document)>Save</button>
