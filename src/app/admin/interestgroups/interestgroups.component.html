@@ -29,7 +29,7 @@
         </tr>
         <tr *ngFor="let interestgroup of interestgroups">
           <td>
-            <label>{{interestgroup.interestgroup}}</label>
+            <input [(ngModel)]="interestgroup.interestgroup">
           </td>
           <td>
             <label>{{interestgroup.interest.interest}}</label>

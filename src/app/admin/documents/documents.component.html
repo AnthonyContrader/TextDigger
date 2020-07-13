@@ -42,23 +42,16 @@
         </tr>
         <tr *ngFor="let document of documents">
           <td>
-            <input [(ngModel)]="document.text"]>
+            <input [(ngModel)]="document.text">
           </td>
           <td>
-            <select [(ngModel)]="documenttoinsert.user">
-              <option *ngFor="let user of users" [ngValue]="user">{{user.username}}</option>
-            </select>
+            <label>{{document.user.username}}</label>
           </td>
           <td>
-            <select [(ngModel)]="documenttoinsert.folder">
-              <option *ngFor="let folder of folders" [ngValue]="folder">{{folder.name}}</option>
-            </select>
+            <label>{{document.folder.name}}</label>
           </td>
           <td>
-            <select [(ngModel)]="documenttoinsert.description">
-              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
-              </option>
-            </select>
+            <label>{{document.description.description}}</label>
           </td>
           <td>
             <button (click)=update(document)>Save</button>

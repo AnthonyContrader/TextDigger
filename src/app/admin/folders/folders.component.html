@@ -47,6 +47,12 @@
               <option *ngFor="let description of descriptions">{{description.description}}</option>
             </select>
           </td>
+          <td>
+            <button (click)=update(folder)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(folder)">Delete</button>
+          </td>
         </tr>
       </table>
     </div>
