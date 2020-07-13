@@ -23,11 +23,11 @@ export class InterestgroupsComponent implements OnInit {
   }
 
   getInterestGroups(){
-    this.service.getAll().subscribe(interestgroups => this.interestgroups = this.interestgroups);
+    this.service.getAll().subscribe(interestgroups => this.interestgroups = interestgroups);
   }
 
   getInterests(){
-    this.service_interest.getAll().subscribe(interests => this.interests = this.interests);
+    this.service_interest.getAll().subscribe(interests => this.interests = interests);
   }
 
   delete(interestgroup: InterestGroupDTO) {

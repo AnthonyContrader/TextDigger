@@ -27,15 +27,15 @@ export class SubscribesComponent implements OnInit {
   }
 
   getSubscribes(){
-    this.service.getAll().subscribe(subscribes => this.subscribes = this.subscribes);
+    this.service.getAll().subscribe(subscribes => this.subscribes = subscribes);
   }
 
   getUsers(){
-    this.service_user.getAll().subscribe(users => this.users = this.users);
+    this.service_user.getAll().subscribe(users => this.users = users);
   }
 
   getInterestGroups(){
-    this.service_interestgroup.getAll().subscribe(interestgroups => this.interestgroups = this.interestgroups);
+    this.service_interestgroup.getAll().subscribe(interestgroups => this.interestgroups = interestgroups);
   }
 
   delete(subscribe: SubscribeDTO) {

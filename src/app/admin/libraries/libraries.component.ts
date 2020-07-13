@@ -27,15 +27,15 @@ export class LibrariesComponent implements OnInit {
   }
 
   getLibraries(){
-    this.service.getAll().subscribe(libraries => this.libraries = this.libraries);
+    this.service.getAll().subscribe(libraries => this.libraries = libraries);
   }
 
   getDescriptions(){
-    this.service_description.getAll().subscribe(descriptions => this.descriptions = this.descriptions);
+    this.service_description.getAll().subscribe(descriptions => this.descriptions = descriptions);
   }
 
   getInterests(){
-    this.service_interest.getAll().subscribe(interests => this.interests = this.interests);
+    this.service_interest.getAll().subscribe(interests => this.interests = interests);
   }
 
   delete(library: LibraryDTO) {

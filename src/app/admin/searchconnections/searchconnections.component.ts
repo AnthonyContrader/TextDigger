@@ -27,15 +27,15 @@ export class SearchconnectionsComponent implements OnInit {
   }
 
   getSearchConnections(){
-    this.service.getAll().subscribe(searchconnections => this.searchconnections = this.searchconnections);
+    this.service.getAll().subscribe(searchconnections => this.searchconnections = searchconnections);
   }
 
   getTags(){
-    this.service_tag.getAll().subscribe(tags => this.tags = this.tags);
+    this.service_tag.getAll().subscribe(tags => this.tags = tags);
   }
 
   getDocuments(){
-    this.service_document.getAll().subscribe(documents => this.documents = this.documents);
+    this.service_document.getAll().subscribe(documents => this.documents = documents);
   }
 
   delete(searchconnection: SearchConnectionDTO) {

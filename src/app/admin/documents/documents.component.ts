@@ -31,19 +31,19 @@ export class DocumentsComponent implements OnInit {
   }
 
   getDocuments(){
-    this.service.getAll().subscribe(documents => this.documents = this.documents);
+    this.service.getAll().subscribe(documents => this.documents = documents);
   }
 
   getUsers(){
-    this.service_user.getAll().subscribe(users => this.users = this.users);
+    this.service_user.getAll().subscribe(users => this.users = users);
   }
 
   getFolders(){
-    this.service_folder.getAll().subscribe(folders => this.folders = this.folders);
+    this.service_folder.getAll().subscribe(folders => this.folders = folders);
   }
 
   getDescriptions(){
-    this.service_description.getAll().subscribe(descriptions => this.descriptions = this.descriptions);
+    this.service_description.getAll().subscribe(descriptions => this.descriptions = descriptions);
   }
 
   delete(document: DocumentDTO) {

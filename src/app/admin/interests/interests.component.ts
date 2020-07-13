@@ -19,7 +19,7 @@ export class InterestsComponent implements OnInit {
   }
 
   getInterests(){
-    this.service.getAll().subscribe(interests => this.interests = this.interests);
+    this.service.getAll().subscribe(interests => this.interests = interests);
   }
 
   delete(interest: InterestDTO) {

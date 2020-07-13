@@ -27,15 +27,15 @@ export class FoldersComponent implements OnInit {
   }
 
   getFolders(){
-    this.service.getAll().subscribe(folders => this.folders = this.folders);
+    this.service.getAll().subscribe(folders => this.folders = folders);
   }
 
   getLibraries(){
-    this.service_library.getAll().subscribe(libraries => this.libraries = this.libraries);
+    this.service_library.getAll().subscribe(libraries => this.libraries = libraries);
   }
 
   getDescriptions(){
-    this.service_description.getAll().subscribe(descriptions => this.descriptions = this.descriptions);
+    this.service_description.getAll().subscribe(descriptions => this.descriptions = descriptions);
   }
 
   delete(folder: FolderDTO) {

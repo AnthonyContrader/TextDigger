@@ -36,23 +36,23 @@ export class DescriptionsComponent implements OnInit {
   }
 
   getDescriptions() {
-    this.service.getAll().subscribe(descriptions => this.descriptions = this.descriptions);
+    this.service.getAll().subscribe(descriptions => this.descriptions = descriptions);
   }
 
   getFolders(){
-    this.service_folder.getAll().subscribe(folders => this.folders = this.folders);
+    this.service_folder.getAll().subscribe(folders => this.folders = folders);
   }
 
   getLibraries(){
-    this.service_library.getAll().subscribe(libraries => this.libraries = this.libraries);
+    this.service_library.getAll().subscribe(libraries => this.libraries = libraries);
   }
 
   getInterests(){
-    this.service_interest.getAll().subscribe(interests => this.interests = this.interests);
+    this.service_interest.getAll().subscribe(interests => this.interests = interests);
   }
 
   getDocuments(){
-    this.service_document.getAll().subscribe(documents => this.documents = this.documents);
+    this.service_document.getAll().subscribe(documents => this.documents = documents);
   }
 
   delete(description: DescriptionDTO) {

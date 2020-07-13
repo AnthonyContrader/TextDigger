@@ -23,7 +23,7 @@ export class TagsComponent implements OnInit {
   }
 
   getTags(){
-    this.service.getAll().subscribe(tags => this.tags = this.tags);
+    this.service.getAll().subscribe(tags => this.tags = tags);
   }
 
   getDescriptions(){
