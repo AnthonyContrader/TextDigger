@@ -39,10 +39,15 @@
             <input [(ngModel)]="library.name">
           </td>
           <td>
-            <label>{{library.description.description}}</label>
+            <select [(ngModel)]="librarytoinsert.description">
+              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
+              </option>
+            </select>
           </td>
           <td>
-            <label>{{library.interest.interest}}</label>
+            <select [(ngModel)]="library.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+            </select>
           </td>
           <td>
             <button (click)=update(library)>Save</button>

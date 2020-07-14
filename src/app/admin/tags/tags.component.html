@@ -33,7 +33,10 @@
             <input [(ngModel)]="tag.tag">
           </td>
           <td>
-            <label>{{tag.description.description}}</label>
+            <select [(ngModel)]="tag.description">
+              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
+              </option>
+            </select>
           </td>
           <td>
             <button (click)=update(tag)>Save</button>

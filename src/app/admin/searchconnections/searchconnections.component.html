@@ -32,10 +32,15 @@
         </tr>
         <tr *ngFor="let searchconnection of searchconnections">
           <td>
-            <label>{{searchconnection.tag.tag}}</label>
+            <select [(ngModel)]="searchconnection.tag">
+              <option *ngFor="let tag of tags" [ngValue]="tag">{{tag.tag}}
+              </option>
+            </select>
           </td>
           <td>
-            <label>{{searchconnection.document.text}}</label>
+            <select [(ngModel)]="searchconnection.document">
+              <option *ngFor="let document of documents" [ngValue]="document">{{document.text}}</option>
+            </select>
           </td>
           <td>
             <button (click)=update(searchconnection)>Save</button>

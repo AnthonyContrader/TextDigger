@@ -38,10 +38,14 @@
             <input [(ngModel)]="folder.name">
           </td>
           <td>
-            <label>{{folder.library.name}}</label>
+            <select [(ngModel)]="folder.library">
+              <option *ngFor="let library of libraries">{{library.name}}</option>
+            </select>
           </td>
           <td>
-            <label>{{folder.description.description}}</label>
+            <select [(ngModel)]="folder.description">
+              <option *ngFor="let description of descriptions">{{description.description}}</option>
+            </select>
           </td>
           <td>
             <button (click)=update(folder)>Save</button>

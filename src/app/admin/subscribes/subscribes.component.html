@@ -32,10 +32,15 @@
         </tr>
         <tr *ngFor="let subscribe of subscribes">
           <td>
-            <label>{{subscribe.user.username}}</label>
+            <select [(ngModel)]="subscribe.user">
+              <option *ngFor="let user of users" [ngValue]="user">{{user.username}}
+              </option>
+            </select>
           </td>
           <td>
-            <label>{{subscribe.interestgroup.interestgroup}}</label>
+            <select [(ngModel)]="subscribe.interestgroup">
+              <option *ngFor="let interestgroup of interestgroups" [ngValue]="interestgroup">{{interestgroup.interestgroup}}</option>
+            </select>
           </td>
           <td>
             <button (click)=update(subscribe)>Save</button>

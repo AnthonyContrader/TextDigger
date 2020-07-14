@@ -45,13 +45,20 @@
             <input [(ngModel)]="document.text">
           </td>
           <td>
-            <label>{{document.user.username}}</label>
+            <select [(ngModel)]="document.user">
+              <option *ngFor="let user of users" [ngValue]="user">{{user.username}}</option>
+            </select>
           </td>
           <td>
-            <label>{{document.folder.name}}</label>
+            <select [(ngModel)]="document.folder">
+              <option *ngFor="let folder of folders" [ngValue]="folder">{{folder.name}}</option>
+            </select>
           </td>
           <td>
-            <label>{{document.description.description}}</label>
+            <select [(ngModel)]="document.description">
+              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
+              </option>
+            </select>
           </td>
           <td>
             <button (click)=update(document)>Save</button>

@@ -16,8 +16,8 @@
             <input placeholder="text" [(ngModel)]="interestgrouptoinsert.interestgroup">
           </td>
           <td>
-            <select class="form-control" [(ngModel)]="interestgrouptoinsert.interest.id">
-              <option *ngFor="let interest of interests" [ngValue]="interest.id">{{interest.interest}}</option>
+            <select [(ngModel)]="interestgrouptoinsert.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
             </select>
           </td>
           <td>
@@ -32,7 +32,9 @@
             <input [(ngModel)]="interestgroup.interestgroup">
           </td>
           <td>
-            <label>{{interestgroup.interest.interest}}</label>
+            <select [(ngModel)]="interestgroup.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+            </select>
           </td>
           <td>
             <button (click)=update(interestgroup)>Save</button>
