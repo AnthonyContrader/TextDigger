@@ -39,7 +39,7 @@
             <input [(ngModel)]="library.name">
           </td>
           <td>
-            <select [(ngModel)]="librarytoinsert.description">
+            <select [(ngModel)]="library.description">
               <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
               </option>
             </select>
