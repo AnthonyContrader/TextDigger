@@ -50,16 +50,24 @@
             <input [(ngModel)]="description.description">
           </td>
           <td>
-            <label>{{description.folder.name}}</label>
+            <select [(ngModel)]="description.folder.id">
+              <option *ngFor="let folder of folders" [ngValue]="folder.id">{{folder.name}}</option>
+            </select>
           </td>
           <td>
-            <label>{{description.library.name}}</label>
+           <select [(ngModel)]="description.library.id">
+             <option *ngFor="let library of libraries" [ngValue]="library.id">{{library.name}}</option>
+           </select>
           </td>
           <td>
-            <label>{{description.document.text}}</label>
+            <select [(ngModel)]="description.document.id">
+              <option *ngFor="let document of documents" [ngValue]="document.id">{{document.text}}</option>
+            </select>
           </td>
           <td>
-            <label>{{description.interest.interest}}</label>
+            <select [(ngModel)]="description.interest.id">
+              <option *ngFor="let interest of interests" [ngValue]="interest.id">{{interest.interest}}</option>
+            </select>
           </td>
           <td>
             <button (click)=update(description)>Save</button>
