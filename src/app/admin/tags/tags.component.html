@@ -30,7 +30,7 @@
         </tr>
         <tr *ngFor="let tag of tags">
           <td>
-            <label>{{tag.tag}}</label>
+            <input [(ngModel)]="tag.tag">
           </td>
           <td>
             <label>{{tag.description.description}}</label>

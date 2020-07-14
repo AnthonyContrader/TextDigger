@@ -12,7 +12,7 @@
         </tr>
         <tr>
           <td>
-            <input placeholder="text" [(ngModel)]="interesttoinsert.interest">
+            <input placeholder="interest" [(ngModel)]="interesttoinsert.interest">
           </td>
           <td>
             <button (click)="insert(interesttoinsert)">Insert</button>
@@ -23,7 +23,7 @@
         </tr>
         <tr *ngFor="let interest of interests">
           <td>
-            <label>{{interest.interest}}</label>
+            <input [(ngModel)]="interest.interest">
           </td>
           <td>
             <button (click)=update(interest)>Save</button>
