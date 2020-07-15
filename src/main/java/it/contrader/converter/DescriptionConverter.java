@@ -12,8 +12,7 @@ public class DescriptionConverter extends AbstractConverter<Description, Descrip
 	public Description toEntity(DescriptionDTO descriptionDto) {
 		Description description = null;
 		if(descriptionDto != null) {
-			description = new Description(descriptionDto.getId(), descriptionDto.getDescription(), descriptionDto.getFolder(),
-					descriptionDto.getLibrary(), descriptionDto.getDocument(), descriptionDto.getInterest());
+			description = new Description(descriptionDto.getId(), descriptionDto.getDescription());
 		}
 		return description;
 	}
@@ -22,8 +21,7 @@ public class DescriptionConverter extends AbstractConverter<Description, Descrip
 	public DescriptionDTO toDTO(Description description) {
 		DescriptionDTO descriptionDTO = null;
 		if(description != null) {
-			descriptionDTO = new DescriptionDTO(description.getId(), description.getDescription(), description.getFolder(),
-					description.getLibrary(), description.getDocument(), description.getInterest());
+			descriptionDTO = new DescriptionDTO(description.getId(), description.getDescription());
 		}
 		return descriptionDTO;
 	}
