@@ -33,8 +33,7 @@
         <tr *ngFor="let searchconnection of searchconnections">
           <td>
             <select [(ngModel)]="searchconnection.tag.tag">
-              <option *ngFor="let tag of tags" [ngValue]="tag.tag">{{tag.tag}}
-              </option>
+              <option *ngFor="let tag of tags" [ngValue]="tag.tag">{{tag.tag}}</option>
             </select>
           </td>
           <td>
