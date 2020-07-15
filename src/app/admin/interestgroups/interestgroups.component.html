@@ -32,8 +32,8 @@
             <input [(ngModel)]="interestgroup.interestgroup">
           </td>
           <td>
-            <select [(ngModel)]="interestgroup.interest">
-              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+            <select [(ngModel)]="interestgroup.interest.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest.interest">{{interest.interest}}</option>
             </select>
           </td>
           <td>

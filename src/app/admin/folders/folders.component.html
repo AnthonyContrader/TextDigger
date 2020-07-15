@@ -18,12 +18,12 @@
           </td>
           <td>
             <select [(ngModel)]="foldertoinsert.library">
-              <option *ngFor="let library of libraries">{{library.name}}</option>
+              <option *ngFor="let library of libraries" [ngValue]="library">{{library.name}}</option>
             </select>
           </td>
           <td>
             <select [(ngModel)]="foldertoinsert.description">
-              <option *ngFor="let description of descriptions">{{description.description}}</option>
+              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}</option>
             </select>
           </td>
           <td>
@@ -43,7 +43,7 @@
             </select>
           </td>
           <td>
-            <select [(ngModel)]="folder.description">
+            <select [(ngModel)]="folder.description.description">
               <option *ngFor="let description of descriptions" [ngValue]="description.description">{{description.description}}</option>
             </select>
           </td>
