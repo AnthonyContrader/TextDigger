@@ -32,14 +32,14 @@
         </tr>
         <tr *ngFor="let searchconnection of searchconnections">
           <td>
-            <select [(ngModel)]="searchconnection.tag">
-              <option *ngFor="let tag of tags" [ngValue]="tag">{{tag.tag}}
+            <select [(ngModel)]="searchconnection.tag.tag">
+              <option *ngFor="let tag of tags" [ngValue]="tag.tag">{{tag.tag}}
               </option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="searchconnection.document">
-              <option *ngFor="let document of documents" [ngValue]="document">{{document.text}}</option>
+            <select [(ngModel)]="searchconnection.document.text">
+              <option *ngFor="let document of documents" [ngValue]="document.text">{{document.text}}</option>
             </select>
           </td>
           <td>

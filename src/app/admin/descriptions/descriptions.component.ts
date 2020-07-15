@@ -47,12 +47,11 @@ export class DescriptionsComponent implements OnInit {
     this.service_library.getAll().subscribe(libraries => this.libraries = libraries);
   }
 
-  getInterests(){
-    this.service_interest.getAll().subscribe(interests => this.interests = interests);
-  }
-
   getDocuments(){
     this.service_document.getAll().subscribe(documents => this.documents = documents);
+  }
+  getInterests(){
+    this.service_interest.getAll().subscribe(interests => this.interests = interests);
   }
 
   delete(description: DescriptionDTO) {

@@ -33,8 +33,8 @@
             <input [(ngModel)]="tag.tag">
           </td>
           <td>
-            <select [(ngModel)]="tag.description">
-              <option *ngFor="let description of descriptions" [ngValue]="description">{{description.description}}
+            <select [(ngModel)]="tag.description.description">
+              <option *ngFor="let description of descriptions" [ngValue]="description.description">{{description.description}}
               </option>
             </select>
           </td>

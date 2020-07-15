@@ -29,13 +29,13 @@
             </select>
           </td>
           <td>
-            <select [(ngModel)]="descriptiontoinsert.document">
-              <option *ngFor="let document of documents" [ngValue]="document">{{document.text}}</option>
+            <select [(ngModel)]="descriptiontoinsert.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="descriptiontoinsert.interest">
-              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+            <select [(ngModel)]="descriptiontoinsert.document">
+              <option *ngFor="let document of documents" [ngValue]="document">{{document.text}}</option>
             </select>
           </td>
           <td>
@@ -50,27 +50,23 @@
             <input [(ngModel)]="description.description">
           </td>
           <td>
-            <select [(ngModel)]="description.folder">
-              <option hidden>{{description.folder.name}}</option>
-              <option *ngFor="let folder of folders" [ngValue]="folder">{{folder.name}}</option>
+            <select [(ngModel)]="description.folder.name">
+              <option *ngFor="let folder of folders" [ngValue]="folder.name">{{folder.name}}</option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="description.library">
-              <option hidden>{{description.library.name}}</option>
-              <option *ngFor="let library of libraries" [ngValue]="library">{{library.name}}</option>
+            <select [(ngModel)]="description.library.name">
+              <option *ngFor="let library of libraries" [ngValue]="library.name">{{library.name}}</option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="description.document">
-              <option hidden>{{description.document.text}}</option>
-              <option *ngFor="let document of documents" [ngValue]="document">{{document.text}}</option>
+            <select [(ngModel)]="description.interest.interest">
+              <option *ngFor="let interest of interests" [ngValue]="interest.interest">{{interest.interest}}</option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="description.interest">
-              <option hidden>{{description.interest.interest}}</option>
-              <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+            <select [(ngModel)]="description.document.text">
+              <option *ngFor="let document of documents" [ngValue]="document.text">{{document.text}}</option>
             </select>
           </td>
           <td>
