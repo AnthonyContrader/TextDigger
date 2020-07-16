@@ -45,18 +45,18 @@
             <input [(ngModel)]="document.text">
           </td>
           <td>
-            <select [(ngModel)]="document.user.username">
-              <option *ngFor="let user of users" [ngValue]="user.username">{{user.username}}</option>
+            <select [(ngModel)]="document.user.id">
+              <option *ngFor="let user of users" [ngValue]="user.id">{{user.username}}</option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="document.folder.name">
-              <option *ngFor="let folder of folders" [ngValue]="folder.name">{{folder.name}}</option>
+            <select [(ngModel)]="document.folder.id">
+              <option *ngFor="let folder of folders" [ngValue]="folder.id">{{folder.name}}</option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="document.description.description">
-              <option *ngFor="let description of descriptions" [ngValue]="description.description">{{description.description}}
+            <select [(ngModel)]="document.description.id">
+              <option *ngFor="let description of descriptions" [ngValue]="description.id">{{description.description}}
               </option>
             </select>
           </td>

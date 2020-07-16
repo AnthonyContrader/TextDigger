@@ -32,14 +32,14 @@
         </tr>
         <tr *ngFor="let subscribe of subscribes">
           <td>
-            <select [(ngModel)]="subscribe.user.username">
-              <option *ngFor="let user of users" [ngValue]="user.username">{{user.username}}
+            <select [(ngModel)]="subscribe.user.id">
+              <option *ngFor="let user of users" [ngValue]="user.id">{{user.username}}
               </option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="subscribe.interestgroup.interestgroup">
-              <option *ngFor="let interestgroup of interestgroups" [ngValue]="interestgroup.interestgroup">{{interestgroup.interestgroup}}</option>
+            <select [(ngModel)]="subscribe.interestgroup.id">
+              <option *ngFor="let interestgroup of interestgroups" [ngValue]="interestgroup.id">{{interestgroup.interestgroup}}</option>
             </select>
           </td>
           <td>

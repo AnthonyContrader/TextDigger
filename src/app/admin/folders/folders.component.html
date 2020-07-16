@@ -38,13 +38,13 @@
             <input [(ngModel)]="folder.name">
           </td>
           <td>
-            <select [(ngModel)]="folder.library.name">
-              <option *ngFor="let library of libraries" [ngValue]="library.name">{{library.name}}</option>
+            <select [(ngModel)]="folder.library.id">
+              <option *ngFor="let library of libraries" [ngValue]="library.id">{{library.name}}</option>
             </select>
           </td>
           <td>
-            <select [(ngModel)]="folder.description.description">
-              <option *ngFor="let description of descriptions" [ngValue]="description.description">{{description.description}}</option>
+            <select [(ngModel)]="folder.description.id">
+              <option *ngFor="let description of descriptions" [ngValue]="description.id">{{description.description}}</option>
             </select>
           </td>
           <td>
