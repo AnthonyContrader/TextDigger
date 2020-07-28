@@ -9,7 +9,6 @@ using Project1.Model;
 using Project1.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -38,7 +37,7 @@ namespace Project1.Controllers
             return UserDto.ConvertFrom(userItem);           
         }
 
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
         [Route("/api/v1/[controller]/getusers")]
         [HttpGet]
         public List<UserDto> GetUsers()
@@ -52,16 +51,6 @@ namespace Project1.Controllers
             }
 
             return usersDto;
-        }
-
-        [Route("/api/v1/[controller]/getcountusers")]
-        [HttpGet]
-        public int GetCountUsers()
-        {
-            UserRepository userRepository = new UserRepository(_context);
-            var users = userRepository.GetAll().AsNoTracking();
-
-            return users.Count();
         }
 
         [Route("/api/v1/[controller]/deleteUser")]

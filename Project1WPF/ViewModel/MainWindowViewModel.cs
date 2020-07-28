@@ -31,7 +31,7 @@ namespace Project1WPF.ViewModel
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = new Uri(Shared.Define.CommonDefine.SERVICE1_BASEURL);
-                IProject1Service service = new Project1Service(client, LoginViewModel.TOKEN);
+                IProject1Service service = new Project1Service(client);
                 users = await service.GetUsersAsync();
             }
 

@@ -16,17 +16,10 @@ namespace Shared.Services
     public class Project1Service : IProject1Service
     {
         private readonly HttpClient _httpClient;
-        public string TOKEN { get; private set; }
     
         public Project1Service(HttpClient httpClient)
         {
             _httpClient = httpClient;
-        }
-
-        public Project1Service(HttpClient httpClient, string token)
-        {
-            _httpClient = httpClient;
-            TOKEN = token;
         }
 
         public async Task<UserItem> CreateUserAsync(UserItem user)
@@ -38,7 +31,6 @@ namespace Shared.Services
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = await _httpClient.PostAsync(url, content);
-            response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadAsStringAsync();
 
             var catalog = JsonConvert.DeserializeObject<UserItem>(result);
@@ -49,32 +41,18 @@ namespace Shared.Services
         {
             string url = "/api/v1/user/getusers";
 
-            SetAuthHeader(_httpClient, TOKEN);
             var response = await _httpClient.GetAsync(url);
-            response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadAsStringAsync();
 
             var catalog = JsonConvert.DeserializeObject<List<UserItem>>(result);
             return catalog;
         }
 
-        public async Task<int> GetCountUsersAsync()
-        {
-            string url = "/api/v1/user/getcountusers";
-
-            var response = await _httpClient.GetAsync(url);
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsStringAsync();
-
-            var count = JsonConvert.DeserializeObject<int>(result);
-            return count;
-        }
-
         public async Task<List<UserItem>> CreateSeedUserAsync(int randomUser)
         {
-            int count = await GetCountUsersAsync();
-            if (count > 0)
-                return new List<UserItem>();
+            var users = await GetUsersAsync();
+            if (users.Count > 0)
+                return users;
 
             ConcurrentBag<UserItem> resultUsers = new ConcurrentBag<UserItem>();
 
@@ -88,7 +66,7 @@ namespace Shared.Services
                 Surname = "Root"
             };
             var userResult = await CreateUserAsync(user);
-            resultUsers.Add(userResult);
+            users.Add(userResult);
 
             List<Task<UserItem>> tasks = new List<Task<UserItem>>();
             for (int i = 0; i < randomUser; i++)
@@ -126,42 +104,12 @@ namespace Shared.Services
             var dataAsString = JsonConvert.SerializeObject(loginData);
             var content = new StringContent(dataAsString, Encoding.UTF8, "application/json");
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-          
+
             var response = await _httpClient.PostAsync(url, content);
-            response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadAsStringAsync();
 
             var catalog = JsonConvert.DeserializeObject<UserItem>(result);
             return catalog;
-        }
-
-        public async Task<(UserItem, string token)> GetUserAndTokenByLogin(string login, string password)
-        {
-            string token = string.Empty;
-            string url = "/api/v1/user/getuserbylogin";
-
-            token = await GetToken(login, password);
-
-            dynamic loginData = new ExpandoObject();
-            loginData.Login = login;
-            loginData.Password = password;
-            var dataAsString = JsonConvert.SerializeObject(loginData);
-            var content = new StringContent(dataAsString, Encoding.UTF8, "application/json");
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-            var response = await _httpClient.PostAsync(url, content);
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsStringAsync();
-
-            var user = JsonConvert.DeserializeObject<UserItem>(result);
-            return (user, token);
-        }
-
-        private void SetAuthHeader(HttpClient client, string token)
-        {
-            var headers = client.DefaultRequestHeaders;
-            if(!headers.Contains("Authorization"))
-                headers.Add("Authorization", "Bearer " + token);
         }
 
         public async Task<List<UserItem>> SeedUsers(int randomUser)
@@ -181,26 +129,6 @@ namespace Shared.Services
 
             var catalog = JsonConvert.DeserializeObject<List<UserItem>>(result);
             return catalog;
-        }
-
-        public async Task<string> GetToken(string login, string password)
-        {
-            string url = "/api/v1/token/";
-
-            dynamic loginData = new ExpandoObject();
-            loginData.Login = login;
-            loginData.Password = password;
-            var dataAsString = JsonConvert.SerializeObject(loginData);
-            var content = new StringContent(dataAsString, Encoding.UTF8, "application/json");
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-            var response = await _httpClient.PostAsync(url, content);
-            if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                throw new Exception("Credenzali non valide");
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsStringAsync();
-            
-            return result;
         }
     }
 }

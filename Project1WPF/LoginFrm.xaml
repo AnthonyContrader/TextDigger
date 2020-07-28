@@ -1,5 +1,4 @@
 ﻿<local:BaseForm x:Class="Project1WPF.LoginFrm"
-        xmlns:w="clr-namespace:Project1WPF.Helper"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -34,11 +33,9 @@
             <Label VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Content="Login"></Label>
             <TextBox Margin="10" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
 
-            <Label Grid.Row="1" Grid.Column="0" Content="Password"></Label>
-            <StackPanel Margin="10" Grid.Row="1" Grid.Column="1">
-                <PasswordBox w:PasswordHelper.Attach="True" w:PasswordHelper.Password="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
-            </StackPanel>
-     
+            <Label VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Content="Password"></Label>
+            <TextBox Margin="10" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+
             <Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Content="Entra" Width="64" HorizontalAlignment="Right"
                     Command="{Binding Path=LoginCommand}" IsEnabled="{Binding Path=IsValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Button>
         </Grid>

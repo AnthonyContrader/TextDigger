@@ -38,22 +38,19 @@ namespace Project1Form
 
             try
             {
-                Program.TOKEN = string.Empty;
-
-                (UserItem, string token) user = default;
+                UserItem user = null;
                 using (HttpClient client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(Shared.Define.CommonDefine.SERVICE1_BASEURL);
                     IProject1Service service = new Project1Service(client);
-                    user = await service.GetUserAndTokenByLogin(login, password);
-                    if (user == default)
+                    user = await service.GetUserByLogin(login, password);
+                    if (user == null)
                     {
                         MessageBox.Show("Creedenziali non valide");
                         return;
                     }
                 }
 
-                Program.TOKEN = user.token;
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)

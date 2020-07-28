@@ -17,8 +17,6 @@ namespace Project1WPF.ViewModel
 {
     public class LoginViewModel : BaseViewModel, IDataErrorInfo
     {
-        public static string TOKEN { get; private set; }
-
         #region fields
 
         private string _login;
@@ -53,7 +51,7 @@ namespace Project1WPF.ViewModel
         #endregion
 
         #region events
-        public event EventHandler<(UserItem, string token)> LoginCompleted;
+        public event EventHandler<UserItem> LoginCompleted;
         #endregion
 
         #region command
@@ -93,20 +91,18 @@ namespace Project1WPF.ViewModel
                     return;
                 }
 
-                (UserItem, string token) user = default;
+                UserItem user = null;
                 using (HttpClient client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(Shared.Define.CommonDefine.SERVICE1_BASEURL);
                     IProject1Service service = new Project1Service(client);
-                    user = await service.GetUserAndTokenByLogin(Login, Password);
-                    if (user == default)
+                    user = await service.GetUserByLogin(Login, Password);
+                    if (user == null)
                     {
                         NotifyMessage("Credenziali non valide");
                         return;
                     }
                 }
-
-                TOKEN = user.token;
 
                 if (LoginCompleted != null)
                     LoginCompleted(this, user);

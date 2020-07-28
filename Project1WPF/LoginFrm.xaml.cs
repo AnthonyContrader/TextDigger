@@ -1,5 +1,4 @@
 ﻿using Project1WPF.ViewModel;
-using Shared.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +33,7 @@ namespace Project1WPF
             this.DataContext = loginViewModel;
         }
 
-        private void LoginViewModel_LoginCompleted(object sender, (UserItem, string token) e)
+        private void LoginViewModel_LoginCompleted(object sender, Shared.Model.UserItem e)
         {
             this.DialogResult = true;
         }

@@ -16,6 +16,6 @@ namespace Project1.Model
         public string Email { get; set; }
         public bool IsAdmin { get; set; } = false;
 
-        public ICollection<ProductItem> Products { get; set; }
+        public IList<Review> Reviews { get; set; }
     }
 }

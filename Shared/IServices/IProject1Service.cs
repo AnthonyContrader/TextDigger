@@ -11,6 +11,5 @@ namespace Project2.IServices
         Task<UserItem> GetUserByLogin(string login, string password);
         Task<List<UserItem>> SeedUsers(int randomUser);
         Task<List<UserItem>> GetUsersAsync();
-        Task<(UserItem, string token)> GetUserAndTokenByLogin(string login, string password);
     }
 }
