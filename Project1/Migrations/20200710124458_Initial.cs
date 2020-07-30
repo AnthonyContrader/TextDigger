@@ -7,31 +7,36 @@ namespace Project1.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Localita",
+                name: "Interest",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Citta = table.Column<string>(maxLength: 50, nullable: false),
-                    Provincia = table.Column<string>(maxLength: 50, nullable: false),
-                    Stato = table.Column<string>(maxLength: 50, nullable: false)
+                    Interest = table.Column<string>(maxLength: 50, nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Localita", x => x.Id);
+                    table.PrimaryKey("PK_Interest", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tipologia",
+                name: "InterestGroup",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomeTipologia = table.Column<string>(maxLength: 50, nullable: false)
+                    InterestGroup = table.Column<string>(maxLength: 50, nullable: false),
+					InterestId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tipologia", x => x.Id);
+                    table.PrimaryKey("PK_InterestGroup", x => x.Id);
+					table.ForeignKey(
+                        name: "FK_InterestGroup_Interest_InterestId",
+                        column: x => x.InterestId,
+                        principalTable: "Interest",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,53 +60,34 @@ namespace Project1.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Esercizio",
+                name: "Tag",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(maxLength: 50, nullable: false),
-                    Indirizzo = table.Column<string>(maxLength: 150, nullable: false),
-                    PrezzoMedio = table.Column<double>(nullable: false),
-                    LocalitaId = table.Column<int>(nullable: false),
-                    TipologiaId = table.Column<int>(nullable: false)
+                    Tag = table.Column<string>(maxLength: 50, nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Esercizio", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Esercizio_Localita_LocalitaId",
-                        column: x => x.LocalitaId,
-                        principalTable: "Localita",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Esercizio_Tipologia_TipologiaId",
-                        column: x => x.TipologiaId,
-                        principalTable: "Tipologia",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Tag", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Review",
+                name: "Subscribe",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Titolo = table.Column<string>(maxLength: 50, nullable: false),
-                    Testo = table.Column<string>(maxLength: 280, nullable: false),
-                    Voto = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
-                    EsercizioId = table.Column<int>(nullable: false)
+                    UserId = table.Column<string>(maxLength: 50, nullable: false),
+                    InterestGroupId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Review", x => x.Id);
+                    table.PrimaryKey("PK_Subscribe", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Review_Esercizio_EsercizioId",
-                        column: x => x.EsercizioId,
-                        principalTable: "Esercizio",
+                        name: "FK_Subscribe_InterestGroup_InterestGroupId",
+                        column: x => x.InterestGroupId,
+                        principalTable: "InterestGroup",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -113,42 +99,37 @@ namespace Project1.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Esercizio_LocalitaId",
-                table: "Esercizio",
-                column: "LocalitaId");
+                name: "IX_InterestGroup_InterestId",
+                table: "InterestGroup",
+                column: "InterestId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Esercizio_TipologiaId",
-                table: "Esercizio",
-                column: "TipologiaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Review_EsercizioId",
-                table: "Review",
-                column: "EsercizioId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Review_UserId",
-                table: "Review",
+                name: "IX_Subscribe_UserId",
+                table: "Subscribe",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Subscribe_InterestGroupId",
+                table: "Subscribe",
+                column: "InterestGroupId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Review");
+                name: "Interest");
 
             migrationBuilder.DropTable(
-                name: "Esercizio");
+                name: "InterestGroup");
 
             migrationBuilder.DropTable(
                 name: "User");
 
             migrationBuilder.DropTable(
-                name: "Localita");
+                name: "Subscribe");
 
             migrationBuilder.DropTable(
-                name: "Tipologia");
+                name: "Tag");
         }
     }
 }

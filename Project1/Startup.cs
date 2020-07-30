@@ -26,10 +26,10 @@ namespace Project1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IConfiguration>(Configuration);
-            services.AddTransient<LocalitaRepository, LocalitaRepository>();
-            services.AddTransient<TipologiaRepository, TipologiaRepository>();
-            services.AddTransient<EsercizioRepository, EsercizioRepository>();
-            services.AddTransient<ReviewRepository, ReviewRepository>();
+            services.AddTransient<InterestRepository, InterestRepository>();
+            services.AddTransient<InterestGroupRepository, InterestGroupRepository>();
+            services.AddTransient<SubscribeRepository, SubscribeRepository>();
+            services.AddTransient<TagRepository, TagRepository>();
             services.AddTransient<UserRepository, UserRepository>();
 
             services.AddDbContext<Project1Context>(options =>
