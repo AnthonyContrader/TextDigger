@@ -31,6 +31,10 @@ namespace Project1
             services.AddTransient<SubscribeRepository, SubscribeRepository>();
             services.AddTransient<TagRepository, TagRepository>();
             services.AddTransient<UserRepository, UserRepository>();
+            services.AddTransient<DocumentRepository, DocumentRepository>();
+            services.AddTransient<FolderRepository, FolderRepository>();
+            services.AddTransient<LibraryRepository, LibraryRepository>();
+            services.AddTransient<SearchConnectionRepository, SearchConnectionRepository>();
 
             services.AddDbContext<Project1Context>(options =>
             {

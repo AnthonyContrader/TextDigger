@@ -7,7 +7,9 @@ namespace Project1.Model
 {
     public class Subscribe : BaseModel
     {
-        public User User { get; set; }
+
+        public int UserId { get; set; }
+        public UserItem User { get; set; }
         public InterestGroup InterestGroup { get; set; }
 		
     }

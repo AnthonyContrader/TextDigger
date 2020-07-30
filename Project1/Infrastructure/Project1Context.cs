@@ -52,7 +52,7 @@ namespace Project1.Infrastructure
                 entity.Property(e => e.Email).HasMaxLength(50);
                 entity.Property(e => e.Address).HasMaxLength(200);
                 entity.Property(e => e.IsAdmin).HasDefaultValue(false);
-                entity.HasMany(c => c.Subscribe).WithOne(e => e.User).HasForeignKey(e => e.UserId);
+                entity.HasMany(c => c.Subscribes).WithOne(e => e.User).HasForeignKey(e => e.UserId);
             });
 
             modelBuilder.Entity<Interest>(entity =>
@@ -86,6 +86,39 @@ namespace Project1.Infrastructure
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Tag).HasMaxLength(50).IsRequired();
                 entity.HasMany(d => d.SearchConnectionPerTag).WithOne(e => e.Tag).HasForeignKey(e => e.TagId);
+            });
+
+            modelBuilder.Entity<Document>(entity =>
+            {
+                entity.ToTable("Document");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Text).HasMaxLength(100).IsRequired();
+                entity.HasOne(u => u.User).WithMany(e => e.Documents).HasForeignKey(e => e.UserItemId);
+                entity.HasOne(f => f.Folder).WithMany(e => e.Documents).HasForeignKey(e => e.FolderId);
+            });
+
+            modelBuilder.Entity<Folder>(entity =>
+            {
+                entity.ToTable("Folder");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).HasMaxLength(100).IsRequired();
+                entity.HasOne(l => l.Library).WithMany(e => e.Folders).HasForeignKey(e => e.LibraryId);
+            });
+
+            modelBuilder.Entity<Library>(entity =>
+            {
+                entity.ToTable("Library");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).HasMaxLength(100).IsRequired();
+                entity.HasOne(i => i.Interest).WithMany(e => e.Libraries).HasForeignKey(e => e.InterestId);
+            });
+
+            modelBuilder.Entity<SearchConnection>(entity =>
+            {
+                entity.ToTable("SearchConnection");
+                entity.HasKey(e => e.Id);
+                entity.HasOne(d => d.Document).WithMany(e => e.SearchConnections).HasForeignKey(e => e.DocumentId);
+                entity.HasOne(t => t.Tag).WithMany(e => e.SearchConnectionPerTag).HasForeignKey(e => e.TagId);
             });
         }
     }

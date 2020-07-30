@@ -17,5 +17,9 @@ namespace Project1.Model
         public bool IsAdmin { get; set; } = false;
 
         public IList<Review> Reviews { get; set; }
+
+        public IList<Document> Documents { get; set; }
+
+        public IList<Subscribe> Subscribes { get; set; }
     }
 }

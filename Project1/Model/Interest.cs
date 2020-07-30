@@ -9,5 +9,7 @@ namespace Project1.Model
     {
     public string Interest { get; set; }
     public IList<InterestGroup> InterestGroupPerInterest { get; set; }
+    
+    public IList<Library> Libraries { get; set; }
     }
 }
