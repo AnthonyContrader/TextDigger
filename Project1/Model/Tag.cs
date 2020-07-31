@@ -7,7 +7,7 @@ namespace Project1.Model
 {
     public class Tag : BaseModel
     {
-        public string Tag { get; set; }
+        public string TagString { get; set; }
         public IList<SearchConnection> SearchConnectionPerTag { get; set; }
 
     }

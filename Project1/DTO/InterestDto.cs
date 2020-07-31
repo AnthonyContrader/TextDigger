@@ -9,14 +9,14 @@ namespace Project1.DTO
 	public class InterestDto
 	{
 		public int? Id { get; set; }
-        public string Interest { get; set; }
+        public string InterestString { get; set; }
 
         public Interest ConvertTo()
         {
             return new Interest
             {
                 Id = this.Id,
-                Interest = this.Interest,
+                InterestString = this.InterestString
             };
         }
         public static InterestDto ConvertFrom(Interest interest)
@@ -24,7 +24,7 @@ namespace Project1.DTO
             return new InterestDto
             {
                 Id = interest.Id,
-                Interest = interest.Interest,
+                InterestString = interest.InterestString,
             };
         }
 

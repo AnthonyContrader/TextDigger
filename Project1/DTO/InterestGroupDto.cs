@@ -9,7 +9,7 @@ namespace Project1.DTO
 	public class InterestGroupDto
 	{
 		public int? Id { get; set; }
-		public string InterestGroup { get; set; }
+		public string InterestGroupString { get; set; }
         public int InterestId { get; set; }
         public Interest Interest { get; set; }
 
@@ -18,7 +18,7 @@ namespace Project1.DTO
             return new InterestGroup
             {
                 Id = this.Id,
-                InterestGroup = this.InterestGroup,
+                InterestGroupString = this.InterestGroupString,
                 InterestId = this.InterestId,
                 Interest = this.Interest
             };
@@ -28,9 +28,9 @@ namespace Project1.DTO
             return new InterestGroupDto
             {
                 Id = interestGroup.Id,
-                InterestGroup = interestGroup.InterestGroup,
-                InterestId = localita.InterestId,
-                Interest = localita.Interest,
+                InterestGroupString = interestGroup.InterestGroupString,
+                InterestId = interestGroup.InterestId,
+                Interest = interestGroup.Interest,
             };
         }
     }

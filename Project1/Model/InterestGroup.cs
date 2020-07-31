@@ -7,9 +7,9 @@ namespace Project1.Model
 {
     public class InterestGroup : BaseModel
     {
-        public string InterestGroup { get; set; }
+        public string InterestGroupString { get; set; }
 
-        public int InterestID { get; set; }
+        public int InterestId { get; set; }
 		public Interest Interest { get; set; }
         public IList<Subscribe> SubscribePerInterestGroup { get; set; }
     }

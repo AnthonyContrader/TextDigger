@@ -23,27 +23,27 @@ namespace Project1.Controllers
         }
         [Route("/api/v1/[controller]/create")]
         [HttpPost]
-        public SubscribesDto Create([FromBody] dynamic subscribe)
+        public SubscribeDto Create([FromBody] dynamic subscribe)
         {
-            SubscribesDto subscribeDto = JsonConvert.DeserializeObject<SubscribesDto>(subscribe.ToString());
+            SubscribeDto subscribeDto = JsonConvert.DeserializeObject<SubscribeDto>(subscribe.ToString());
 
             Subscribe subscribes = subscribeDto.ConvertTo();
             SubscribeRepository subscribeRepository = new SubscribeRepository(_context);
             subscribes = subscribeRepository.Insert(subscribes);
-            return SubscribesDto.ConvertFrom(subscribes);
+            return SubscribeDto.ConvertFrom(subscribes);
         }
 
         //[Authorize(Roles ="Admin")]
         [Route("/api/v1/[controller]/getsubscribes")]
         [HttpGet]
-        public List<SubscribesDto> GetSubscribe()
+        public List<SubscribeDto> GetSubscribe()
         {
             SubscribeRepository subscribeRepository = new SubscribeRepository(_context);
             var subscribes = subscribeRepository.GetAll().AsNoTracking();
-            List<SubscribesDto> subscribeDto = new List<SubscribesDto>();
+            List<SubscribeDto> subscribeDto = new List<SubscribeDto>();
             foreach (var subscribe in subscribes)
             {
-                subscribeDto.Add(SubscribesDto.ConvertFrom(subscribe));
+                subscribeDto.Add(SubscribeDto.ConvertFrom(subscribe));
             }
 
             return subscribeDto;

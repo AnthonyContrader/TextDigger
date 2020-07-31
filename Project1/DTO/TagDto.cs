@@ -9,14 +9,14 @@ namespace Project1.DTO
 	public class TagDto
 	{
 		public int? Id { get; set; }
-		public string Tag { get; set; }
+		public string TagString { get; set; }
 
 		public Tag ConvertTo()
 		{
 			return new Tag
 			{
 				Id = this.Id,
-				Tag = this.Tag,
+				TagString = this.TagString,
 				
 			};
 		}
@@ -25,7 +25,7 @@ namespace Project1.DTO
 			return new TagDto
 			{
 				Id = tag.Id,
-				Tag = tag.Tag,
+				TagString = tag.TagString,
 				
 			};
 		}

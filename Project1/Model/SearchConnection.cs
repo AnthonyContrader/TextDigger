@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace Project1.Model
 {
-    public class SearchConnection
+    public class SearchConnection : BaseModel
     {
-
-        public int? Id { get; set; }
 
         public int TagId { get; set; }
 

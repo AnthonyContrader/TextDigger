@@ -59,7 +59,7 @@ namespace Project1.Infrastructure
             {
                 entity.ToTable("Interest");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Interest).HasMaxLength(50).IsRequired();
+                entity.Property(e => e.InterestString).HasMaxLength(50).IsRequired();
                 entity.HasMany(l => l.InterestGroupPerInterest).WithOne(e => e.Interest).HasForeignKey(e => e.InterestId);
             });
 
@@ -67,7 +67,7 @@ namespace Project1.Infrastructure
             {
                 entity.ToTable("InterestGroup");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.InterestGroup).HasMaxLength(50).IsRequired();
+                entity.Property(e => e.InterestGroupString).HasMaxLength(50).IsRequired();
 				entity.Property(e => e.Interest).IsRequired();
                 entity.HasMany(d => d.SubscribePerInterestGroup).WithOne(e => e.InterestGroup).HasForeignKey(e => e.InterestGroupId);
             });
@@ -84,7 +84,7 @@ namespace Project1.Infrastructure
             {
                 entity.ToTable("Tag");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Tag).HasMaxLength(50).IsRequired();
+                entity.Property(e => e.TagString).HasMaxLength(50).IsRequired();
                 entity.HasMany(d => d.SearchConnectionPerTag).WithOne(e => e.Tag).HasForeignKey(e => e.TagId);
             });
 

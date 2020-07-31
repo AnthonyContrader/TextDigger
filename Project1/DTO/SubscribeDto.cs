@@ -27,7 +27,7 @@ namespace Project1.DTO
         }
         public static SubscribeDto ConvertFrom(Subscribe subscribe)
         {
-            return new ReviewsDto
+            return new SubscribeDto
             {
                 Id = subscribe.Id,
                 UserId = subscribe.UserId,

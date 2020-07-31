@@ -10,6 +10,8 @@ namespace Project1.Model
 
         public int UserId { get; set; }
         public UserItem User { get; set; }
+
+        public int InterestGroupId { get; set; }
         public InterestGroup InterestGroup { get; set; }
 		
     }
