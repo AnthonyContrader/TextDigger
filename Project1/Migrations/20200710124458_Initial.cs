@@ -104,7 +104,7 @@ namespace Project1.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(maxLength: 50, nullable: false),
+                    UserId = table.Column<int>(nullable: false),
 					Text = table.Column<string>(maxLength: 50, nullable: false),
                     FolderId = table.Column<int>(nullable: false),
                 },
