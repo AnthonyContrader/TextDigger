@@ -68,7 +68,7 @@ namespace Project1.Infrastructure
                 entity.ToTable("InterestGroup");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.InterestGroupString).HasMaxLength(50).IsRequired();
-				entity.Property(e => e.Interest).IsRequired();
+                entity.HasIndex(e => e.InterestId);
                 entity.HasMany(d => d.SubscribePerInterestGroup).WithOne(e => e.InterestGroup).HasForeignKey(e => e.InterestGroupId);
             });
 
@@ -76,8 +76,7 @@ namespace Project1.Infrastructure
             {
                 entity.ToTable("Subscribe");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.User).IsRequired();
-                entity.Property(e => e.InterestGroup).IsRequired();
+                entity.HasIndex(e => e.InterestGroupId);
             });
 
             modelBuilder.Entity<Tag>(entity =>
