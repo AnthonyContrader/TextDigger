@@ -8,8 +8,8 @@ namespace Project1.DTO
 {
     public class SearchConnectionDto
     {
-        public int? Id { get; set; }
 
+        public int? Id { get; set; }
         public int TagId { get; set; }
 
         public Tag Tag { get; set; }
@@ -22,10 +22,9 @@ namespace Project1.DTO
         {
             return new SearchConnection
             {
-                Id = this.Id,
                 TagId = this.TagId,
                 Tag = this.Tag,
-                DocumentId = this.DocumentId,
+                DocumentId = this.DocumentId, 
                 Document = this.Document
             };
         }
