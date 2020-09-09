@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.contrader.textdigger"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "microservice",
+    "baseName": "TextDigger",
+    "packageName": "com.contrader.textdigger",
+    "packageFolder": "com/contrader/textdigger",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mssql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MmE0MjUxMDI5ODQ1ZTk1YzUzMTQ1ZThkMGY0ZTU2OWU1Zjg1NmUwZWYxZWMyYmRlNGE3NTg2ZjkwNjkzNjBkMGEwOGU3ZDA1MGRhNDFlNThjN2RmMWU1MTg2ODU4N2Q1MTU3NTIyOGUxYmZmNGM2NzM0MDcxMDZlOWFmZWU5NWI=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1599576090394,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
