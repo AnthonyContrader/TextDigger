@@ -1,0 +1,24 @@
+{
+  "name": "Interest",
+  "fields": [
+    {
+      "fieldName": "interest",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200909144240",
+  "javadoc": "Task entity.\\n@author The JHipster team.",
+  "entityTableName": "interest",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}

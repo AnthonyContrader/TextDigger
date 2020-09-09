@@ -1,0 +1,33 @@
+{
+  "name": "SearchConnection",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tag",
+      "otherEntityRelationshipName": "searchConnection",
+      "relationshipName": "tag",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "searchConnection",
+      "relationshipName": "document",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200909144540",
+  "entityTableName": "search_connection",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}

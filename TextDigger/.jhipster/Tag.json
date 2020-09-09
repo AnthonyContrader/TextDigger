@@ -1,0 +1,23 @@
+{
+  "name": "Tag",
+  "fields": [
+    {
+      "fieldName": "tag",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200909143940",
+  "entityTableName": "tag",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}

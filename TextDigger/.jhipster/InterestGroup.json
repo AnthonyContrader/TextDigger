@@ -1,0 +1,32 @@
+{
+  "name": "InterestGroup",
+  "fields": [
+    {
+      "fieldName": "interestGroup",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "interest",
+      "otherEntityRelationshipName": "interestGroup",
+      "relationshipName": "interest",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200909144340",
+  "javadoc": "The Employee entity.",
+  "entityTableName": "interest_group",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}

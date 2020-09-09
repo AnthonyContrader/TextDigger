@@ -1,0 +1,34 @@
+{
+  "name": "Utente",
+  "fields": [
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "usertype",
+      "fieldType": "Usertype",
+      "fieldValues": "ADMIN,USER"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200909143840",
+  "javadoc": "JHipster JDL model for myApp",
+  "entityTableName": "utente",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}

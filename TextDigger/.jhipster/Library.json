@@ -1,0 +1,31 @@
+{
+  "name": "Library",
+  "fields": [
+    {
+      "fieldName": "libraryName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "interest",
+      "otherEntityRelationshipName": "library",
+      "relationshipName": "interest",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200909144440",
+  "entityTableName": "library",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}

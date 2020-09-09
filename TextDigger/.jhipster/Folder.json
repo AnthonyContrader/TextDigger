@@ -1,0 +1,31 @@
+{
+  "name": "Folder",
+  "fields": [
+    {
+      "fieldName": "folderName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "library",
+      "otherEntityRelationshipName": "folder",
+      "relationshipName": "library",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200909144140",
+  "entityTableName": "folder",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}

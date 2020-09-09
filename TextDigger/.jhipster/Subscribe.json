@@ -1,0 +1,33 @@
+{
+  "name": "Subscribe",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "utente",
+      "otherEntityRelationshipName": "subscribe",
+      "relationshipName": "user",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "interestGroup",
+      "otherEntityRelationshipName": "subscribe",
+      "relationshipName": "interestgroup",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200909144640",
+  "entityTableName": "subscribe",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TextDigger",
+  "applications": "*",
+  "microserviceName": "TextDigger",
+  "angularJSSuffix": "mySuffix"
+}
