@@ -6,106 +6,67 @@
 // Entity definitions starts here
 // ==============================
 
-entity Region {
-    regionName String
+entity Utente {
+    username String
+    password String required
+    usertype Usertype
 }
 
-entity Country {
-    countryName String
+enum Usertype {
+    ADMIN, USER
+}
+
+entity Tag {
+    tag String
 }
 
 // an ignored comment
 /** not an ignored comment */
-entity Location {
-    streetAddress String
-    postalCode String
-    city String
-    stateProvince String
+entity Document {
+    text String
 }
 
-entity Department {
-    departmentName String required
+entity Folder {
+    folderName String 
 }
 
 /**
  * Task entity.
  * @author The JHipster team.
  */
-entity Task {
-    title String
-    description String
+entity Interest {
+    interest String
 }
 
 /**
  * The Employee entity.
  */
-entity Employee {
-    /**
-    * The firstname attribute.
-    */
-    firstName String
-    lastName String
-    email String
-    phoneNumber String
-    hireDate ZonedDateTime
-    salary Long
-    commissionPct Long
+entity InterestGroup {
+    interestGroup String
 }
 
-entity Job {
-    jobTitle String
-    minSalary Long
-    maxSalary Long
+entity Library {
+    libraryName String
 }
 
-entity JobHistory {
-    startDate ZonedDateTime
-    endDate ZonedDateTime
-    language Language
+entity SearchConnection {
 }
 
-enum Language {
-    FRENCH, ENGLISH, SPANISH
-}
-
-relationship ManyToMany {
-    Job{task(title)} to Task{job}
-}
-
-// defining multiple OneToMany relationships with comments
-relationship OneToMany {
-    Country{region} to Region
-    Location{country} to Country
-    Department{location} to Location
-    Employee{job} to Job
-    /**
-    * A relationship
-    */
-    Department{employee} to
-    /**
-    * Another side of the same relationship
-    */
-    Employee
+entity Subscribe{
+	
 }
 
 relationship ManyToOne {
-    Employee{manager} to Employee
+    SearchConnection {tag} to Tag
+    SearchConnection {document} to Document
+    Subscribe {user} to Utente
+    Subscribe {interestgroup} to InterestGroup
+    Document {user} to Utente
+    Document {folder} to Folder
+    Folder {library} to Library
+    InterestGroup {interest} to Interest
+    Library {interest} to Interest
 }
-
-// defining multiple oneToOne relationships
-relationship OneToOne {
-    JobHistory{job} to Job,
-    JobHistory{department} to Department,
-    JobHistory{employee} to Employee
-}
-
-// =======
-// Options
-// =======
-
-// Set pagination options
-paginate JobHistory, Employee with infinite-scroll
-paginate Job with pagination
 
 dto * with mapstruct
 
