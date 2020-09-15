@@ -1,1 +1,72 @@
-<p>login works!</p>
+<div class="row">
+    <div class="col-12 text-center">
+      <img src="../../../assets/italianlearning.png" class="img-fluid" alt="logo">
+    </div>
+    <div class="offset-4 col-4">
+      <form #f="ngForm">
+  
+        <div class="form-group">
+          <input class="form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
+        </div>
+  
+        <div class="text-center">
+          <button style="background-color: #073569fa !important;" type="submit" (click)="login(f)"
+            class="btn m-1 text-light"><i class="fas fa-sign-in-alt" style="margin-right: 5px"></i>Login</button>
+  
+          <button style="background-color: #073569fa !important;" type="submit" (click)="registerForm.reset()"
+            class="btn btn-primary m-1 text-light" data-toggle="modal" data-target="#register">
+            <i class="fas fa-user-plus" style="margin-right: 5px"></i>Sign Up</button>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title" #modalTitle></div>
+          <button type="button" #closeModal class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form #registerForm="ngForm" (ngSubmit)="register(usertoinsert)">
+          <div class="modal-body">
+            <div class="form-group">
+              <input class="form-control" type="text" id="username" name="username" required placeholder="Username"
+                [(ngModel)]="usertoinsert.login">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" id="name" name="name" required placeholder="Name"
+                [(ngModel)]="usertoinsert.firstName">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" id="surname" name="surname" required placeholder="Surname"
+                [(ngModel)]="usertoinsert.lastName">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" id="email" email="true" name="email" required placeholder="Email"
+                [(ngModel)]="usertoinsert.email">
+            </div>
+  
+            <div class="form-group">
+              <input class="form-control" type="password" minlength="6" name="password" required placeholder="Password"
+                [(ngModel)]="usertoinsert.password">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" minlength="6" id="password2" name="confermaPassword" required
+                [(ngModel)]="usertoinsert.confermaPassword" placeholder="Conferma Password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" [disabled]="!validation()" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>

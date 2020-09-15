@@ -1,1 +1,52 @@
-<p>interestgroups works!</p>
+<div class="container">
+    <div class="row-mt-5">
+      <div class="col-mid-1">
+  
+      </div>
+  
+      <div class="col-mid-10">
+        <table>
+          <tr>
+            <th>InterestGroup</th>
+            <th>Interest</th>
+            <th>Edit</th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="text" [(ngModel)]="interestgrouptoinsert.interestGroup">
+            </td>
+            <td>
+              <select [(ngModel)]="interestgrouptoinsert.interest">
+                <option *ngFor="let interest of interests" [ngValue]="interest">{{interest.interest}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)="insert(interestgrouptoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Delete</button>
+            </td>
+          </tr>
+          <tr *ngFor="let interestgroup of interestgroups">
+            <td>
+              <input [(ngModel)]="interestgroup.interestGroup">
+            </td>
+            <td>
+              <select [(ngModel)]="interestgroup.interest">
+                <option *ngFor="let interest of interests" [ngValue]="interest.id">{{interest.interest}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)=update(interestgroup)>Save</button>
+            </td>
+            <td>
+              <button (click)="delete(interestgroup)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>

@@ -1,1 +1,52 @@
-<p>documents works!</p>
+<div class="container">
+    <div class="row-mt-5">
+      <div class="col-mid-1">
+  
+      </div>
+  
+      <div class="col-mid-10">
+        <table>
+          <tr>
+            <th>Document</th>
+            <th>Folder</th>
+            <th>Edit</th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="text" [(ngModel)]="documenttoinsert.text">
+            </td>
+            <td>
+              <select [(ngModel)]="documenttoinsert.folder">
+                <option *ngFor="let folder of folders" [ngValue]="folder">{{folder.folderName}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)="insert(documenttoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Delete</button>
+            </td>
+          </tr>
+          <tr *ngFor="let document of documents">
+            <td>
+              <input [(ngModel)]="document.text">
+            </td>
+            <td>
+              <select [(ngModel)]="document.folder">
+                <option *ngFor="let folder of folders" [ngValue]="folder.id">{{folder.folderName}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)=update(document)>Save</button>
+            </td>
+            <td>
+              <button (click)="delete(document)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>

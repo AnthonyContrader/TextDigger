@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TagDTO } from 'src/dto/tagdto';
+import { TagService } from 'src/service/tag.service';
 
 @Component({
   selector: 'app-tags',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagsComponent implements OnInit {
 
-  constructor() { }
+  tags: TagDTO[];
+  tagtoinsert: TagDTO = new TagDTO();
 
-  ngOnInit(): void {
+  constructor(private service: TagService) { }
+
+  ngOnInit() {
+    this.getTags();
+  }
+
+  getTags(){
+    this.service.getAll().subscribe(tags => this.tags = tags);
+  }
+
+  delete(tag: TagDTO) {
+    this.service.delete(tag.id).subscribe(() => this.getTags());
+  }
+
+  update(tag: TagDTO) {
+    this.service.update(tag).subscribe(() => this.getTags());
+  }
+
+  insert(tag: TagDTO) {
+    this.service.insert(tag).subscribe(() => this.getTags());
+  }
+
+  clear(){
+    this.tagtoinsert = new TagDTO();
   }
 
 }

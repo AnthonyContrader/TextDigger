@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
+import { InterestDTO } from 'src/dto/interestdto';
+import { InterestService } from 'src/service/interest.service';
 
 @Component({
   selector: 'app-interests',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterestsComponent implements OnInit {
 
-  constructor() { }
+  interests: InterestDTO[];
+  interesttoinsert: InterestDTO = new InterestDTO();
 
-  ngOnInit(): void {
+  constructor(private service: InterestService) { }
+
+  ngOnInit() {
+    this.getInterests();
+  }
+
+  getInterests(){
+    this.service.getAll().subscribe(interests => this.interests = interests);
+  }
+
+  delete(interest: InterestDTO) {
+    this.service.delete(interest.id).subscribe(() => this.getInterests());
+  }
+
+  update(interest: InterestDTO) {
+    this.service.update(interest).subscribe(() => this.getInterests());
+  }
+
+  insert(interest: InterestDTO) {
+    this.service.insert(interest).subscribe(() => this.getInterests());
+  }
+
+  clear(){
+    this.interesttoinsert = new InterestDTO();
   }
 
 }
