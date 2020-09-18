@@ -1,1 +1,56 @@
-<p>admin-layout works!</p>
+<!-- Navbar -->
+<nav style="font-size: 1.2rem !important;" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top pl-1">
+    <a class="nav-link"[routerLink]="['/admin-dashboard']"><img src="../../assets/italianlearning-dark.png" class="img-fluid" alt="logo" style="width: 90px"></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-nowrap">
+        <li [routerLinkActive]="['active']">
+          <a class="nav-link"[routerLink]="['/admin-dashboard/users']"><i class="fas fa-users" style="margin-right: 5px"></i>Users</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a class="nav-link"[routerLink]="['/admin-dashboard/documents']"><i class="fas fa-file-word" style="margin-right: 5px"></i>Documents</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a class="nav-link"[routerLink]="['/admin-dashboard/folders']"><i class="fas fa-folder" style="margin-right: 5px"></i>Folders</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a class="nav-link"[routerLink]="['/admin-dashboard/interests']"><i class="fas fa-wifi" style="margin-right: 5px"></i>Interests</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['/admin-dashboard/interestsgroups']"><i class="fas fa-network-wired" style="margin-right: 5px"></i>InterestsGroups</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['/admin-dashboard/libraries']"><i class="fas fa-book" style="margin-right: 5px"></i>Libraries</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['/admin-dashboard/searchconnections']"><i class="fas fa-ethernet" style="margin-right: 5px"></i>Searchconnections</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['/admin-dashboard/subscribes']"><i class="fab fa-connectdevelop" style="margin-right: 5px"></i>Subscribes</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['/admin-dashboard/tags']"><i class="fas fa-tags" style="margin-right: 5px"></i>Tags</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user" style="margin-right: 15px"></i>{{user.firstName}}</a>
+            <div class="dropdown-menu dropdown-menu-right mr-15" dropdown dropdown-append-to-body>
+              <a class="dropdown-item" [routerLink]="['/admin-dashboard/profile']"><i class="fas fa-user" style="margin-right: 15px"></i>Profile</a>
+              <a class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout</a>
+            </div>
+        </li>
+      </ul>
+      
+    </div>
+  
+  </nav>
+  
+  <div style="margin-top: 75px !important;" class="col-md-12">
+    <router-outlet></router-outlet>   
+  </div>
+  
