@@ -10,7 +10,7 @@ export class InterestgroupService extends AbstractService<InterestGroupDTO> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.type = "interestgroups";
-    this.micro = "textdigger";
+    this.type = 'interestgroups';
+    this.micro = '';
    }
 }

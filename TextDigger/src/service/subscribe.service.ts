@@ -10,7 +10,7 @@ export class SubscribeService extends AbstractService<SubscribeDTO> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.type= "subscribes";
-    this.micro= "textdigger";
+    this.type= 'subscribes';
+    this.micro= '';
    }
 }

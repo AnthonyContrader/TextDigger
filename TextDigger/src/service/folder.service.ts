@@ -10,7 +10,7 @@ export class FolderService extends AbstractService<FolderDTO> {
 
   constructor(http: HttpClient) { 
     super(http);
-    this.type="folders";
-    this.micro="textdigger";
+    this.type='folders';
+    this.micro='';
   }
 }

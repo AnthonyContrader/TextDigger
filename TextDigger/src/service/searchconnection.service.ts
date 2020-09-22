@@ -10,7 +10,7 @@ export class SearchconnectionService extends AbstractService<SearchConnectionDTO
 
   constructor(http: HttpClient) {
     super(http);
-    this.type= "searchconnections";
-    this.micro= "textdigger";
+    this.type= 'searchconnections';
+    this.micro= '';
    }
 }

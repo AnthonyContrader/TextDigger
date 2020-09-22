@@ -10,7 +10,7 @@ export class LibraryService extends AbstractService<LibraryDTO> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.type= "libraries";
-    this.micro = "textdigger";
+    this.type= 'libraries';
+    this.micro = '';
    }
 }

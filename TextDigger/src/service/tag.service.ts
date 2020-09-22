@@ -10,7 +10,7 @@ export class TagService extends AbstractService<TagDTO>{
 
   constructor(http: HttpClient) {
     super(http);
-    this.type= "tags";
-    this.micro= "textdigger";
+    this.type= 'tags';
+    this.micro= '';
    }
 }
